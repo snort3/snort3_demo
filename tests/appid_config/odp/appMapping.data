@@ -1,0 +1,8 @@
+165	FTP	8	0	0	ftp	ftp
+166	FTP Data	36	0	0	ftp-data	ftp-data
+167	FTPS Data	20132	0	0	ftpsdata	ftpsdata
+168	FTPS	20131	0	0	ftps	ftps
+426	SIP	20028	30	0	sip	sip
+638	Firefox	0	32	0	~	firefox
+676	HTTP	9	0	0	http	http
+836	SMTP	30	125	0	smtp	smtp

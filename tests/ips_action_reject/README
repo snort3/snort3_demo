@@ -1,0 +1,10 @@
+=== IPS reject action test
+
+This is a test of "reject" IPS action. It reset a connection on http
+GET request.
+
+Test result verifies:
+
+1. compare the alert -- reset verict
+
+2. compare the inlone-out.pcap -- reset of connections.

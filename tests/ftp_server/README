@@ -1,0 +1,6 @@
+=== FTP server test
+
+This test shows FTP server command validation.
+
+A build-in alert 125:2 is generated for an invalid FTP command.
+
