@@ -1,0 +1,6 @@
+=== FTP data test
+
+This is a test of FTP inspector data channel and file API.
+
+Given a malware in FTP data traffic and file signature is correctly
+identified in file.log with "block" verdict.

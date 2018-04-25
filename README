@@ -1,1 +1,16 @@
-snort3 demo
+== Snort 3.0 Demo
+
+This test suite contains examples of Snort 3.0 usage. Each directory
+contains all the files sufficient to demonstrate a use case and a 
+README that explains the interesting bits.
+
+Demos are executed using bats, a simple bash test framework, which
+you can find here: https://github.com/sstephenson/bats/.
+
+To execute the tests:
+
+run_test.sh <snort3_installed_path>
+
+run_test.sh will find *.bats files recursively from the current
+directory down and execute each test. Output is in TAPS format with
+a summary at the end.

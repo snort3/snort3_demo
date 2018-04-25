@@ -1,0 +1,7 @@
+=== FTP client test
+
+By enabling the ftp_client.bounce option, this test shows detection of
+FTP bounce attacks.
+
+A build-in rule 125:8 is alerted for the FTP pcap.
+
