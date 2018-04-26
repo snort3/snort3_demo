@@ -1,5 +1,4 @@
 #!/usr/bin/env bats
-# Description:
 
 PCAP="malware_mac.doc.pcap"
 CFG="snort.lua"
