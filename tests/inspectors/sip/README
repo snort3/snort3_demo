@@ -1,0 +1,10 @@
+=== SIP inspector maximum content length match
+
+This is a test to verify that SIP inspector to match the
+content length provided in the configuration.
+
+Test result verifies:
+
+1. compare the alert - content length for builtin SIP rule (140:16) is too large 
+or is negative.
+

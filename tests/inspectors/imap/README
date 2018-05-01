@@ -1,0 +1,12 @@
+=== IMAP Inspector Bit Encoding decode depth
+
+This is a test case to test IMAP Inspector Bit encoding decoding depth.
+This is a 7bit decoding depth test for IMAP.
+
+Test result verifies:
+
+1. The alerts are generated for the rule 1:1:0 i.e. first 7bit part of multi 
+part message for the decoding depth mentioned.
+
+2. The second local rule 1:2:0 will not be triggered as the decoding depth 
+is set to 15.
