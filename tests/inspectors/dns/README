@@ -1,0 +1,7 @@
+=== DNS Inspector
+
+This is to test DNS Inspector - rdata_overflow.
+
+Test verifies:
+
+1. Generates an alert for builtin DNS rule 116:445 rdata_overflow.

@@ -1,0 +1,8 @@
+=== Normalizer
+
+This is to test an alert on SYN on an established session.
+
+Test verifies:
+
+1. A builtin rule 129:1 is triggered on TCP SYN when a session is
+established.

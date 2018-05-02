@@ -1,0 +1,11 @@
+=== Binder
+
+This is to test use of binder.
+
+Test verifies:
+
+1. With the use of binder, inspection subpolicy and ips subpolicy 
+are selected.
+
+2. A builtin rule 140:26 and a local SIP rules used by IPS subpolicy 
+are generated.

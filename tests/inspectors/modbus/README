@@ -1,0 +1,12 @@
+=== MODBUS Inspector
+
+This is to test MODBUS Inspector that uses PAF to reassemble a Modbus
+PDU that was split over multiple TCP segments.
+
+Test verifies:
+
+1. A local rule is triggered that uses modbus_data rule option. An alert 
+is generated when there is a content match within reassembled Modbus PDU
+split over multiple TCP segments.
+
+

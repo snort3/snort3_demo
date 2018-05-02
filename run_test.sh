@@ -10,6 +10,13 @@ export snorty_path=$1
 export LUA_PATH=$snorty_path/include/snort/lua/\?.lua\;\;
 export SNORT_LUA_PATH=$snorty_path/etc/snort/
 export PATH=$PATH:$(pwd)/bin
+if [ -d "${snorty_path}/lib64" ]; then
+    libs=${snorty_path}/lib64
+else
+    libs=${snorty_path}/lib
+fi
+export SNORT_DAQS=$libs/snort/daqs:$libs/snort_extra/daqs
+export SNORT_PLUGINS=$libs
 
 # run tests for all .bats
 for t in `find . -name \*.bats` ; do

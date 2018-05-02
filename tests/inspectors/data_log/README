@@ -1,0 +1,7 @@
+=== HTTP Request Data Logger
+
+This test is to use data logger to log information on HTTP Request.
+
+Test verifies:
+
+1. Data logger correctly logs HTTP Request info.

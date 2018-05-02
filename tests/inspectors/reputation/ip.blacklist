@@ -1,0 +1,8 @@
+# This is a full line comment
+172.16.42.32/32     # This is an inline comment, line with single CIDR block
+172.33.42.32/16
+172.33.1.5/32
+10.1.2.3/32
+10.9.8.7
+
+

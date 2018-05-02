@@ -1,0 +1,10 @@
+=== DNP3 Inspector
+
+This is to test DNP3 inspector - reassemble with new first segment.
+
+Test verifies:
+
+1. DNP3 inspector test where a new first FIN segment comes during 
+reassembly which resets the process.
+
+2. An alert is generates for local rule for matched content and a builtin rule 145:4. 
