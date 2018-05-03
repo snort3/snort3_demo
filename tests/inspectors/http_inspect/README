@@ -1,0 +1,9 @@
+=== HTTP Inspector
+
+This is to test the HTTP raw body buffers detection and possibility of 
+basic matches.
+
+Test verifies:
+
+1. Local rules associated with raw body and raw header buffers of HTTP 
+message are matched.

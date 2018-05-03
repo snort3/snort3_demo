@@ -1,0 +1,7 @@
+=== Stream File Inspector
+
+This is to test basic stream_file inspector functionality
+
+Test verifies:
+
+1. A local rule with file type PDF is fired using stream_file inspector.
