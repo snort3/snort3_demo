@@ -1,0 +1,11 @@
+=== AppID: Kerberos detector plugin
+
+This is to test AppID for Kerberos detector plugin. It generates alerts 
+based on intrusion rules as well as static and dynamic appid counters.
+
+Test result verifies:
+
+1. Local rule 1:18761 triggered -- appid Kerberos detected correctly.
+
+2. Correct AppID detected with static and dynamic counts.
+

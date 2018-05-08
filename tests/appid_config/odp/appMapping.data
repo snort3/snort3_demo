@@ -5,4 +5,7 @@
 426	SIP	20028	30	0	sip	sip
 638	Firefox	0	32	0	~	firefox
 676	HTTP	9	0	0	http	http
+701	Kerberos	20011	128	0	kerberos	kerberos
+710	LDAP	20012	0	0	ldap	ldap
+755	NetBIOS-ssn (SMB)	17	0	0	netbios-ssn	netbios-ssn
 836	SMTP	30	125	0	smtp	smtp

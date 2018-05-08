@@ -1,0 +1,12 @@
+=== SMTP Inspector 
+
+This is to test SMTP inspector - Long SMTP header line length.
+It will generate an alert once data is received before the server response.
+
+Test result verifies:
+
+1. A long SMTP header length sent to detection will generate an alert once 
+the data is received before the server responds. 
+
+2. Built-in rule 124:2 is triggered to generate an alert.
+

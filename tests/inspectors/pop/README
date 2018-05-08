@@ -1,0 +1,14 @@
+=== POP Inspector Stateful MIME Boundary Search
+
+This is to test POP inspector stateful boundary search.
+It searches for content that is split between two packets.
+
+Test verifies:
+
+1. An alert is generated for content match within a specified limit set
+in a local rule.
+
+2. The inspector searches for the content that is divided between two packets.
+The Base64 decoding depth for this inspector is set to unlimited.
+
+3. Rule 142:4 would not trigger as it does not meet the boundary conditions.
