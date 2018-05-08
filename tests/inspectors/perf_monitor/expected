@@ -1,0 +1,42 @@
+--------------------------------------------------
+daq
+                    pcaps: 1
+                 received: 8
+                 analyzed: 8
+                    allow: 7
+                 rx_bytes: 1454
+--------------------------------------------------
+daq
+                    pcaps: 1
+                 received: 2
+                 analyzed: 2
+                    allow: 2
+                 rx_bytes: 132
+--------------------------------------------------
+daq
+                    pcaps: 1
+                 received: 1
+                 analyzed: 1
+                    allow: 1
+                 rx_bytes: 66
+--------------------------------------------------
+daq
+                    pcaps: 1
+                 received: 1
+                 analyzed: 1
+                    allow: 1
+                 rx_bytes: 74
+--------------------------------------------------
+daq
+                    pcaps: 1
+                 received: 1
+                 analyzed: 1
+                    allow: 1
+                 rx_bytes: 74
+--------------------------------------------------
+daq
+                    pcaps: 1
+                 received: 6
+                 analyzed: 6
+                    allow: 6
+                 rx_bytes: 1315
