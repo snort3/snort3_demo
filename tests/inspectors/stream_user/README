@@ -1,0 +1,8 @@
+=== Stream User Inspector
+
+This test is to verify the basic functionality of stream_user inspector.
+
+Test verifies:
+
+1. Triggers a local rule using http_uri rule option and displays the user
+counter using stream_user inspector.

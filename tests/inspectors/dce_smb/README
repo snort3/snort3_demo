@@ -1,0 +1,11 @@
+=== DCE SMB and Wizard Inspectors
+
+This test is for DCE SMB with TCP/SMB/DCE segmentation.
+
+Test verifies:
+
+1. Wizard recognizes DCE SMB with tcp/smb/dce segmentation and triggers
+DCE rule options.
+
+2. A local rule with various dce options is triggered and been correctly
+recognized by the wizard.

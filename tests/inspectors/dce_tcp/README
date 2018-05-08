@@ -1,0 +1,8 @@
+=== DCE TCP Inspector
+
+This test is to test dce_tcp traffic.
+
+Test verifies:
+
+1. Wizard recognizes DCE TCP traffic as such.
+
