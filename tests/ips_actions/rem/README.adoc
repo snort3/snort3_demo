@@ -1,0 +1,7 @@
+=== Rem
+
+This test is to verify the usage of rem IPS option.
+
+Test verifies:
+
+1. A local rule is triggered using rem ips option.

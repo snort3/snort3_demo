@@ -1,0 +1,8 @@
+=== SIP Stat Code
+
+This test is to verify the basic functionality of sip_stat_code option.
+
+Test verifies:
+
+1. Local rules containing sip_stat_code is triggered verifying the basic
+functionality.

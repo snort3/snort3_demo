@@ -1,0 +1,7 @@
+=== Target
+
+This test is to verify the basic functionality of target IPS option.
+
+Test verifies:
+
+1. A local rule using target rule option is triggered.

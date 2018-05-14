@@ -1,0 +1,8 @@
+=== Priority
+
+This test is to verify priority IPS option.
+
+Test verifies:
+
+1. An alert is triggered to test pattern match on decoded data when 
+ignore_data is enabled in SMTP.

@@ -1,0 +1,8 @@
+=== PCRE
+
+This is to test PCRE rule option.
+
+Test verifies:
+
+1. A local rule is triggered that uses pcre rule option with relative
+start of subject.

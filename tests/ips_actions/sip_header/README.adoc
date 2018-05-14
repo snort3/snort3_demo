@@ -1,0 +1,7 @@
+=== SIP Header
+
+This test is to verify the basic functionality of sip_header ips option.
+
+Test verifies:
+
+1. A local rule using sip_header is triggered.

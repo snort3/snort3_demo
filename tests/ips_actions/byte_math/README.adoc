@@ -1,0 +1,8 @@
+=== Byte Math
+
+This is to test byte_math rule option with ADD operator feature.
+
+Test verifies:
+
+1. An alert is generated for byte_math rule option using ADD operator
+feature.

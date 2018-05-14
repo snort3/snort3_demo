@@ -1,0 +1,9 @@
+=== HTTP Header and HTTP Cookie
+
+This test is to check the basic functionlity of http_header and 
+http_cookie IPS options.
+
+Test verifies:
+
+1. A local rule is triggered and verifies that http_header and http_cookie
+functions as expected.
