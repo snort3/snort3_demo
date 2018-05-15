@@ -1,0 +1,8 @@
+=== Service
+
+This test is to verify the functionality of service ips option.
+
+Test verifies:
+
+1. This test verifies the snort configuration using service ips
+option.

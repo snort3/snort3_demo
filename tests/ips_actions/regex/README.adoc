@@ -1,0 +1,7 @@
+=== Regex
+
+This test is to verify the regex IPS option.
+
+Test verifies:
+
+1. A local rule using regex ips option is triggered.

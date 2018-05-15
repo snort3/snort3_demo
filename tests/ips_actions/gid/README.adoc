@@ -1,0 +1,7 @@
+=== GID
+
+This test is to verify an alert is triggered with correct GID.
+
+Test verifies:
+
+1. An alert is generated with correct GID as mentioned in the rule.

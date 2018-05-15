@@ -1,0 +1,8 @@
+=== SIP Body
+
+This test is to verify the sip_body ips option.
+
+Test verifies:
+
+1. Test verifies basic body content match - in the body for the 
+SIP inspector.

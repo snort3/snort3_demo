@@ -1,0 +1,13 @@
+=== Byte Extract and Byte Test
+
+This is to test byte_extract and byte_test rule options with 
+and without a bitmask.
+
+Test verifies:
+
+1. First local rule is generated for byte_extract with a bitmask value and 
+byte_test without a bitmask value.
+
+2. Second local rule is generated for byte_extract and byte_test both with
+bitmask values. 
+

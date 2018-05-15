@@ -1,0 +1,7 @@
+=== Dsize
+
+This test is to verify the teredo multiple encapsulation dsize.
+
+Test verifies:
+
+1. A local rule is triggered where a small dzise is used.

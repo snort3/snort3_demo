@@ -1,0 +1,8 @@
+=== SO and SOID 
+
+This is to test the so and soid ips options.
+
+Test verifies:
+
+1. The test verifies correct so rule conversion. This test builds and
+executes a plain so rule with GID:3 and SID:18758.

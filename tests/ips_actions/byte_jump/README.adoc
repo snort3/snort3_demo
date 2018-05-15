@@ -1,0 +1,9 @@
+=== Byte Jump 
+
+This is to test byte_jump rule option with post_offset passing a
+negative value.
+
+Test verifies:
+
+1. An alert is genertated for byte_jump rule option with post_offset
+set to a negative value.

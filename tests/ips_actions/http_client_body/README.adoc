@@ -1,0 +1,9 @@
+=== HTTP Client Body
+
+This test it http_client_body using HTTP inspector with parameter extraction 
+and normalization with %u encoding.
+
+Test verifies:
+
+1. Test verifies that %u encoded parameters from a POST can be extracted 
+and normalized with the possibility of chunked payloads.

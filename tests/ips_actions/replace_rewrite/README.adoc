@@ -1,0 +1,8 @@
+=== Replace and Rewrite
+
+This test is to verify replace ips option with rewrite action.
+
+Test verifies:
+
+1. A local rule using replace keyword with rewrite action is triggered.
+

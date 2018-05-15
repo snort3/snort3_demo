@@ -1,0 +1,8 @@
+=== Pkt Data and File Data
+
+This test is to verify file_data and pkt_data IPS rule options.
+
+Test verifies:
+
+1. This test alerts on a single segment HTTP response with rule that has 
+content relative to file_data.

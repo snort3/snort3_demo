@@ -1,0 +1,10 @@
+=== Appids
+
+This is to test the appid rule option.
+
+Test verifies:
+
+1. An alert is generated for local rule to correctly detect appid
+for SMTP.
+
+
