@@ -19,7 +19,7 @@ http_inspect = { }
 
 default_rules =
 [[
-alert tcp any any -> any any ( msg:"File_Data_Matched"; file_data; pcre:"/XML Heap Corruption/iR"; sid:11111; )
+alert tcp ( msg:"File_Data_Matched"; file_data; pcre:"/XML Heap Corruption/iR"; sid:11111; )
 ]]
 
 ips =

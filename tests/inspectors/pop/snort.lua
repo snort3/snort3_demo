@@ -24,7 +24,7 @@ pop =
 
 local_rules =
 [[
-alert tcp any any -> any any ( msg:"ALERT"; file_data; content:"<html",within 10; sid:1; gid:1; )
+alert tcp ( msg:"ALERT"; file_data; content:"<html",within 10; sid:1; gid:1; )
 alert ( msg:"POP_B64_DECODING_FAILED"; sid:4; gid:142; rev:1; metadata:rule-type preproc,service pop; )
 ]]
 
