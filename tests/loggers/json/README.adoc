@@ -1,0 +1,10 @@
+=== ALERT_JSON
+
+Test log coverage for scenario where events are diplayed in a json format.
+
+Test result verifies:
+
+1. Various fields of a json format are populated.
+
+2. Rules parameters are matched and displayed correctly given the json format test option.
+

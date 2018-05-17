@@ -1,0 +1,27 @@
+
+(Event)
+	Snort ID: 0	Event ID: 1	Seconds: 1206715315.845035
+	Policy ID:	Context: 0	Inspect: 0	Detect: 0
+	Rule 1:1:0	Class: 0	Priority: 0
+	MPLS Label: 1044495	VLAN ID: 0	IP Version: 0x44	IP Proto: 6
+	Src IP: 10.4.10.181	Port: 39701
+	Dst IP: 65.55.251.108	Port: 443
+	App Name: none
+	Status: allow	Action: pass
+
+Packet
+	sensor id: 0	event id: 1	event second: 1206715315
+	packet second: 1206715315	packet microsecond: 845035
+	linktype: 1	packet_length: 190
+[    0] 00 D0 03 B3 A7 FC 00 16 41 E2 F2 5E 88 47 FF 00  ........A..^.G..
+[   16] F1 FF 45 00 00 AC 4C 35 40 00 40 06 9C BA 0A 04  ..E...L5@.@.....
+[   32] 0A B5 41 37 FB 6C 9B 15 01 BB 49 FA AB E3 77 EF  ..A7.l....I...w.
+[   48] 24 A1 80 18 05 B4 13 F8 00 00 01 01 08 0A 00 5A  $..............Z
+[   64] E8 A5 00 00 00 00 16 03 01 00 73 01 00 00 6F 03  ..........s...o.
+[   80] 01 00 1E 46 AB 8A DB E1 38 B0 53 C3 D9 44 CE FB  ...F....8.S..D..
+[   96] 7D 34 93 66 2E 64 1A D0 5F 2C 0A 6F F2 07 B2 47  }4.f.d.._,.o...G
+[  112] DB 20 FC 01 00 00 3B 57 41 F4 8E 5D 0F 5E 50 7A  . ....;WA..].^Pz
+[  128] A0 48 BC 72 89 B5 C9 DC DC E9 83 6A CF 03 88 5D  .H.r.......j...]
+[  144] 0A 89 00 28 00 39 00 38 00 35 00 33 00 32 00 04  ...(.9.8.5.3.2..
+[  160] 00 05 00 2F 00 16 00 13 FE FF 00 0A 00 15 00 12  .../............
+[  176] FE FE 00 09 00 64 00 62 00 03 00 06 01 00        .....d.b......

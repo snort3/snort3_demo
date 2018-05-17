@@ -1,0 +1,13 @@
+
+$packet 192.168.1.2 80 -> 192.168.1.1 48620
+
+x54 79 70 65 3A 20 6C 6F 67 67 65 72 20 52 65 66 65 72 20 74  # Type: logger Refer t
+x6F 20 74 68 65 20 52 45 41 44 4D 45 20 69 6E 20 74 68 65 20  # o the README in the 
+x4C 69 62 44 41 51 20 73 6F 75 72 63 65 20 74 61 72 62 61 6C  # LibDAQ source tarbal
+x6C 20 66 6F 72 20 69 6E 73 74 72 75 63 74 69 6F 6E 73 20 6F  # l for instructions o
+x6E 20 68 6F 77 20 74 6F 20 62 75 69 6C 64 20 74 68 65 20 6C  # n how to build the l
+x69 62 72 61 72 79 20 61 6E 64 20 6D 6F 64 75 6C 65 73 20 61  # ibrary and modules a
+x73 20 77 65 6C 6C 20 61 73 20 64 65 74 61 69 6C 73 20 6F 6E  # s well as details on
+x20 63 6F 6E 66 69 67 75 72 69 6E 67 20 61 6E 64 20 75 73 69  #  configuring and usi
+x6E 67 20 74 68 65 20 62 75 6E 64 6C 65 64 20 44 41 51 20 6D  # ng the bundled DAQ m
+x6F 64 75 6C 65 73 2E                                         # odules.

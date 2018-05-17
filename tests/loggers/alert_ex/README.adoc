@@ -1,0 +1,10 @@
+=== ALERT_EX
+
+Test log coverage for scenario where events are diplayed in a alert_ex format.
+
+Test result verifies:
+
+1. local rules for ICMP and HTTP traffic are triggered
+
+2. event messages are converted to upper_case
+
