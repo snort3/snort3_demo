@@ -23,7 +23,7 @@ appid =
 
 local_rules =
 [[
-alert udp any any -> any any ( msg:"openAppId: test for app kerberos"; appids:"Kerberos"; sid:18761; rev:4; )
+alert udp ( msg:"openAppId: test for app kerberos"; appids:"Kerberos"; sid:18761; rev:4; )
 ]]
 
 ips =

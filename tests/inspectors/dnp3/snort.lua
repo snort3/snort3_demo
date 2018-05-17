@@ -18,8 +18,8 @@ dnp3 = { }
 
 local_rules =
 [[
-alert tcp any any -> any any ( msg:"should not alert"; dnp3_data; content:"missed"; sid:1; )
-alert tcp any any -> any any ( msg:"should alert"; dnp3_data; content:"matched"; sid:2; )
+alert tcp ( msg:"should not alert"; dnp3_data; content:"missed"; sid:1; )
+alert tcp ( msg:"should alert"; dnp3_data; content:"matched"; sid:2; )
 alert ( msg:"DNP3_REASSEMBLY_BUFFER_CLEARED"; sid:4; gid:145; rev:1; metadata:rule-type preproc; )
 ]]
 

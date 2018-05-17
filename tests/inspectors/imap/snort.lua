@@ -46,8 +46,8 @@ imap =
 
 local_rules =
 [[
-alert tcp any any -> any any ( msg:"Should Alert - first 7bit part of multi-part message"; flow:established; file_data; content:"This is a multi",distance 0,within 15; sid:1; )
-alert tcp any any -> any any ( msg:"Should Not Alert - second 7bit part of multi-part message"; flow:established; file_data; content:"This is a multi-",distance 0,within 16; sid:2; )
+alert tcp ( msg:"Should Alert - first 7bit part of multi-part message"; flow:established; file_data; content:"This is a multi",distance 0,within 15; sid:1; )
+alert tcp ( msg:"Should Not Alert - second 7bit part of multi-part message"; flow:established; file_data; content:"This is a multi-",distance 0,within 16; sid:2; )
 ]]
 
 ips =
