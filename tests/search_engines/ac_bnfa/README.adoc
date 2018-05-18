@@ -1,0 +1,9 @@
+=== ac_bnfa fast pattern matcher
+
+This test case uses ac_bnfa search method for high performance.
+
+Test result verifies:
+
+1. Generates one alert for 1:1 after multiple matches for better performance.
+2. Generates one alert for 119:43 which is javascript obfuscation.
+
