@@ -1,0 +1,10 @@
+=== CSV
+
+Test log coverage for scenario where events are diplayed in a CSV format.
+
+Test result verifies:
+
+1. Various fields of a csv format are populated
+
+2. Both rules parameters are matched and displayed correctly given the csv format test option
+

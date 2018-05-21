@@ -1,0 +1,10 @@
+=== LOG_CODECS
+
+Test log coverage for logging protocols in packet by layer.
+
+Test result verifies:
+
+1. Logging protocols for each packet
+
+2. Rule is triggered for packets contains an IP layer
+

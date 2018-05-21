@@ -1,0 +1,9 @@
+=== UNIFIED2
+
+Test log coverage for scenario where output event and packet diplayed in unified2 format file.
+
+Test result verifies:
+
+1. logger option returns events in unified2 format file
+
+
