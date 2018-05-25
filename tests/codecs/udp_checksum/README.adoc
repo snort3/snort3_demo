@@ -1,0 +1,7 @@
+=== UDP Checksum
+
+This test is to verify UDP checksum.
+
+Test verifies:
+
+1. Good and bad ip6, icmp6, udp6, and tcp6 checksums.

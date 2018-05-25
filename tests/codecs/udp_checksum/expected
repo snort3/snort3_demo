@@ -1,0 +1,6 @@
+icmp6
+       bad_icmp6_checksum: 1
+tcp
+        bad_tcp6_checksum: 1
+udp
+        bad_udp6_checksum: 1

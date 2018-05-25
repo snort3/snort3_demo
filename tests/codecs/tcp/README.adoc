@@ -1,0 +1,8 @@
+=== TCP Builtin Rules
+
+This test verifies TCP builtin rule 116:433.
+
+Test verifies:
+
+1. A TCP decoder builtin rule 116:433 rule is triggered. 
+This rule is DDos shaft SYN flood.
