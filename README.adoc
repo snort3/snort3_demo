@@ -9,7 +9,7 @@ you can find here: https://github.com/sstephenson/bats/.
 
 To execute the tests:
 
-run_test.sh <snort3_installed_path>
+./run_test.sh <snort3_installed_path>
 
 run_test.sh will find *.bats files recursively from the current
 directory down and execute each test. Output is in TAPS format with
