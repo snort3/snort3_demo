@@ -1,0 +1,7 @@
+=== Event Filter
+
+This is to test the limit feature of event_filter.
+
+Test verifies:
+
+1. After every 10 seconds, an ICMP alert is generated.

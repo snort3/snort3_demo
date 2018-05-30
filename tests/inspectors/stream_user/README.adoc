@@ -1,6 +1,7 @@
 === Stream User Inspector
 
 This test is to verify the basic functionality of stream_user inspector.
+This test also demonstrates the use of Hext DAQ.
 
 Test verifies:
 

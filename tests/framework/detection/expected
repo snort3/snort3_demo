@@ -1,0 +1,107 @@
+detection: packet 1 C2S 127.0.0.1:1234 127.0.0.1:5678
+detection: Fast pattern search
+
+snort.raw[16]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+31 30 00 41 41 41 41 41 41 41  66 6F 6F 62 61 72              10.AAAAAAAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Processing pattern match #1
+detection: Fast pattern packet[5] = 'AAAAA' |41 41 41 41 41 | ( )
+detection: Starting tree eval
+detection: Evaluating option content, cursor name pkt_data, cursor position 0
+
+snort.raw[16]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+31 30 00 41 41 41 41 41 41 41  66 6F 6F 62 61 72              10.AAAAAAAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Rule options variables: 
+var[0]=0 var[1]=0 var[2]=0 
+detection: Evaluating option byte_jump, cursor name pkt_data, cursor position 8
+
+snort.raw[8]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+41 41 66 6F 6F 62 61 72                                       AAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: no match
+detection: Rule options variables: 
+var[0]=0 var[1]=0 var[2]=0 
+detection: Evaluating option byte_jump, cursor name pkt_data, cursor position 9
+
+snort.raw[7]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+41 66 6F 6F 62 61 72                                          Afoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: no match
+detection: Rule options variables: 
+var[0]=0 var[1]=0 var[2]=0 
+detection: Evaluating option byte_jump, cursor name pkt_data, cursor position 10
+
+snort.raw[6]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+66 6F 6F 62 61 72                                             foobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: no match
+detection: no match
+detection: Processing pattern match #2
+detection: Fast pattern packet[3] = 'foo' |66 6F 6F | ( )
+detection: Starting tree eval
+detection: Evaluating option byte_extract, cursor name pkt_data, cursor position 0
+
+snort.raw[16]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+31 30 00 41 41 41 41 41 41 41  66 6F 6F 62 61 72              10.AAAAAAAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Rule options variables: 
+var[0]=1 var[1]=0 var[2]=0 
+detection: Evaluating option byte_math, cursor name pkt_data, cursor position 1
+
+snort.raw[15]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+30 00 41 41 41 41 41 41 41 66  6F 6F 62 61 72                 0.AAAAAAAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Rule options variables: 
+var[0]=1 var[1]=10 var[2]=0 
+detection: Evaluating option content, cursor name pkt_data, cursor position 2
+
+snort.raw[14]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+00 41 41 41 41 41 41 41 66 6F  6F 62 61 72                    .AAAAAAAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Rule options variables: 
+var[0]=1 var[1]=10 var[2]=0 
+detection: Reached leaf, cursor name pkt_data, cursor position 13
+
+snort.raw[3]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+62 61 72                                                      bar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Matched rule gid:sid:rev 1:3:0
+detection: Rule options variables: 
+var[0]=1 var[1]=10 var[2]=0 
+detection: Evaluating option byte_math, cursor name pkt_data, cursor position 0
+
+snort.raw[16]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+31 30 00 41 41 41 41 41 41 41  66 6F 6F 62 61 72              10.AAAAAAAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Rule options variables: 
+var[0]=10 var[1]=10 var[2]=0 
+detection: Evaluating option content, cursor name pkt_data, cursor position 1
+
+snort.raw[15]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+30 00 41 41 41 41 41 41 41 66  6F 6F 62 61 72                 0.AAAAAAAfoobar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Rule options variables: 
+var[0]=10 var[1]=10 var[2]=0 
+detection: Reached leaf, cursor name pkt_data, cursor position 13
+
+snort.raw[3]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+62 61 72                                                      bar
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+detection: Matched rule gid:sid:rev 1:1:0
+detection: Rule options variables: 
+var[0]=10 var[1]=10 var[2]=0 
+04/22-20:21:40.905630, 1, TCP, raw, 56, C2S, 127.0.0.1:1234, 127.0.0.1:5678, 1:3:0, allow
+04/22-20:21:40.905630, 1, TCP, raw, 56, C2S, 127.0.0.1:1234, 127.0.0.1:5678, 1:1:0, allow

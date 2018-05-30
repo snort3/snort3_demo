@@ -1,0 +1,10 @@
+=== Suppress
+
+This test validates threshold using suppress.
+
+Test verifies:
+
+1. The test verifies the given GID and SID are suppressed for the given
+source IP address.
+
+2. The test also validates the threshold.

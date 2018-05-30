@@ -1,0 +1,8 @@
+=== Process
+
+This test is to configure basic process set up.
+
+Test verifies:
+
+1. Test verifies AppId: load, init, terminate and unload the 
+third party dynamic library.

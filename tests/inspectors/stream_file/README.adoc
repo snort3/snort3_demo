@@ -1,6 +1,6 @@
 === Stream File Inspector
 
-This is to test basic stream_file inspector functionality
+This is to test is to demonstrate the use of File DAQ.
 
 Test verifies:
 

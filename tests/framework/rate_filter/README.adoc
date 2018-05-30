@@ -1,0 +1,16 @@
+=== Rate Filter
+
+This test is to verify total sessions by destination using rate_filter.
+
+Test verifies:
+
+1. Check if total number of sessions is tracked by destination.
+
+2. Test case uses pcap file (includes single source and single destination) 
+with 100 connections, 10 calls per second, and 10 second duration. 
+Snort lua defines a rate_filter rule to track total sessions by destination 
+and drop packets if number of sessions exceeds 30, with 1 second revert 
+duration.
+
+3. Snort should allow first 30 connections and then drop all packets till 
+the last 30 connections remain. It should then allow packets

@@ -1,0 +1,7 @@
+=== Profiler
+
+This test is to configure profiling of rules and/or modules.
+
+Test verifies:
+
+1. This tests profiler rule output can be limited to COUNT items.
