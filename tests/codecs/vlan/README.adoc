@@ -1,0 +1,7 @@
+=== VLAN
+
+This is a QinQ (802.1AD standard) test.
+
+Test verifies:
+
+1. Tests snort handling 802.1AD traffic. 

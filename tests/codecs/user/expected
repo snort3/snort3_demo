@@ -1,0 +1,80 @@
+pkt:1	
+eth(DLT):  D4:AE:52:89:BA:FA -> 78:2B:CB:33:4B:9F  type:0x88A8
+vlan(0x88a8):  Priority:2(0x2) CFI:1 Vlan_ID:1(0x0001)  Next:0x8100
+vlan(0x8100):  Priority:0(0x0) CFI:0 Vlan_ID:2(0x0002)  Next:0x0800
+ipv4(0x0800):  1.1.1.2 -> 1.1.1.1
+	Next:0x01 TTL:64 TOS:0x0 ID:1 IpLen:20 DgmLen:28
+icmp4(0x01):  Type:0  Code:0  
+	ID:0  Seq:0  ECHO REPLY
+
+pkt:2	
+eth(DLT):  02:01:02:03:04:05 -> 02:09:08:07:06:05  type:0x0800
+ipv4(0x0800):  10.1.2.3 -> 10.9.8.7
+	Next:0x11 TTL:64 TOS:0x0 ID:1 IpLen:20 DgmLen:91 MF
+	Frag Offset: 0x0000   Frag Size: 0x0047
+
+
+snort.raw[71]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+BD EC 0D D8 00 47 AF 4C 60 00  00 01 00 17 06 40 00 00 00 00  .....G.L`......@....
+00 00 00 00 00 00 FF FF 0A 01  02 03 00 00 00 00 00 00 00 00  ....................
+00 00 FF FF 0A 09 08 07 BD EC  00 08 00 00 00 00 00 00 00 00  ....................
+50 00 01 00 0E 77 00 00 61 62  63                             P....w..abc
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+
+pkt:3	
+eth(DLT):  02:01:02:03:04:05 -> 02:09:08:07:06:05  type:0x0800
+ipv4(0x0800):  192.168.1.1 -> 192.168.1.2
+	Next:0x06 TTL:64 TOS:0x0 ID:1 IpLen:20 DgmLen:40
+tcp(0x06):  ******S*  SrcPort:48620  DstPort:8
+	Seq: 0x1  Ack: 0x0  Win: 0x2000  TcpLen: 20
+
+pkt:4	
+eth(DLT):  02:09:08:07:06:05 -> 02:01:02:03:04:05  type:0x0800
+ipv4(0x0800):  192.168.1.2 -> 192.168.1.1
+	Next:0x06 TTL:64 TOS:0x0 ID:1 IpLen:20 DgmLen:40
+tcp(0x06):  ***A**S*  SrcPort:8  DstPort:48620
+	Seq: 0x1  Ack: 0x2  Win: 0x2000  TcpLen: 20
+
+pkt:5	
+eth(DLT):  02:01:02:03:04:05 -> 02:09:08:07:06:05  type:0x0800
+ipv4(0x0800):  192.168.1.1 -> 192.168.1.2
+	Next:0x06 TTL:64 TOS:0x0 ID:2 IpLen:20 DgmLen:40
+tcp(0x06):  ***A****  SrcPort:48620  DstPort:8
+	Seq: 0x2  Ack: 0x2  Win: 0x2000  TcpLen: 20
+
+pkt:6	
+eth(DLT):  02:01:02:03:04:05 -> 02:09:08:07:06:05  type:0x0800
+ipv4(0x0800):  192.168.1.1 -> 192.168.1.2
+	Next:0x06 TTL:64 TOS:0x0 ID:3 IpLen:20 DgmLen:99
+tcp(0x06):  ***AP***  SrcPort:48620  DstPort:8
+	Seq: 0x2  Ack: 0x2  Win: 0x2000  TcpLen: 20
+
+snort.raw[59]:
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+74 65 73 74 20 75 72 69 20 70  61 74 68 3A 20 68 74 74 70 73  test uri path: https
+3A 2F 2F 77 77 77 2E 74 65 73  74 2E 72 6F 2F 3F 67 77 73 5F  ://www.test.ro/?gws_
+72 64 3D 73 73 6C 20 63 6F 6E  74 65 6E 74 3A 20 31 32 33     rd=ssl content: 123
+- - - - - - - - - - - - - - -  - - - - - - - - - - - - - - -  - - - - -  - - - - -
+
+pkt:7	
+eth(DLT):  02:09:08:07:06:05 -> 02:01:02:03:04:05  type:0x0800
+ipv4(0x0800):  192.168.1.2 -> 192.168.1.1
+	Next:0x06 TTL:64 TOS:0x0 ID:2 IpLen:20 DgmLen:40
+tcp(0x06):  ***A***F  SrcPort:8  DstPort:48620
+	Seq: 0x2  Ack: 0x3D  Win: 0x2000  TcpLen: 20
+
+pkt:8	
+eth(DLT):  02:01:02:03:04:05 -> 02:09:08:07:06:05  type:0x0800
+ipv4(0x0800):  192.168.1.1 -> 192.168.1.2
+	Next:0x06 TTL:64 TOS:0x0 ID:4 IpLen:20 DgmLen:40
+tcp(0x06):  ***A***F  SrcPort:48620  DstPort:8
+	Seq: 0x3D  Ack: 0x3  Win: 0x2000  TcpLen: 20
+
+pkt:9	
+eth(DLT):  02:09:08:07:06:05 -> 02:01:02:03:04:05  type:0x0800
+ipv4(0x0800):  192.168.1.2 -> 192.168.1.1
+	Next:0x06 TTL:64 TOS:0x0 ID:3 IpLen:20 DgmLen:40
+tcp(0x06):  ***A****  SrcPort:8  DstPort:48620
+	Seq: 0x3  Ack: 0x3E  Win: 0x2000  TcpLen: 20
+

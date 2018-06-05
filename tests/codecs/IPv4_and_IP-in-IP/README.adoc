@@ -1,0 +1,8 @@
+=== IP-in-IP and IPv4
+
+This test is to verify the codecs IP-in-IP and IPv4.
+
+Test verifies:
+
+1. Test verifies codecs does not decode inner IPv6 
+when IPv4 is fragmented.

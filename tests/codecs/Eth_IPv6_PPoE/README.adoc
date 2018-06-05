@@ -1,0 +1,7 @@
+=== Ethernet, IPv6, and PPoE
+
+This test coder decoder IPv6 and PPoE.
+
+Test verifies:
+
+1. Verify snort can read packets with PPPoE and IPv6.
