@@ -4,8 +4,8 @@ alert tcp
     metadata:service http;
     reference:url,en.wikipedia.org/wiki/Vbs;
     classtype:misc-activity;
-    gid:3;
     sid:18758;
+    gid:3;
     rev:8;
     soid:3_18758_8;
 # everything above appears in stub

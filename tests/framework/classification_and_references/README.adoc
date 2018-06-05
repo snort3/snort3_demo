@@ -1,0 +1,10 @@
+=== Classification and References
+
+This is to basic configuration of classification that define rule 
+categories with priority. This test is also to define reference
+system used in rules.
+
+Test verifies:
+
+1. Test verifies basic configuration of classification and reference
+framework options.

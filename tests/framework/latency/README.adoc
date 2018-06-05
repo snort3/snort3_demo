@@ -1,0 +1,7 @@
+=== Latency
+
+This test is to verify packet latency behavior using fastpath enabled.
+
+Test verifies:
+
+1. Test verifies the packet latency when the fastpath is enabled.

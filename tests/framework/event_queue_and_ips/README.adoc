@@ -1,0 +1,7 @@
+=== Event Queue and IPS
+
+This is to test basic event trace options.
+
+Test verifies:
+
+1. Test verifies basic event trace output.

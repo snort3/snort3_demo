@@ -1,0 +1,7 @@
+=== Detection 
+
+This test does detection trace for basic IPS options.
+
+Test verifies:
+
+1. Verify output for trace flag ips options. 
