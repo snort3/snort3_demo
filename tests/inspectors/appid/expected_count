@@ -2,6 +2,7 @@ appid
                   packets: 33
         processed_packets: 33
            total_sessions: 3
+            appid_unknown: 1
 --------------------------------------------------
 Appid dynamic stats:
 kerberos: flows: 2, clients: 2, users: 0, payloads 0, misc: 0, incompatible: 0, failed: 0
