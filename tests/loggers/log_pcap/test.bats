@@ -6,7 +6,7 @@ OPTIONS="-l . -U -H -q -k none"
 
 @test "log_pcap Logger - log packets in pcap format" {
     $snorty_path/bin/snort -r $PCAP -c $CFG $OPTIONS
-    $snorty_path/../tools/u2spewfoo/u2spewfoo unified2.log > snort.out
+    $snorty_path/bin/u2spewfoo unified2.log > snort.out
     diff expected snort.out
 }
 

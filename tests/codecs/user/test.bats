@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTION="-U -H -q"
 
 @test "user codec - packet decoding" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION -L dump -d > snort.out
+    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION -L dump -d --lua 'output = {wide_hex_dump = true}' > snort.out
     diff expected snort.out
 }
 @test "network ip layer test" {

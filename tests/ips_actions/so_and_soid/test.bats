@@ -12,7 +12,7 @@ setup()
         CXX='clang++'
     fi
 
-    include="$SNORT_PLUGINS/../include/snort"
+    include="${snorty_path}/include/snort"
 
     base=sid_18758
 
