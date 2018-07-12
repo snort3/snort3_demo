@@ -5,7 +5,7 @@ stream = { }
 
 local_rules =
 [[
-    alert tcp ( sid:2; msg:"regex";
+    alert tcp ( sid:2; msg:"regex"; 
         regex:"^transfer-encoding\h*:\h*chunked\r$", nocase, multiline, fast_pattern; )
 ]]
 

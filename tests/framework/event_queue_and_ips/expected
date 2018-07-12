@@ -1,64 +1,64 @@
 
-Trace started at Tue Apr 10 20:58:51 2018
+Trace started at Tue Jul 10 07:10:41 2018
 Trace max_data is 2048 bytes
 
 Evt=1, Gid=1, Sid=1, Rev=0, Act=alert
-Pkt=4, Sec=1223906136. 52000, Len=456, Cap=456
+Pkt=4, Sec=1223906136. 52000, Len=466, Cap=466
 Pkt Bits: Flags=0x100098, Proto=0x803, Err=0x0
-Pkt Cnts: Dsz=402, Alt=0
+Pkt Cnts: Dsz=412, Alt=0
 Packet[ 0] 47 45 54 20 2F 77 72 6C 2F 63 6F 6D 6D 61 6E 64  GET /wrl/command
-Packet[16] 32 33 20 48 54 54 50 2F 31 2E 31 0D 0A 48 6F 73  23 HTTP/1.1..Hos
-Packet[32] 74 3A 20 77 72 6C 0D 0A 55 73 65 72 2D 41 67 65  t: wrl..User-Age
-Packet[48] 6E 74 3A 20 4D 6F 7A 69 6C 6C 61 2F 35 2E 30 20  nt: Mozilla/5.0 
-Packet[64] 28 58 31 31 3B 20 55 3B 20 4C 69 6E 75 78 20 69  (X11; U; Linux i
-Packet[80] 36 38 36 3B 20 65 6E 2D 55 53 3B 20 72 76 3A 31  686; en-US; rv:1
-Packet[96] 2E 38 2E 31 2E 31 37 29 20 47 65 63 6B 6F 2F 32  .8.1.17) Gecko/2
-Packet[112] 30 30 38 31 30 30 37 20 46 69 72 65 66 6F 78 2F  0081007 Firefox/
-Packet[128] 32 2E 30 2E 30 2E 31 37 0D 0A 41 63 63 65 70 74  2.0.0.17..Accept
-Packet[144] 3A 20 74 65 78 74 2F 78 6D 6C 2C 61 70 70 6C 69  : text/xml,appli
-Packet[160] 63 61 74 69 6F 6E 2F 78 6D 6C 2C 61 70 70 6C 69  cation/xml,appli
-Packet[176] 63 61 74 69 6F 6E 2F 78 68 74 6D 6C 2B 78 6D 6C  cation/xhtml+xml
-Packet[192] 2C 74 65 78 74 2F 68 74 6D 6C 3B 71 3D 30 2E 39  ,text/html;q=0.9
-Packet[208] 2C 74 65 78 74 2F 70 6C 61 69 6E 3B 71 3D 30 2E  ,text/plain;q=0.
-Packet[224] 38 2C 69 6D 61 67 65 2F 70 6E 67 2C 2A 2F 2A 3B  8,image/png,*/*;
-Packet[240] 71 3D 30 2E 35 0D 0A 41 63 63 65 70 74 2D 4C 61  q=0.5..Accept-La
-Packet[256] 6E 67 75 61 67 65 3A 20 65 6E 2D 75 73 2C 65 6E  nguage: en-us,en
-Packet[272] 3B 71 3D 30 2E 35 0D 0A 41 63 63 65 70 74 2D 45  ;q=0.5..Accept-E
-Packet[288] 6E 63 6F 64 69 6E 67 3A 20 67 7A 69 70 2C 64 65  ncoding: gzip,de
-Packet[304] 66 6C 61 74 65 0D 0A 41 63 63 65 70 74 2D 43 68  flate..Accept-Ch
-Packet[320] 61 72 73 65 74 3A 20 49 53 4F 2D 38 38 35 39 2D  arset: ISO-8859-
-Packet[336] 31 2C 75 74 66 2D 38 3B 71 3D 30 2E 37 2C 2A 3B  1,utf-8;q=0.7,*;
-Packet[352] 71 3D 30 2E 37 0D 0A 4B 65 65 70 2D 41 6C 69 76  q=0.7..Keep-Aliv
-Packet[368] 65 3A 20 33 30 30 0D 0A 43 6F 6E 6E 65 63 74 69  e: 300..Connecti
-Packet[384] 6F 6E 3A 20 6B 65 65 70 2D 61 6C 69 76 65 0D 0A  on: keep-alive..
-Packet[400] 0D 0A                                            ..
+Packet[16] 32 33 20 48 54 54 50 2F 31 2E 31 0D 0A 43 6F 6E  23 HTTP/1.1..Con
+Packet[32] 6E 65 63 74 69 6F 6E 3A 20 6B 65 65 70 2D 61 6C  nection: keep-al
+Packet[48] 69 76 65 0D 0A 41 63 63 65 70 74 3A 20 74 65 78  ive..Accept: tex
+Packet[64] 74 2F 78 6D 6C 2C 20 61 70 70 6C 69 63 61 74 69  t/xml, applicati
+Packet[80] 6F 6E 2F 78 6D 6C 2C 20 61 70 70 6C 69 63 61 74  on/xml, applicat
+Packet[96] 69 6F 6E 2F 78 68 74 6D 6C 2B 78 6D 6C 2C 20 74  ion/xhtml+xml, t
+Packet[112] 65 78 74 2F 68 74 6D 6C 3B 71 3D 30 2E 39 2C 20  ext/html;q=0.9, 
+Packet[128] 74 65 78 74 2F 70 6C 61 69 6E 3B 71 3D 30 2E 38  text/plain;q=0.8
+Packet[144] 2C 20 69 6D 61 67 65 2F 70 6E 67 2C 20 2A 2F 2A  , image/png, */*
+Packet[160] 3B 71 3D 30 2E 35 0D 0A 41 63 63 65 70 74 2D 43  ;q=0.5..Accept-C
+Packet[176] 68 61 72 73 65 74 3A 20 49 53 4F 2D 38 38 35 39  harset: ISO-8859
+Packet[192] 2D 31 2C 20 75 74 66 2D 38 3B 71 3D 30 2E 37 2C  -1, utf-8;q=0.7,
+Packet[208] 20 2A 3B 71 3D 30 2E 37 0D 0A 41 63 63 65 70 74   *;q=0.7..Accept
+Packet[224] 2D 45 6E 63 6F 64 69 6E 67 3A 20 67 7A 69 70 2C  -Encoding: gzip,
+Packet[240] 20 64 65 66 6C 61 74 65 0D 0A 41 63 63 65 70 74   deflate..Accept
+Packet[256] 2D 4C 61 6E 67 75 61 67 65 3A 20 65 6E 2D 75 73  -Language: en-us
+Packet[272] 2C 20 65 6E 3B 71 3D 30 2E 35 0D 0A 48 6F 73 74  , en;q=0.5..Host
+Packet[288] 3A 20 77 72 6C 0D 0A 55 73 65 72 2D 41 67 65 6E  : wrl..User-Agen
+Packet[304] 74 3A 20 4D 6F 7A 69 6C 6C 61 2F 35 2E 30 20 28  t: Mozilla/5.0 (
+Packet[320] 58 31 31 3B 20 55 3B 20 4C 69 6E 75 78 20 69 36  X11; U; Linux i6
+Packet[336] 38 36 3B 20 65 6E 2D 55 53 3B 20 72 76 3A 31 2E  86; en-US; rv:1.
+Packet[352] 38 2E 31 2E 31 37 29 20 47 65 63 6B 6F 2F 32 30  8.1.17) Gecko/20
+Packet[368] 30 38 31 30 30 37 20 46 69 72 65 66 6F 78 2F 32  081007 Firefox/2
+Packet[384] 2E 30 2E 30 2E 31 37 0D 0A 4B 65 65 70 2D 41 6C  .0.0.17..Keep-Al
+Packet[400] 69 76 65 3A 20 33 30 30 0D 0A 0D 0A              ive: 300....
 
 Evt=2, Gid=1, Sid=1, Rev=0, Act=alert
 Pkt=6, Sec=1223906136. 78000, Len=403, Cap=403
 Pkt Bits: Flags=0x100058, Proto=0x803, Err=0x0
 Pkt Cnts: Dsz=349, Alt=0
 Packet[ 0] 48 54 54 50 2F 31 2E 31 20 32 30 30 20 4F 6B 0D  HTTP/1.1 200 Ok.
-Packet[16] 0A 44 61 74 65 3A 20 57 65 64 2C 20 32 39 20 4A  .Date: Wed, 29 J
-Packet[32] 75 6C 20 32 30 30 39 20 31 33 3A 33 35 3A 32 36  ul 2009 13:35:26
-Packet[48] 20 47 4D 54 0D 0A 53 65 72 76 65 72 3A 20 41 70   GMT..Server: Ap
-Packet[64] 61 63 68 65 2F 32 2E 32 2E 33 20 28 44 65 62 69  ache/2.2.3 (Debi
-Packet[80] 61 6E 29 20 50 48 50 2F 35 2E 32 2E 30 2D 38 2B  an) PHP/5.2.0-8+
-Packet[96] 65 74 63 68 31 30 20 6D 6F 64 5F 73 73 6C 2F 32  etch10 mod_ssl/2
-Packet[112] 2E 32 2E 33 20 4F 70 65 6E 53 53 4C 2F 30 2E 39  .2.3 OpenSSL/0.9
-Packet[128] 2E 38 63 0D 0A 4C 61 73 74 2D 4D 6F 64 69 66 69  .8c..Last-Modifi
-Packet[144] 65 64 3A 20 53 75 6E 2C 20 32 30 20 4A 61 6E 20  ed: Sun, 20 Jan 
-Packet[160] 32 30 30 38 20 31 32 3A 30 31 3A 32 31 20 47 4D  2008 12:01:21 GM
-Packet[176] 54 0D 0A 45 54 61 67 3A 20 22 61 38 30 31 63 2D  T..ETag: "a801c-
-Packet[192] 31 62 62 64 31 63 2D 32 32 34 31 36 36 34 30 22  1bbd1c-22416640"
-Packet[208] 0D 0A 41 63 63 65 70 74 2D 52 61 6E 67 65 73 3A  ..Accept-Ranges:
-Packet[224] 20 62 79 74 65 73 0D 0A 43 6F 6E 74 65 6E 74 2D   bytes..Content-
-Packet[240] 4C 65 6E 67 74 68 3A 20 30 0D 0A 4B 65 65 70 2D  Length: 0..Keep-
-Packet[256] 41 6C 69 76 65 3A 20 74 69 6D 65 6F 75 74 3D 31  Alive: timeout=1
-Packet[272] 35 2C 20 6D 61 78 3D 39 39 0D 0A 43 6F 6E 6E 65  5, max=99..Conne
-Packet[288] 63 74 69 6F 6E 3A 20 4B 65 65 70 2D 41 6C 69 76  ction: Keep-Aliv
-Packet[304] 65 0D 0A 43 6F 6E 74 65 6E 74 2D 54 79 70 65 3A  e..Content-Type:
-Packet[320] 20 61 70 70 6C 69 63 61 74 69 6F 6E 2F 6F 63 74   application/oct
-Packet[336] 65 74 2D 73 74 72 65 61 6D 0D 0A 0D 0A           et-stream....
+Packet[16] 0A 43 6F 6E 6E 65 63 74 69 6F 6E 3A 20 4B 65 65  .Connection: Kee
+Packet[32] 70 2D 41 6C 69 76 65 0D 0A 44 61 74 65 3A 20 57  p-Alive..Date: W
+Packet[48] 65 64 2C 20 32 39 20 4A 75 6C 20 32 30 30 39 20  ed, 29 Jul 2009 
+Packet[64] 31 33 3A 33 35 3A 32 36 20 47 4D 54 0D 0A 41 63  13:35:26 GMT..Ac
+Packet[80] 63 65 70 74 2D 52 61 6E 67 65 73 3A 20 62 79 74  cept-Ranges: byt
+Packet[96] 65 73 0D 0A 45 54 61 67 3A 20 22 61 38 30 31 63  es..ETag: "a801c
+Packet[112] 2D 31 62 62 64 31 63 2D 32 32 34 31 36 36 34 30  -1bbd1c-22416640
+Packet[128] 22 0D 0A 53 65 72 76 65 72 3A 20 41 70 61 63 68  "..Server: Apach
+Packet[144] 65 2F 32 2E 32 2E 33 20 28 44 65 62 69 61 6E 29  e/2.2.3 (Debian)
+Packet[160] 20 50 48 50 2F 35 2E 32 2E 30 2D 38 2B 65 74 63   PHP/5.2.0-8+etc
+Packet[176] 68 31 30 20 6D 6F 64 5F 73 73 6C 2F 32 2E 32 2E  h10 mod_ssl/2.2.
+Packet[192] 33 20 4F 70 65 6E 53 53 4C 2F 30 2E 39 2E 38 63  3 OpenSSL/0.9.8c
+Packet[208] 0D 0A 43 6F 6E 74 65 6E 74 2D 4C 65 6E 67 74 68  ..Content-Length
+Packet[224] 3A 20 30 0D 0A 43 6F 6E 74 65 6E 74 2D 54 79 70  : 0..Content-Typ
+Packet[240] 65 3A 20 61 70 70 6C 69 63 61 74 69 6F 6E 2F 6F  e: application/o
+Packet[256] 63 74 65 74 2D 73 74 72 65 61 6D 0D 0A 4C 61 73  ctet-stream..Las
+Packet[272] 74 2D 4D 6F 64 69 66 69 65 64 3A 20 53 75 6E 2C  t-Modified: Sun,
+Packet[288] 20 32 30 20 4A 61 6E 20 32 30 30 38 20 31 32 3A   20 Jan 2008 12:
+Packet[304] 30 31 3A 32 31 20 47 4D 54 0D 0A 4B 65 65 70 2D  01:21 GMT..Keep-
+Packet[320] 41 6C 69 76 65 3A 20 74 69 6D 65 6F 75 74 3D 31  Alive: timeout=1
+Packet[336] 35 2C 20 6D 61 78 3D 39 39 0D 0A 0D 0A           5, max=99....
 
 Traced 2 events
-Trace stopped at Tue Apr 10 20:58:51 2018
+Trace stopped at Tue Jul 10 07:10:41 2018
