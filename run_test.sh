@@ -35,3 +35,9 @@ pass=$(($pass - $skip))
 total=$(($pass + $fail + $skip))
 printf "\n"
 printf "Total = $total, Pass = $pass, Fail = $fail, Skip = $skip\n" | tee demo_summary.log
+if [ $fail -ne 0 ]
+    exit 1;
+else
+    exit 0;
+fi
+
