@@ -37,7 +37,7 @@ if [ -f "expected_alert" ] ; then
     let "flag++"
 
     # include everything between file open/close inclusive except stuff on netboot
-    $SED -n  "/++ \[/,/-- \[/p" snort.out | grep -Ev "(^\+\+|^--).*netboot" > alert.out;
+    $SED -n  "/++ \[/,/-- \[/p" snort.out |  sed '/All pthreads started/d' | grep -Ev "(^\+\+|^--).*netboot" > alert.out;
     $SED -i '/No Entry For AppId\|Detected AppId\|Detector\|Stats\|appid_stats/d' alert.out
 
     diff expected_alert alert.out
