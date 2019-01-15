@@ -22,10 +22,6 @@ alert tcp ( msg:"new in 2.8.6.2: second rule works"; sd_pattern:"TEST"; sid:1000
 
 ips =
 {
+    obfuscate_pii = true,
     rules = local_rules
-}
-
-output =
-{
-    obfuscate_pii = true
 }
