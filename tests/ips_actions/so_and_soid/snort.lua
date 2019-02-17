@@ -8,6 +8,9 @@ end
 
 dofile(conf_dir .. '/snort_defaults.lua')
 
+HOME_NET = 'any'
+EXTERNAL_NET = 'any'
+
 stream = { }
 stream_tcp = { }
 http_inspect = { }
