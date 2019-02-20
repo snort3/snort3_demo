@@ -1,0 +1,135 @@
+This file explains how to analyze performance for open source Snort 3.0
+relative to Snort 2.9 in readback mode.  Snort 2 and Snort 3 have some
+significant differences but the various configs provide for equivalent
+functionality.
+
+* IPS mode
+
+* Uses conf and rules from snortrules-snapshot-29110.tar.gz from snort.org
+
+* Disables small segments / 129:12 since maccdc has lots
+
+* Comments out reputation since config is not operational with white/black lists
+
+* Comments out perf_monitor since with 3.0 it skews counts
+
+* Currently uses 2.9.11 conf and rules.  Will be updated to 2.9.12.
+
+Refer to the following sections for details:
+
+* Scripts
+* Confs
+* Rules
+* Pcaps
+* Build
+* Testing
+
+
+= Scripts:
+
+{2.9,3.0}/setup.sh - edit to set build and ODP path.
+
+{2.9,3.0}/repeat.sh - processes given conf N times.
+
+{2.9,3.0}/perf_test.sh - driver for running all pcaps against all confs.
+
+The scripts currently support running Snort 3 with multiple packet threads but
+only a single Snort 2 instance.  We will provide a means to run multiple Snort
+2 processes for a better multi-thread comparison.
+
+
+= Confs:
+
+decode.{conf,lua} - just decode packets.  No inspectors or rules.
+
+stream.{conf,lua} - adds stream only to decode conf.  No non-stream inspectors.
+No rules.
+
+appid.{conf,lua} - adds appid only to stream conf.
+
+snort.{conf,lua} - full configuration w/o rules.  Originally w/o appid
+either but now included.
+
+min.{conf,lua} - adds rules to snort.conf.
+
+max.{conf,lua} - same as min except with unlimited http flow depths.
+
+prune.{conf,lua} - same as min except with max caches of 1000 flows to force
+heavy pruning.
+
+
+= Rules:
+
+enabled.rules = all 2.9.11 rules matching "^alert"
+
+disabled.rules = all 2.9.11 rules matching "^# alert" then uncommented
+
+all.rules = both of the above.
+
+
+= Pcaps:
+
+maccdc.pcap = maccdc2012_00000.pcap mostly has a TCP scan in it (SYN-RST).
+https://download.netresec.com/pcap/maccdc-2012/maccdc2012_00000.pcap.gz
+
+get250.pcap = crafted version of standard data sheet perf test traffic.  Use
+this command:
+
+$ common/get_250k.sh 4096 | abcip --pcap get250.pcap
+
+# (abcip is here:  https://github.com/crc181/abcip.git)
+
+Also, used a mixed traffic pcap from your local network.  We don't have one
+to share at the moment.
+
+* You may want to put your pcaps on a ramdisk (but the Linux file cache is
+  may be good enough).
+
+
+= Build:
+
+== Snort 2.9:
+
+$ export CFLAGS="-O3"
+$ export PKG_CONFIG_PATH=/path/to/luajit.pc/
+
+$ ./configure --enable-inline-init-failopen --enable-control-socket --enable-side-channel --enable-sourcefire --enable-file-inspect --enable-open-appid --enable-option-checking=fatal --prefix /home/snorty/snort/snort-2.9.12/o3
+
+
+== Snort 3.0:
+
+$ export CFLAGS="-O3"
+$ export CXXFLAGS="-O3 -fno-rtti"
+$ configure_cmake.sh --enable-shell --enable-tsc-clock --enable-tcmalloc --disable-memory-manager
+
+
+= Testing:
+
+Edit common/setup.sh to set the pcaps and confs.
+
+== Snort 2:
+
+1.  Setup:
+
+-- Edit 2.9/setup.sh to set the Snort 2 build install path.
+-- Edit 2.9/opd.conf to set the Snort 2 ODP install path.
+
+2.  Run perf_test.sh <cpu_mask> <#iterations>
+
+$ cd 2.9
+$ ./perf_test.sh 0x1 3
+
+== Snort 3:
+
+1.  Setup:
+
+-- Edit 3.0/setup.sh to set the Snort 3 build install and ODP_PATH.
+-- Edit 3.0/common.lua to set the Snort 3 CPU pinning config.
+
+2.  Run perf_test.sh <mpse> <#iterations> <#threads>
+
+<mpse> ::= hyperscan | ac_full | ac_bnfa | etc.
+
+$ cd 3.0
+$ ./perf_test.sh hyperscan 3 1
+
