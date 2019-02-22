@@ -51,7 +51,7 @@ stream_icmp = { }
 arp_spoof = { }
 back_orifice = { }
 dnp3 = { }
-dns = { }
+--dns = { }
 imap = { }
 modbus = { }
 pop = { }
@@ -103,7 +103,7 @@ wizard = default_wizard
 binder =
 {
     -- port bindings required for protocols without wizard support
-    { when = { proto = 'udp', ports = '53' },  use = { type = 'dns' } },
+    --{ when = { proto = 'udp', ports = '53' },  use = { type = 'dns' } },
     { when = { proto = 'tcp', ports = '111' }, use = { type = 'rpc_decode' } },
     { when = { proto = 'tcp', ports = '502' }, use = { type = 'modbus' } },
     { when = { proto = 'tcp', ports = '2123 2152 3386' }, use = { type = 'gtp' } },
@@ -116,7 +116,7 @@ binder =
     { when = { service = 'dce_http_proxy' },   use = { type = 'dce_http_proxy' } },
 
     { when = { service = 'dnp3' },             use = { type = 'dnp3' } },
-    { when = { service = 'dns' },              use = { type = 'dns' } },
+    --{ when = { service = 'dns' },              use = { type = 'dns' } },
     { when = { service = 'ftp' },              use = { type = 'ftp_server' } },
     { when = { service = 'ftp-data' },         use = { type = 'ftp_data' } },
     { when = { service = 'gtp' },              use = { type = 'gtp_inspect' } },
