@@ -40,7 +40,7 @@ stream_tcp =
     policy = 'windows',
     session_timeout = 180,
     overlap_limit = 10,
-    queue_limit = { max_segments = 0, max_bytes = 0 },
+    queue_limit = { max_segments = 1024, max_bytes = 65535 },
 }
 
 stream_udp = { session_timeout = 3600 }
