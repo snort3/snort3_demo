@@ -8,34 +8,8 @@
 
 require('snort_config')
 
-conf_dir = os.getenv('SNORT_LUA_PATH')
-
-if ( not conf_dir ) then
-    conf_dir = '.'
-end
-
 ---------------------------------------------------------------------------
--- 2. configure defaults
----------------------------------------------------------------------------
-
-HOME_NET = 'any'
-EXTERNAL_NET = 'any'
-
-dofile(conf_dir .. '/snort_defaults.lua')
-dofile(conf_dir .. '/file_magic.lua')
-
----------------------------------------------------------------------------
--- 3. configure inspection
----------------------------------------------------------------------------
-
-stream =
-{
-    ip_frags_only = true,
-    udp_cache = { idle_timeout = 3600 },
-}
-
----------------------------------------------------------------------------
--- 5. configure performance
+-- 2. configure performance
 ---------------------------------------------------------------------------
 
 latency =
@@ -44,16 +18,10 @@ latency =
     rule = { max_time = 200 },
 }
 
-profiler = { rules = { count = 50, sort = 'avg_check' } }
+profiler = { }
 
 ---------------------------------------------------------------------------
--- 6. configure detection
----------------------------------------------------------------------------
-
-search_engine = { detect_raw_tcp = false }
-
----------------------------------------------------------------------------
--- 9. configure tweaks
+-- 4. configure tweaks
 ---------------------------------------------------------------------------
 
 dofile('common.lua')

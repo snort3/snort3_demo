@@ -1,5 +1,5 @@
 # set the build below and the app_detector_dir in odp.conf
-build=/home/snorty/snort2/snort-2.9.12/o3
+build=/home/russ/snort2/snort-2.9.12/o3
 
 snort=$build/bin/snort
 plugs=$build/lib/snort_dynamicpreprocessor

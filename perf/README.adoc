@@ -5,8 +5,6 @@ functionality.
 
 * IPS mode
 
-* Uses conf and rules from snortrules-snapshot-29110.tar.gz from snort.org
-
 * Disables small segments / 129:12 since maccdc has lots
 
 * Comments out reputation since config is not operational with white/black lists
@@ -47,17 +45,11 @@ decode.{conf,lua} - just decode packets.  No inspectors or rules.
 stream.{conf,lua} - adds stream only to decode conf.  No non-stream inspectors.
 No rules.
 
-appid.{conf,lua} - adds appid only to stream conf.
+inspect.{conf,lua} - full configuration w/o rules.
 
-snort.{conf,lua} - full configuration w/o rules.  Originally w/o appid
-either but now included.
+detect-min.{conf,lua} - adds rules to snort.conf.
 
-min.{conf,lua} - adds rules to snort.conf.
-
-max.{conf,lua} - same as min except with unlimited http flow depths.
-
-prune.{conf,lua} - same as min except with max caches of 1000 flows to force
-heavy pruning.
+detect-max.{conf,lua} - same as min except with unlimited http flow depths.
 
 
 = Rules:
@@ -102,7 +94,7 @@ $ ./configure --enable-inline-init-failopen --enable-control-socket --enable-sid
 
 $ export CFLAGS="-O3"
 $ export CXXFLAGS="-O3 -fno-rtti"
-$ configure_cmake.sh --enable-shell --enable-tsc-clock --enable-tcmalloc --disable-memory-manager
+$ configure_cmake.sh --enable-shell --enable-tsc-clock --enable-tcmalloc
 
 
 = Testing:

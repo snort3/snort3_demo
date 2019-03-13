@@ -1,7 +1,7 @@
 # set build and ODP_PATH
 
-build=/home/snorty/build/o3/install
-export ODP_PATH="/home/snorty/snort3_test/tests/src/network_inspectors/appid/appid_config/"
+build=/home/russ/build/o3/install
+export ODP_PATH="/home/russ"
 
 snort=$build/bin/snort
 plugs=$build/lib64

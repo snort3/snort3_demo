@@ -25,5 +25,5 @@ threads =
 
 process = { threads = threads }
 
-search_engine.search_method = 'hyperscan'
+search_engine = { }
 

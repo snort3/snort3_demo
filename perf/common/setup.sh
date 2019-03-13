@@ -1,5 +1,5 @@
 #!/bin/bash
 
-pcaps="/home/snorty/pcaps/perf"
-confs="decode stream appid snort min max prune"
+pcaps="/home/russ/ramdisk"
+confs="decode stream inspect detect-min detect-max"
 

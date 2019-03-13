@@ -4,7 +4,7 @@
 ---------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------
--- 1. configure environment
+-- configure environment
 ---------------------------------------------------------------------------
 
 require('snort_config')
@@ -16,7 +16,7 @@ if ( not conf_dir ) then
 end
 
 ---------------------------------------------------------------------------
--- 2. configure defaults
+-- configure defaults
 ---------------------------------------------------------------------------
 
 HOME_NET = 'any'
@@ -26,7 +26,7 @@ dofile(conf_dir .. '/snort_defaults.lua')
 dofile(conf_dir .. '/file_magic.lua')
 
 ---------------------------------------------------------------------------
--- 3. configure inspection
+-- configure stream
 ---------------------------------------------------------------------------
 
 stream =
@@ -42,16 +42,19 @@ stream_tcp =
     policy = 'windows',
     session_timeout = 180,
     overlap_limit = 10,
-    queue_limit = { max_segments = 1024, max_bytes = 65535 },
 }
 
 stream_udp = { session_timeout = 3600 }
 stream_icmp = { }
 
+---------------------------------------------------------------------------
+-- configure inspection
+---------------------------------------------------------------------------
+
 arp_spoof = { }
 back_orifice = { }
 dnp3 = { }
---dns = { }
+dns = { }
 imap = { }
 modbus = { }
 pop = { }
@@ -67,13 +70,19 @@ dce_udp = { }
 dce_http_proxy = { }
 dce_http_server = { }
 
-http_inspect = { request_depth = 300, response_depth = 500 }
+http_inspect = { }
 http2_inspect = { }
 
 normalizer =
 {
     ip4 = { base = false },
-    tcp = { base = false, ips = true, req_urg = false, req_urp = false }
+    tcp =
+    {
+        base = false, block = false, urp = false, pad = false,
+        opts = false, req_urg = false, req_urp = false,
+        rsv = false, req_urp = false,
+        ips = true
+    }
 }
 
 gtp_inspect = default_gtp
@@ -96,7 +105,7 @@ appid =
 }
 
 ---------------------------------------------------------------------------
--- 4. configure bindings
+-- configure bindings
 ---------------------------------------------------------------------------
 
 wizard = default_wizard
@@ -117,7 +126,7 @@ binder =
     { when = { service = 'dce_http_proxy' },   use = { type = 'dce_http_proxy' } },
 
     { when = { service = 'dnp3' },             use = { type = 'dnp3' } },
-    --{ when = { service = 'dns' },              use = { type = 'dns' } },
+    { when = { service = 'dns' },              use = { type = 'dns' } },
     { when = { service = 'ftp' },              use = { type = 'ftp_server' } },
     { when = { service = 'ftp-data' },         use = { type = 'ftp_data' } },
     { when = { service = 'gtp' },              use = { type = 'gtp_inspect' } },
@@ -139,7 +148,7 @@ binder =
 dofile('hosts.lua')
 
 ---------------------------------------------------------------------------
--- 5. configure performance
+-- configure performance
 ---------------------------------------------------------------------------
 
 latency =
@@ -150,19 +159,10 @@ latency =
 
 profiler = { rules = { count = 50, sort = 'avg_check' } }
 
----------------------------------------------------------------------------
--- 6. configure detection
----------------------------------------------------------------------------
-
-search_engine = { }
-
-references = default_references
-classifications = default_classifications
-
-ips = { }
+memory = { }
 
 ---------------------------------------------------------------------------
--- 9. configure tweaks
+-- configure tweaks
 ---------------------------------------------------------------------------
 
 dofile('common.lua')

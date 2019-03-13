@@ -9,8 +9,15 @@ pcap=$4
 
 echo "conf=$conf, cpu=$cpu, max=$max, pcap=$pcap"
 
+exp="0"
+
 for i in $(seq 1 $max) ; do
-    echo $i `taskset $cpu $snort $args -c $conf -r $pcap -n 1 2>&1 | grep "$runt" | grep -o '[0-9\.]*'`
     #taskset $cpu $snort $args -c $conf -r $pcap
+    x=`taskset $cpu $snort $args -c $conf -r $pcap 2>&1 | grep "$runt" | grep -o '[0-9\.]*'`
+    echo "$i $x"
+    exp+="+$x"
 done
+
+avg=`echo "scale=3; ($exp)/$max" | bc -l`
+echo "avg $avg"
 

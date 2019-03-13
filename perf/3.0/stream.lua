@@ -2,30 +2,10 @@
 -- stream: just do decode and stream processing
 ---------------------------------------------------------------------------
 
----------------------------------------------------------------------------
--- 1. configure environment
----------------------------------------------------------------------------
-
 require('snort_config')
 
-conf_dir = os.getenv('SNORT_LUA_PATH')
-
-if ( not conf_dir ) then
-    conf_dir = '.'
-end
-
 ---------------------------------------------------------------------------
--- 2. configure defaults
----------------------------------------------------------------------------
-
-HOME_NET = 'any'
-EXTERNAL_NET = 'any'
-
-dofile(conf_dir .. '/snort_defaults.lua')
-dofile(conf_dir .. '/file_magic.lua')
-
----------------------------------------------------------------------------
--- 3. configure inspection
+-- 1. configure stream
 ---------------------------------------------------------------------------
 
 stream =
@@ -42,13 +22,24 @@ stream_tcp =
     policy = 'windows',
     session_timeout = 180,
     overlap_limit = 10,
-    queue_limit = { max_segments = 1024, max_bytes = 65535 },
 }
 
 stream_udp = { session_timeout = 3600 }
 
+normalizer =
+{
+    ip4 = { base = false },
+    tcp =
+    {
+        base = false, block = false, urp = false, pad = false,
+        opts = false, req_urg = false, req_urp = false,
+        rsv = false, req_urp = false,
+        ips = true
+    }
+}
+
 ---------------------------------------------------------------------------
--- 4. configure bindings
+-- 2. configure bindings
 ---------------------------------------------------------------------------
 
 wizard = default_wizard
@@ -60,7 +51,7 @@ binder =
 }
 
 ---------------------------------------------------------------------------
--- 5. configure performance
+-- 3. configure performance
 ---------------------------------------------------------------------------
 
 latency =
@@ -69,16 +60,10 @@ latency =
     rule = { max_time = 200 },
 }
 
-profiler = { rules = { count = 50, sort = 'avg_check' } }
+profiler = { }
 
 ---------------------------------------------------------------------------
--- 6. configure detection
----------------------------------------------------------------------------
-
-search_engine = { detect_raw_tcp = false }
-
----------------------------------------------------------------------------
--- 9. configure tweaks
+-- 4. configure tweaks
 ---------------------------------------------------------------------------
 
 dofile('common.lua')
