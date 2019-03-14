@@ -1,7 +1,7 @@
 # set build and ODP_PATH
 
-build=/home/russ/build/o3/install
-export ODP_PATH="/home/russ"
+build=/home/snorty/work/alt/install
+[ -d "$ODP_PATH" ] || export ODP_PATH="/home/snorty"
 
 snort=$build/bin/snort
 plugs=$build/lib64
