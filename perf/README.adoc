@@ -25,7 +25,7 @@ Refer to the following sections for details:
 
 = Scripts:
 
-{2.9,3.0}/setup.sh - edit to set build and ODP path.
+{2.9,3.0}/setup.sh - edit to set build, pcaps, and ODP path.
 
 {2.9,3.0}/repeat.sh - processes given conf N times.
 
@@ -99,13 +99,15 @@ $ configure_cmake.sh --enable-shell --enable-tsc-clock --enable-tcmalloc
 
 = Testing:
 
-Edit common/setup.sh to set the pcaps and confs.
-
 == Snort 2:
 
 1.  Setup:
 
--- Edit 2.9/setup.sh to set the Snort 2 build install path.
+-- Environment:
+
+$ export SNORT2_BUILD=<Snort 2 build prefix>
+$ export SNORT_PCAPS=<path to dir containing pcaps for test>
+
 -- Edit 2.9/opd.conf to set the Snort 2 ODP install path.
 
 2.  Run perf_test.sh <cpu_mask> <#iterations>
@@ -117,7 +119,12 @@ $ ./perf_test.sh 0x1 3
 
 1.  Setup:
 
--- Edit 3.0/setup.sh to set the Snort 3 build install and ODP_PATH.
+-- Environment:
+
+$ export SNORT3_BUILD=<Snort 3 build prefix>
+$ export SNORT_PCAPS=<path to dir containing pcaps for test>
+$ export ODP_PATH=<path to dir containing odp/>
+
 -- Edit 3.0/common.lua to set the Snort 3 CPU pinning config.
 
 2.  Run perf_test.sh <mpse> <#iterations> <#threads>
