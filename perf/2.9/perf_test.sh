@@ -3,7 +3,7 @@
 cpu=$1
 max=$2
 
-. ../common/setup.sh
+. ./setup.sh
 
 for pcap in $pcaps/* ; do
     for conf in $confs ; do

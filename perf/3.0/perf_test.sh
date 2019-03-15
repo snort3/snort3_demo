@@ -6,7 +6,7 @@ thr="$3"
 
 [ "$thr" ] || thr="1"
 
-. ../common/setup.sh
+. ./setup.sh
 
 for z in $thr ; do
     for pcap in $pcaps/* ; do
