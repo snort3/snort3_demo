@@ -9,7 +9,7 @@ thr="$3"
 . ./setup.sh
 
 for z in $thr ; do
-    for pcap in $pcaps/* ; do
+    for pcap in $SNORT_PCAPS/* ; do
         for conf in $confs ; do
             ./repeat.sh $conf.lua $mpse $max $pcap $z
         done
