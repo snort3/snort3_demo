@@ -19,6 +19,8 @@ latency =
 }
 
 profiler = { }
+profiler.modules = { sort = 'avg_check' }
+profiler.rules = { show = false }
 
 ---------------------------------------------------------------------------
 -- 4. configure tweaks

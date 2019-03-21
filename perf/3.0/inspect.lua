@@ -157,7 +157,9 @@ latency =
     rule = { max_time = 200 },
 }
 
-profiler = { rules = { count = 50, sort = 'avg_check' } }
+profiler = { }
+profiler.modules = { sort = 'avg_check' }
+profiler.rules = { show = false }
 
 memory = { }
 

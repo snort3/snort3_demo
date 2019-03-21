@@ -9,6 +9,8 @@ stream_tcp.queue_limit = { max_segments = 655, max_bytes = 262144 }
 http_inspect.request_depth = 300
 http_inspect.response_depth = 500
 
+profiler.rules = { show = true, sort = 'avg_check' }
+
 ---------------------------------------------------------------------------
 -- configure detection
 ---------------------------------------------------------------------------
