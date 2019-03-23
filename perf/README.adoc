@@ -21,6 +21,7 @@ Refer to the following sections for details:
 * Pcaps
 * Build
 * Testing
+* Tips
 
 
 = Scripts:
@@ -133,4 +134,50 @@ $ export ODP_PATH=<path to dir containing odp/>
 
 $ cd 3.0
 $ ./perf_test.sh hyperscan 3 1
+
+
+= Tips
+
+Performance testing can be a tricky affair.  Comparing Snort 2 and Snort 3 is
+even more challenging.  Here are some things to consider:
+
+1.  Use the supplied configurations as a starting point to get a baseline.  If
+you need to make changes for your deployment, make sure they have an equivalent
+impact on Snort 2 and Snort 3 if you are comparing them.
+
+2.  Start with the supplied pcaps.  When you switch to live traffic, it gets
+more complicated:
+
+a.  Disable LRO and other NIC accelerations (eg with ethtool).  For IDS mode,
+Snort will hadle overlaps the same way the receiving host does.  For IPS mode,
+Snort will normalize the TCP stream.
+
+b.  Check your MTU and set Snort's snaplen accordingly.  Otherwise Snort may
+not get complete packets.
+
+c.  Check Snort's shutdown stats for things like checksum errors and
+normalizations.  High counts likely indicate a problem and you may need to
+disable checksums, etc.
+
+d.  Snort does much better with bidirectional traffic.  If you have asymmetric
+routing, try to deploy Snort where it will see both directions.  Unidirectional
+traffic can not be properly analyzed in general.  Consider an HTTP HEAD
+request.  The response headers may indicate a content-length but no body will
+follow causing Snort to treat subsequent headers as body.
+
+3.  When comparing Snort 2 and Snort 3, note that Snort 2 may have appeared to
+be doing something it wasn't.  Snort 3 counts paint a more accurate picture.
+
+4.  Have a look at these documents:
+
+a.  For general tuning tips: "Using Perfmon and Performance Profiling to Tune
+Snort Preprocessors and Rules" available at https://snort.org/documents:
+
+https://snort-org-site.s3.amazonaws.com/production/document_files/files/000/000/030/original/WhitePaper_Snort_PerformanceTuning_2009.pdf
+
+b.  For more information on offloads etc:
+
+https://snort-org-site.s3.amazonaws.com/production/document_files/files/000/000/067/original/packet-offloading-issues.pdf
+https://lwn.net/Articles/358910/
+https://www.kernel.org/doc/Documentation/networking/segmentation-offloads.txt
 
