@@ -165,6 +165,13 @@ traffic can not be properly analyzed in general.  Consider an HTTP HEAD
 request.  The response headers may indicate a content-length but no body will
 follow causing Snort to treat subsequent headers as body.
 
+e.  By default, Snort factors in the address_space_id from the DAQ and VLAN
+tags in the packet when hashing flows.  If these are not the same in each
+direction, set these variables as appropriate:
+
+    packets.address_space_agnostic
+    packets.vlan_agnostic
+
 3.  When comparing Snort 2 and Snort 3, note that Snort 2 may have appeared to
 be doing something it wasn't.  Snort 3 counts paint a more accurate picture.
 
