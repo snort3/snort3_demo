@@ -1,8 +1,13 @@
 #!/usr/bin/env bats
 
-PCAP="so_soid_18758.pcap"
-CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+base=sid_3_13
+
+pcap="cheez.pcap"
+cfg="snort.lua"
+
+gcc_opts="-std=c++11 -Wall -g -ggdb -O0 -fsanitize=address"
+stub_opts="--warn-all --plugin-path ."
+run_opts="-H -U -q -A csv"
 
 setup()
 {
@@ -12,24 +17,21 @@ setup()
         CXX='clang++'
     fi
 
-    include="${snorty_path}/include/snort"
-
-    base=sid_18758
-
+    local include="${snorty_path}/include/snort"
     $snorty_path/bin/snort --rule-to-text < $base.txt > $base.h
 
-    ${CXX} -c -std=c++11 -I$include -fPIC -o $base.o $base.cc
+    ${CXX} -c $gcc_opts -I$include -fPIC -o $base.o $base.cc
     ${CXX} -shared -o $base.so $base.o
 }
 
-@test "SO and SOID - rule with GID:3 and SID:18758" {
-    $snorty_path/bin/snort --plugin-path . --dump-dynamic-rules > stub.txt
-    $snorty_path/bin/snort --plugin-path . -r $PCAP -c $CFG -R stub.txt $OPTION > snort.out
+@test "SO and SOID - 3:13" {
+    $snorty_path/bin/snort $stub_opts --dump-dynamic-rules > stub.rule
+    $snorty_path/bin/snort $stub_opts -c $cfg -R stub.rule -r $pcap $run_opts &> snort.out
     diff expected snort.out
 }
 
 teardown()
 {
-    rm -f snort.out *.z *.o *.so stub.txt *.h
+    rm -f snort.out *.z *.o *.so stub.rule *.h
 }
 
