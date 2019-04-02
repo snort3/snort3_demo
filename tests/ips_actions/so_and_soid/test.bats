@@ -18,6 +18,7 @@ setup()
     fi
 
     local include="${snorty_path}/include/snort"
+    [ "$DAQ_INCLUDES" ] && include="$include:$DAQ_INCLUDES"
     $snorty_path/bin/snort --rule-to-text < $base.txt > $base.h
 
     ${CXX} -c $gcc_opts -I$include -fPIC -o $base.o $base.cc
