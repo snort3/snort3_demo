@@ -1,0 +1,66 @@
+
+c ( b=80 )
+
+a ( syn )
+b ( syn, ack )
+a ( ack )
+
+# made with Reel Cheez!
+a ( ack, data="GET /crazy?withThe=CheezWhiz&cans=1 HTTP/1.1|d a d a|" )
+
+b ( ack, data=
+    "HTTP/1.1 200 OK|d a|"
+    "Transfer-Encoding: chunked|d a|"
+    "Content-Type: text/html; charset=iso-8859-1|d a d a|"
+)
+
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="0|d a d a|" )
+a ( ack )
+
+a ( ack, data="GET /crazy?withThe=CheezWhiz&cans=2 HTTP/1.1|d a d a|" )
+
+b ( ack, data=
+    "HTTP/1.1 200 OK|d a|"
+    "Transfer-Encoding: chunked|d a|"
+    "Content-Type: text/html; charset=iso-8859-1|d a d a|"
+)
+
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="0|d a d a|" )
+a ( ack )
+
+a ( ack, data="GET /crazy?withThe=CheezWhiz&cans=3 HTTP/1.1|d a d a|" )
+
+b ( ack, data=
+    "HTTP/1.1 200 OK|d a|"
+    "Transfer-Encoding: chunked|d a|"
+    "Content-Type: text/html; charset=iso-8859-1|d a d a|"
+)
+
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="0|d a d a|" )
+a ( ack )
+
+a ( ack, data="GET /crazy?withThe=CheezWhiz&cans=4 HTTP/1.1|d a d a|" )
+
+b ( ack, data=
+    "HTTP/1.1 200 OK|d a|"
+    "Transfer-Encoding: chunked|d a|"
+    "Content-Type: text/html; charset=iso-8859-1|d a d a|"
+)
+
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="9|d a|CheezWhiz|d a|" )
+b ( ack, data="0|d a d a|" )
+a ( ack )
+
+b ( fin, ack )
+a ( fin, ack )
+b ( ack )
+

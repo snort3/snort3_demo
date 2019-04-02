@@ -1,8 +1,41 @@
-=== SO and SOID 
+=== SO and SOID
 
-This is to test the so and soid ips options.
+This test demonstrates the use of SO rules.  Look at the bats file to see the
+process.  Here is a summary:
 
-Test verifies:
+1.  Write your so rule in text form.  Add function hooks at the point you want
+    them called.  You may also invoke custom rule options.  You may use zero or
+    more of either or both.
 
-1. The test verifies correct so rule conversion. This test builds and
-executes a plain so rule with GID:3 and SID:18758.
+2.  Run snort to translate your text rule into a header file you can include in
+    your so rule source file.
+
+3.  Write your so rule source file.  You must define any eval functions and new
+    rule options in your source file(s).  Your source file must define snort_plugins
+    and implement certain API functions.  See the example for details.
+
+4.  Run snort to dump your rule stub.  Your stub must be included in your
+    configuration to activate your so rule.
+
+5.  Run snort with your so rule stub and dynamic library.  Your stub must be
+    included like a text rule.  Your dynamic library must be found in the
+    --plugin-path.
+
+3:13 looks for a Cheez Whiz attack by counting the number of cans feteched per
+flow.  Anything over 7 triggers the alert.  If your tolerance is higher, your
+name is Carter Waxman, and you may adjust it higher.
+
+Some things to note:
+
+* FlowData is strictly optional.  Use for per flow state where flowbits won't work.
+
+* All of <args> from so:<args>; in your rule will be passed in to your ctor.
+  You use this string to identify the function name when you have multiple so
+  options and to pass in any other args.  You could just hard code those args
+  since they can't be changed via the stub.  If you want real arguments, create a
+  new rule option.
+
+* Cursor start is at the end of your last content match.  Use existing buffer
+  selectors and content matches to position the cursor to keep your so logic
+  simple.
+

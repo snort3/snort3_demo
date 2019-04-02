@@ -1,0 +1,17 @@
+alert http
+(
+    msg:"Too much Cheez Whiz is bad mkay.";
+    flow:to_server,established;
+    http_uri; content:"crazy";
+    http_uri:query; content:"withThe=CheezWhiz";
+    http_uri:query; content:"cans=";
+    service:http;
+    reference:url,http://www.kraftbrands.com/cheezwhiz/;
+    classtype:misc-activity;
+    gid:3;
+    sid:13;
+    rev:1;
+    soid:3_13_1;
+    so:cans 7;
+)
+
