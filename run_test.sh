@@ -15,6 +15,7 @@ if [ -d "${snorty_path}/lib64" ]; then
 else
     libs=${snorty_path}/lib
 fi
+export PKG_CONFIG_PATH=$libs/pkgconfig:$PKG_CONFIG_PATH
 export SNORT_DAQS=$libs/snort/daqs:$libs/snort_extra/daqs
 export SNORT_PLUGINS=$libs
 

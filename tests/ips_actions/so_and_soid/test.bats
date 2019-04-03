@@ -17,11 +17,10 @@ setup()
         CXX='clang++'
     fi
 
-    local include="${snorty_path}/include/snort"
-    [ "$DAQ_INCLUDES" ] && include="$include -I$DAQ_INCLUDES"
-    $snorty_path/bin/snort --rule-to-text < $base.txt > $base.h
+    local cppflags="$(pkg-config --cflags snort) $(pkg-config --variable=DAQ_CPPFLAGS snort)"
 
-    ${CXX} -c $gcc_opts -I$include -fPIC -o $base.o $base.cc
+    $snorty_path/bin/snort --rule-to-text < $base.txt > $base.h
+    ${CXX} -c $gcc_opts $cppflags -fPIC -o $base.o $base.cc
     ${CXX} -shared -o $base.so $base.o
 }
 
