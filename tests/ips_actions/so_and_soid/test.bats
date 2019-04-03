@@ -28,7 +28,7 @@ setup()
 @test "SO and SOID - 3:13" {
     $snorty_path/bin/snort $stub_opts --dump-dynamic-rules > stub.rule
     $snorty_path/bin/snort $stub_opts -c $cfg -R stub.rule -r $pcap $run_opts &> snort.out
-    diff expected snort.out
+    cat stub.rule snort.out | diff expected -
 }
 
 teardown()
