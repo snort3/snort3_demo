@@ -2,7 +2,7 @@
 
 PCAP="plustest.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none -U -H --daq-batch-size=1"
 
 @test "Perf Monitor - Populate DAQ Stats" {
     $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION 
