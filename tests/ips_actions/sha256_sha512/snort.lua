@@ -41,8 +41,7 @@ alert tcp any any -> any 8 (
 )
 ]]
 
-ips =
-{
-    rules = hash_rules,
-}
+ips = { rules = hash_rules }
+
+search_engine = { detect_raw_tcp = true }
 

@@ -36,7 +36,7 @@ alert tcp any -> any 8 ( sid:2; flow:to_server; content:"GET"; msg:"tcp foo"; ta
 alert udp any <> any 27 ( sid:3; content:"legend"; )
 ]]
 
-ips = 
-{
-    rules = local_rules,
-}
+ips = { rules = local_rules }
+
+search_engine = { detect_raw_tcp = true }
+

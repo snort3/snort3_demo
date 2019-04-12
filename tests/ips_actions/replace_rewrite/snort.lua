@@ -19,10 +19,7 @@ normalizer =
     },
 }
 
-inspection =
-{
-    mode = "inline"
-}
+inspection = { mode = "inline" }
 
 stream = { }
 
@@ -41,9 +38,7 @@ rewrite tcp 10.1.1.87 any -> 10.1.1.0/24 80
 )
 ]]
 
-ips =
-{
-    rules = local_rules,
-}
+ips = { rules = local_rules }
 
+search_engine = { detect_raw_tcp = true }
 
