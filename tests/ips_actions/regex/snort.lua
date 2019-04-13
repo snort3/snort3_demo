@@ -1,5 +1,4 @@
 
-require('snort_config')  -- for loading
 
 stream = { }
 

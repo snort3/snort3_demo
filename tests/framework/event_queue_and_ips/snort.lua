@@ -1,5 +1,4 @@
 
-require("snort_config")
 
 dir = os.getenv('SNORT_LUA_PATH')
 
@@ -24,4 +23,6 @@ alert tcp ( sid:1; msg:"http/1.1"; content:"HTTP/1.1", depth 50; )
 ]]
 
 ips = { rules = default_rules }
+
+search_engine = { detect_raw_tcp = true }
 

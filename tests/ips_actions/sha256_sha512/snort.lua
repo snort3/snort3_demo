@@ -1,4 +1,3 @@
-require('snort_config')  -- for loading
 
 dir = os.getenv('SNORT_LUA_PATH')
 
@@ -41,8 +40,7 @@ alert tcp any any -> any 8 (
 )
 ]]
 
-ips =
-{
-    rules = hash_rules,
-}
+ips = { rules = hash_rules }
+
+search_engine = { detect_raw_tcp = true }
 
