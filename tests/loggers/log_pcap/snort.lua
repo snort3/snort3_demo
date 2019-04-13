@@ -1,4 +1,3 @@
-require('snort_config')
 
 TEST_NET = [[1.1.1.1 2.2.2.2]]
 TEST_PORTS = [[80,8080]]

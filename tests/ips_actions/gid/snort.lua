@@ -1,4 +1,3 @@
-require("snort_config")
 
 udp = { enable_gtp = true }
 

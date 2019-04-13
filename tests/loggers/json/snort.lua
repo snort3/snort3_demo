@@ -1,5 +1,4 @@
 
-require('snort_config')
 
 conf_dir = os.getenv('SNORT_LUA_PATH')
 
