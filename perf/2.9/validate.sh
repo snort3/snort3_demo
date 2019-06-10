@@ -8,7 +8,7 @@ max=$3
 pcap=$4
 
 echo -e "\nconf=$conf, cpu=$cpu, max=$max, pcap=$pcap\n"
-echo -e "command: taskset $cpu $snort $args -c $conf -r $pcap -T\n"
+echo -e "command: taskset $cpu $snort $args -c $conf $vars -r $pcap -T\n"
 
-taskset $cpu $snort $args -c $conf -r $pcap -T
+taskset $cpu $snort $args -c $conf $vars -r $pcap -T
 

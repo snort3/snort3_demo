@@ -9,7 +9,7 @@ stream_tcp.queue_limit = { max_segments = 655, max_bytes = 262144 }
 http_inspect.request_depth = 300
 http_inspect.response_depth = 500
 
-profiler.rules = { show = true, sort = 'avg_check' }
+profiler.rules = { show = true, sort = 'total_time' }
 
 ---------------------------------------------------------------------------
 -- configure detection
@@ -18,5 +18,8 @@ profiler.rules = { show = true, sort = 'avg_check' }
 references = default_references
 classifications = default_classifications
 
-ips = { include = 'enabled.rules' }
+search_engine = { }
+detection = { }
+
+ips = { include = os.getenv('SNORT3_RULES') }
 

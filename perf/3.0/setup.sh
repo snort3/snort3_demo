@@ -1,8 +1,10 @@
-# export or set SNORT3_BUILD, ODP_PATH, and SNORT_PCAPS
+# export or set SNORT3_BUILD, SNORT3_RULES, SNORT_PCAPS, and SNORT_ODP
 
 [ -d "$SNORT3_BUILD" ] || SNORT3_BUILD=/home/snorty/work/alt/install
+[ -e "$SNORT3_RULES" ] || SNORT3_RULES=test.rules
+
 [ -d "$SNORT_PCAPS" ] || SNORT_PCAPS=/home/snorty/ramdisk
-[ -d "$ODP_PATH" ] || export ODP_PATH="/home/snorty"
+[ -d "$SNORT_ODP" ] || export SNORT_ODP="/home/snorty"
 
 export LUA_PATH=$SNORT3_BUILD/include/snort/lua/\?.lua\;\;
 export SNORT_LUA_PATH=$SNORT3_BUILD/etc/snort/

@@ -60,7 +60,7 @@ latency =
 }
 
 profiler = { }
-profiler.modules = { sort = 'avg_check' }
+profiler.modules = { sort = 'total_time' }
 profiler.rules = { show = false }
 
 ---------------------------------------------------------------------------

@@ -100,7 +100,7 @@ file_id = { file_rules = file_magic }
 
 appid =
 {
-    app_detector_dir = os.getenv('ODP_PATH')
+    app_detector_dir = os.getenv('SNORT_ODP')
 }
 
 ---------------------------------------------------------------------------
@@ -157,7 +157,7 @@ latency =
 }
 
 profiler = { }
-profiler.modules = { sort = 'avg_check' }
+profiler.modules = { sort = 'total_time' }
 profiler.rules = { show = false }
 
 memory = { }

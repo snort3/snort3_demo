@@ -1,17 +1,17 @@
 This file explains how to analyze performance for open source Snort 3.0
 relative to Snort 2.9 in readback mode.  Snort 2 and Snort 3 have some
 significant differences but the various configs provide for equivalent
-functionality.
+functionality.  For perf testing, these configs should be preferred over using
+snort2lua.
 
 * IPS mode
 
 * Disables small segments / 129:12 since maccdc has lots
 
-* Comments out reputation since config is not operational with white/black lists
+* Comments out reputation since config is not operational without white/black
+  lists
 
 * Comments out perf_monitor since with 3.0 it skews counts
-
-* Currently uses 2.9.11 conf and rules.  Will be updated to 2.9.12.
 
 Refer to the following sections for details:
 
@@ -26,7 +26,7 @@ Refer to the following sections for details:
 
 = Scripts:
 
-{2.9,3.0}/setup.sh - edit to set build, pcaps, and ODP path.
+{2.9,3.0}/setup.sh - edit to set build, rules, pcaps, and ODP path.
 
 {2.9,3.0}/repeat.sh - processes given conf N times.
 
@@ -55,30 +55,27 @@ detect-max.{conf,lua} - same as min except with unlimited http flow depths.
 
 = Rules:
 
-enabled.rules = all 2.9.11 rules matching "^alert"
-
-disabled.rules = all 2.9.11 rules matching "^# alert" then uncommented
-
-all.rules = both of the above.
+Download the appropriate rule sets from snort.org and select an appropriate set
+for your tests.
 
 
 = Pcaps:
 
+Use pcaps containing the traffic needed for your tests.  A general purpose
+mixed traffic pcap from your local network is a good starting point.  You can
+also find some useful pcaps online or generate them as explained below.
+
 maccdc.pcap = maccdc2012_00000.pcap mostly has a TCP scan in it (SYN-RST).
 https://download.netresec.com/pcap/maccdc-2012/maccdc2012_00000.pcap.gz
 
-get250.pcap = crafted version of standard data sheet perf test traffic.  Use
-this command:
+The tcp_* and udp_* pcaps can be used to generate standard data sheet perf test
+pcaps.  Use with abcip like this:
 
-$ common/get_250k.sh 4096 | abcip --pcap get250.pcap
+$ common/tcp_1000.sh 4096 | abcip --pcap get250.pcap
 
 # (abcip is here:  https://github.com/crc181/abcip.git)
 
-Also, used a mixed traffic pcap from your local network.  We don't have one
-to share at the moment.
-
-* You may want to put your pcaps on a ramdisk (but the Linux file cache is
-  may be good enough).
+You should put your pcaps on a ramdisk for the most consistent results.  4G is a good size for the ramdisk.  Generally, pcaps between 1G and 4G will give good results.
 
 
 = Build:
@@ -104,12 +101,12 @@ $ configure_cmake.sh --enable-shell --enable-tsc-clock --enable-tcmalloc
 
 1.  Setup:
 
--- Environment:
+Export the following (or directly set in perf/*/setup.sh):
 
 $ export SNORT2_BUILD=<Snort 2 build prefix>
+$ export SNORT2_RULES=<Snort 2 rules file>
 $ export SNORT_PCAPS=<path to dir containing pcaps for test>
-
--- Edit 2.9/opd.conf to set the Snort 2 ODP install path.
+$ export SNORT_ODP=<path to dir containing odp/>
 
 2.  Run perf_test.sh <cpu_mask> <#iterations>
 
@@ -120,13 +117,9 @@ $ ./perf_test.sh 0x1 3
 
 1.  Setup:
 
--- Environment:
+Same as for Snort 2 except use SNORT3_BUILD and SNORT3_RULES.
 
-$ export SNORT3_BUILD=<Snort 3 build prefix>
-$ export SNORT_PCAPS=<path to dir containing pcaps for test>
-$ export ODP_PATH=<path to dir containing odp/>
-
--- Edit 3.0/common.lua to set the Snort 3 CPU pinning config.
+You must also edit 3.0/common.lua to set the Snort 3 CPU pinning config.
 
 2.  Run perf_test.sh <mpse> <#iterations> <#threads>
 
