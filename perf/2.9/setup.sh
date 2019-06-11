@@ -12,7 +12,7 @@ engine=$SNORT2_BUILD/lib/snort_dynamicengine/libsf_engine.so
 
 confs="decode stream inspect detect-min detect-max"
 daq="--daq dump --daq-var load-mode=read-file --daq-var output=none"
-args="--dynamic-preprocessor-lib-dir $plugs --dynamic-engine-lib $engine $daq -H -A console:test"
+args="--dynamic-preprocessor-lib-dir $plugs --dynamic-engine-lib $engine $daq -H -A none -K none"
 vars="-S SNORT_RULES=$SNORT2_RULES -S SNORT_ODP=$SNORT_ODP"
 runt="Run time"
 
