@@ -10,23 +10,7 @@ z=$5
 
 [ "$z" ] || z=1
 
-fatal_p()
-{
-    echo "you must delete p"
-    exit -1
-}
-
-[ -e p ] && fatal_p
-ln -s $pcap p
-
-pcaps="p"
-
-for i in $(seq 2 $z) ; do
-    pcaps+=" p"
-done
-
 var="search_engine.search_method"
-
 data="conf, mpse, num, pcap, z"
 
 for i in $(seq 1 $num) ; do
@@ -42,7 +26,7 @@ max=0
 sum="0"
 
 for i in $(seq 1 $num) ; do
-    x=`$snort $args -c $conf -r "$pcaps" --lua "$var = '$mpse'" -z $z 2>&1 | \
+    x=`$snort $args -c $conf -r $pcap --lua "$var = '$mpse'" -z $z --pcap-loop $z 2>&1 | \
         grep "$runt" | grep -o '[0-9.]*'`
     printf ", $x"
     sum+="+$x"
@@ -52,6 +36,4 @@ done
 
 avg=`echo "scale=3; ($sum)/$num" | bc -l`
 printf ", $min, $max, $avg\n"
-
-rm -f p
 
