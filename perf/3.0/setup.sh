@@ -12,7 +12,7 @@ export SNORT_LUA_PATH=$SNORT3_BUILD/etc/snort/
 snort=$SNORT3_BUILD/bin/snort
 plugs=$SNORT3_BUILD/lib64
 
-confs="decode stream inspect detect-min detect-max"
+confs="decode stream inspect detect-min detect-max network-awareness"
 daq="--daq dump --daq-var load-mode=read-file --daq-var output=none"
 args="--warn-all --plugin-path $plugs $daq -H -Q"
 runt="seconds:"
