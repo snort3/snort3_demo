@@ -12,6 +12,6 @@ OPTION="-A csv -k none -U -H"
 
 teardown()
 {
-    rm -r snort.log
+    rm -f snort.log
     rm -f snort.out
 }

@@ -1,5 +1,4 @@
 	stream_user
-service rule counts - user    to-srv  to-cli
 1, TCP, stream_user, 15, C2S, 10.1.2.3:48620, 10.9.8.7:80, 1:2:0, allow
                      user: 4           	(100.000%)
                user_scans: 1
