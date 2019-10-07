@@ -2,9 +2,4 @@
 
 This test is to verify the basic functionality of HTTP2 inspector.
 
-Test verifies:
-
-1. A local rule for http2_frame_header and http2_frame_data is triggered.
-
-2. A builtin rule 129:15 is triggered in order to verify HTTP2 inspector's
-basic functionality.
+Test verifies: A local rule for http2_frame_header is triggered.
