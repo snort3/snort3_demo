@@ -18,8 +18,6 @@ http2_inspect = { }
 default_rules =
 [[
 alert tcp ( msg:"HTTP/2 frame header match"; http2_frame_header; content:"|00 00 0c 04 00 00 00 00 00|"; sid:1; )
-alert tcp ( msg:"HTTP/2 frame data match"; http2_frame_data; content:"HTTP/2.0"; sid:2; )
-alert tcp ( msg:"HTTP/2 file data match"; file_data; content:"HTTP/2.0"; sid:3; )
 ]]
 
 ips =
