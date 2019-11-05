@@ -24,7 +24,7 @@ for t in `find . -name \*.bats` ; do
     printf "\n# $t:\n"
     pushd . &>/dev/null
     cd `dirname $t`
-    bats -t $t
+    bats -t .
     popd &> /dev/null
     done | tee demo_result.log
 
