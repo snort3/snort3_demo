@@ -5,7 +5,7 @@ contains all the files sufficient to demonstrate a use case and a
 README that explains the interesting bits.
 
 Demos are executed using bats, a simple bash test framework, which
-you can find here: https://github.com/sstephenson/bats/.
+you can find here: https://github.com/bats-core/bats-core.
 
 To execute the tests:
 
