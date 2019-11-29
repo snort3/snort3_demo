@@ -2,7 +2,7 @@
 
 PCAP="csv.pcap"
 CFG="snort.lua"
-OPTIONS="-q -A csv -U -H -k none"
+OPTIONS="-q -A csv -k none"
 
 @test "CSV Logger - output event in csv format" {
     $snort -r $PCAP -c $CFG $OPTIONS > snort.out

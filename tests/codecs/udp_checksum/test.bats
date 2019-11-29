@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 PCAP="ip6_cks.pcap"
-OPTION="-A csv -H -U"
+OPTION="-A csv"
 
 @test "UDP Checksum" {
     $snort -r $PCAP $OPTION > snort.out

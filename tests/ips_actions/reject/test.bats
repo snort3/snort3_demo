@@ -2,7 +2,7 @@
 
 PCAP="myhttp.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -U -H -k none -v -Q --daq dump --daq-var load-mode=read-file"
+OPTION="-q -A csv -k none -v -Q --daq dump --daq-var load-mode=read-file"
 
 @test "ips reject action test" {
 

@@ -5,8 +5,8 @@ if [ $# -lt 1 ] ; then
     exit -1
 fi
 
-# global args (if needed)
-args=""
+# global args (add any needed here for your environment)
+args="-H -U"
 
 # setup environnement
 export snorty_path=$1

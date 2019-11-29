@@ -2,7 +2,7 @@
 
 PCAP="ftp_xpwd_cmd.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "Test the detection of Invalid FTP Commands" {
 

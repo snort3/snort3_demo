@@ -2,7 +2,7 @@
 
 PCAP="command23.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -l . -U -H"
+OPTION="-q -A csv -k none -l ."
 
 @test "Event Queue and IPS" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out

@@ -7,7 +7,7 @@ cfg="snort.lua"
 
 gcc_opts="-std=c++11 -Wall -g -ggdb -O0 -fsanitize=address"
 stub_opts="--warn-all --plugin-path ."
-run_opts="-H -U -q -A csv"
+run_opts="-q -A csv"
 
 setup()
 {

@@ -2,7 +2,7 @@
 
 PCAP="user.pcap"
 CFG="snort.lua"
-OPTION="-U -H -q"
+OPTION="-q"
 
 @test "user codec - packet decoding" {
     $snort -r $PCAP -c $CFG $OPTION -L dump -d --lua 'output = {wide_hex_dump = true}' > snort.out

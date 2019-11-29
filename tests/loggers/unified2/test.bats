@@ -2,7 +2,7 @@
 
 PCAP="mpls_ip4_tcp.pcap"
 CFG="snort.lua"
-OPTIONS="-y -q -A u2 -U -H -k none"
+OPTIONS="-y -q -A u2 -k none"
 
 @test "unified2 Logger - output event in unified2 format file" {
     $snort -r $PCAP -c $CFG $OPTIONS

@@ -2,7 +2,7 @@
 
 PCAP="cnnf.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "Process - AppId third party plugin" {
     $snort -r $PCAP -c $CFG --plugin-path $SNORT_PLUGINS $OPTION > snort.out

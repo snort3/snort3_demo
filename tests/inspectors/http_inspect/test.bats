@@ -2,7 +2,7 @@
 
 PCAP="one_session.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "HTTP Inspector raw_body and raw_header buffer match test" {
     $snort -c $CFG -r $PCAP $OPTION > snort.out

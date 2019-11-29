@@ -2,7 +2,7 @@
 
 PCAP="one_pkt.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "Detection - Trace Basic IPS Options" {
     skip "this test requires snort trace messages enabled by --enable-debug-msgs"

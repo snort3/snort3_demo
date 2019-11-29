@@ -2,7 +2,7 @@
 
 PCAP="json.pcap"
 CFG="snort.lua"
-OPTIONS="-A json -H -U -k none -q"
+OPTIONS="-A json -k none -q"
 
 @test "json Logger - output event in json format" {
     $snort -r $PCAP -c $CFG $OPTIONS > snort.out

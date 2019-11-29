@@ -2,7 +2,7 @@
 
 PCAP="alert_before_server_response.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -U -H -k none"
+OPTION="-q -A csv -k none"
 
 @test "SMTP Inspector - Long SMTP header line length and stream_udp" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out

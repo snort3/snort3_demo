@@ -2,7 +2,7 @@
 
 PCAP="http.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "PCRE - relative start of subject" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out

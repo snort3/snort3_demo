@@ -2,7 +2,7 @@
 
 PCAP="hext.pcap"
 CFG="snort.lua"
-OPTIONS="-A log_hext -H -U -q"
+OPTIONS="-A log_hext -q"
 
 @test "log_hext Logger - output payload suitable for daq hext" {
     $snort -r $PCAP -c $CFG $OPTIONS > snort.out

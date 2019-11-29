@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
 CFG="snort.lua"
-OPTION="-A csv -k none -U -H"
+OPTION="-A csv -k none"
 
 @test "Basic stream_user functional test" {
     $snort -c $CFG --daq-dir $SNORT_DAQS --daq hext -i get.hext $OPTION > snort.log

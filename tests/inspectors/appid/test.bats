@@ -2,7 +2,7 @@
 
 PCAP="kerberos.pcap"
 CFG="snort.lua"
-OPTION="-A csv -U -H -k none"
+OPTION="-A csv -k none"
 
 @test "AppID with Kerberos Detector Plugin" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out

@@ -2,7 +2,7 @@
 
 PCAP="appids_smtp.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "APPID to detect SMTP" {
     $snort -r $PCAP -c $CFG $OPTION --plugin-path $SNORT_PLUGINS > snort.out

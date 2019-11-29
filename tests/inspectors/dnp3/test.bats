@@ -2,7 +2,7 @@
 
 PCAP="dnp3_missed_matched_contents.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "DNP3 Inspector - Missed Matched Contents" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out

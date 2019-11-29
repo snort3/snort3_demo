@@ -2,7 +2,7 @@
 
 PCAP="log_pcap.pcap"
 CFG="snort.lua"
-OPTIONS="-l . -U -H -q -k none"
+OPTIONS="-l . -q -k none"
 
 @test "log_pcap Logger - log packets in pcap format" {
     $snort -r $PCAP -c $CFG $OPTIONS

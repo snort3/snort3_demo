@@ -2,7 +2,7 @@
 
 PCAP="single.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "Replace and Rewrite - test replace keyword with rewrite action" {
     $snort -r $PCAP -c $CFG $OPTION --Q --daq dump --daq-var load-mode=read-file > snort.out

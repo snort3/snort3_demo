@@ -2,7 +2,7 @@
 
 PCAP="ipv4.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "Reputation - test to blacklist IPv4" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out
