@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTION="-q -A csv -k none -U -H"
 
 @test "Profiler - Limit Output Count" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION > snort.out
+    $snort -r $PCAP -c $CFG $OPTION > snort.out
     run ./compare_profile.sh
 }
 

@@ -6,7 +6,7 @@ OPTION="-q -A csv -k none -U -H"
 
 
 @test "DCE SMB with TCP/SMB/DCE segmentation verified by wizard" {
-    $snorty_path/bin/snort -c $CFG -r $PCAP $OPTION > snort.out
+    $snort -c $CFG -r $PCAP $OPTION > snort.out
     diff expected snort.out
 }
 

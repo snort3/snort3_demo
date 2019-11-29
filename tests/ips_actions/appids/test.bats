@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTION="-q -A csv -k none -U -H"
 
 @test "APPID to detect SMTP" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION --plugin-path $SNORT_PLUGINS > snort.out 
+    $snort -r $PCAP -c $CFG $OPTION --plugin-path $SNORT_PLUGINS > snort.out
     diff expected snort.out
 }
 

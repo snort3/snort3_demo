@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTION="-q -A csv -k none -U -H --daq-batch-size=1"
 
 @test "Perf Monitor - Populate DAQ Stats" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION 
+    $snort -r $PCAP -c $CFG $OPTION
     diff expected perf_monitor_base.txt
 }
 

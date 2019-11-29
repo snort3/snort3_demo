@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTION="-q -A csv -k none -U -H -s 18050"
 
 @test "Priority IPS Option - Basic Functionality" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION > snort.out
+    $snort -r $PCAP -c $CFG $OPTION > snort.out
     diff expected snort.out
 }
 

@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTIONS="-q -A csv -U -H -k none"
 
 @test "CSV Logger - output event in csv format" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTIONS > snort.out
+    $snort -r $PCAP -c $CFG $OPTIONS > snort.out
     diff expected snort.out
 }
 

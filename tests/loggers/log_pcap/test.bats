@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTIONS="-l . -U -H -q -k none"
 
 @test "log_pcap Logger - log packets in pcap format" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTIONS
+    $snort -r $PCAP -c $CFG $OPTIONS
     $snorty_path/bin/u2spewfoo unified2.log > snort.out
     diff expected snort.out
 }

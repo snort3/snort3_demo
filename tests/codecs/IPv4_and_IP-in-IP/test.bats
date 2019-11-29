@@ -5,7 +5,7 @@ CFG="snort.lua"
 OPTION="-A csv -U -H -k none -q"
 
 @test "IP-in-IP and IPv4 - Fragged Teredo" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION > snort.out
+    $snort -r $PCAP -c $CFG $OPTION > snort.out
     diff expected snort.out
 }
 
