@@ -9,7 +9,7 @@ stream_tcp.queue_limit = { max_segments = 0, max_bytes = 0 }
 http_inspect.request_depth = -1
 http_inspect.response_depth = -1
 
-profiler.rules = { show = true, sort = 'total_time', count = 10 }
+profiler.rules = { show = true, sort = 'total_time', count = 25 }
 
 ---------------------------------------------------------------------------
 -- configure detection

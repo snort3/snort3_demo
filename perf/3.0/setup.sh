@@ -13,7 +13,7 @@ snort=$SNORT3_BUILD/bin/snort
 plugs=$SNORT3_BUILD/lib64
 
 confs="decode stream inspect detect-min detect-max network-awareness"
-daq="--daq dump --daq-var load-mode=read-file --daq-var output=none"
+daq="--daq dump --daq-var load-mode=read-file --daq-var output=none --daq-dir /home/snorty/build/daq3/lib/daq"
 args="--warn-all --plugin-path $plugs $daq -H -Q"
 runt="seconds:"
 
