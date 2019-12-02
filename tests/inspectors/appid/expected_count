@@ -4,8 +4,9 @@ appid
            total_sessions: 3
             appid_unknown: 1
 --------------------------------------------------
-Appid dynamic stats:
-kerberos: flows: 2, clients: 2, users: 0, payloads 0, misc: 0, incompatible: 0, failed: 0
-ldap: flows: 0, clients: 0, users: 2, payloads 0, misc: 0, incompatible: 0, failed: 0
-netbios-ssn_(smb): flows: 1, clients: 0, users: 0, payloads 0, misc: 0, incompatible: 0, failed: 0
+detected apps and services
+              Application: Flows      Clients    Users      Payloads   Misc       Incompat.  Failed    
+                 kerberos: 2          2          0          0          0          0          0         
+                     ldap: 0          0          2          0          0          0          0         
+        netbios-ssn_(smb): 1          0          0          0          0          0          0         
 --------------------------------------------------

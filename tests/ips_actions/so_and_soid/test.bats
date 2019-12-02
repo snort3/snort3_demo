@@ -7,7 +7,7 @@ cfg="snort.lua"
 
 gcc_opts="-std=c++11 -Wall -g -ggdb -O0 -fsanitize=address"
 stub_opts="--warn-all --plugin-path ."
-run_opts="-H -U -q -A csv"
+run_opts="-q -A csv"
 
 setup()
 {
@@ -19,14 +19,14 @@ setup()
 
     local cppflags="$(pkg-config --cflags snort) $(pkg-config --variable=DAQ_CPPFLAGS snort)"
 
-    $snorty_path/bin/snort --rule-to-text < $base.txt > $base.h
+    $snort --rule-to-text < $base.txt > $base.h
     ${CXX} -c $gcc_opts $cppflags -fPIC -o $base.o $base.cc
     ${CXX} -shared -o $base.so $base.o
 }
 
 @test "SO and SOID - 3:13" {
-    $snorty_path/bin/snort $stub_opts --dump-dynamic-rules > stub.rule
-    $snorty_path/bin/snort $stub_opts -c $cfg -R stub.rule -r $pcap $run_opts &> snort.out
+    $snort $stub_opts --dump-dynamic-rules > stub.rule
+    $snort $stub_opts -c $cfg -R stub.rule -r $pcap $run_opts &> snort.out
     cat stub.rule snort.out | diff expected -
 }
 

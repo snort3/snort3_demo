@@ -2,10 +2,10 @@
 
 PCAP="SIP_Eyebeam2Eyebeam_Video_Audio.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none -U -H"
+OPTION="-q -A csv -k none"
 
 @test "SIP Body - basic body content match - in the body " {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION > snort.out
+    $snort -r $PCAP -c $CFG $OPTION > snort.out
     diff expected snort.out
 }
 

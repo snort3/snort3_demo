@@ -2,11 +2,11 @@
 
 PCAP="http_session_data_log.pcap"
 CFG="snort.lua"
-OPTION="-H -U"
+OPTION=""
 
 @test "Log HTTP Request Data" {
     [ -f $SNORT_PLUGINS/snort_extra/inspectors/data_log.so ] # is plugin installed?
-    $snorty_path/bin/snort -r $PCAP -c $CFG --plugin-path $SNORT_PLUGINS $OPTION
+    $snort -r $PCAP -c $CFG --plugin-path $SNORT_PLUGINS $OPTION
     diff expected data_log
 }
 

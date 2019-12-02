@@ -2,10 +2,10 @@
 
 PCAP="ac_bnfa.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -U -H -k none"
+OPTION="-q -A csv -k none"
 
 @test "ac_bnfa search method" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTION > snort.out
+    $snort -r $PCAP -c $CFG $OPTION > snort.out
     diff expected snort.out
 }
 

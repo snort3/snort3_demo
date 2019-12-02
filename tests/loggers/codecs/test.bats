@@ -2,10 +2,10 @@
 
 PCAP="codecs.pcap"
 CFG="snort.lua"
-OPTIONS="-A log_codecs -q -H -U -k none"
+OPTIONS="-A log_codecs -q -k none"
 
 @test "log_codecs Logger - log protocols in packet by layers" {
-    $snorty_path/bin/snort -r $PCAP -c $CFG $OPTIONS > snort.out
+    $snort -r $PCAP -c $CFG $OPTIONS > snort.out
     diff expected snort.out
 }
 

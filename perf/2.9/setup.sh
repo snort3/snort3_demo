@@ -1,6 +1,6 @@
 # export or set SNORT2_BUILD, SNORT2_RULES, SNORT_PCAPS, and SNORT_ODP below
 
-[ -d "$SNORT2_BUILD" ] || SNORT2_BUILD=/home/snorty/snort2/snort-2.9.12/o3
+[ -d "$SNORT2_BUILD" ] || SNORT2_BUILD=/home/snorty/snort2/snort-2.9.15/o3
 [ -e "$SNORT2_RULES" ] || SNORT2_RULES=test.rules
 
 [ -d "$SNORT_PCAPS" ] || SNORT_PCAPS=/home/snorty/ramdisk
