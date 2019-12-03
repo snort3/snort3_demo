@@ -3,6 +3,7 @@ appid
         processed_packets: 33
            total_sessions: 3
             appid_unknown: 1
+       service_cache_adds: 2
 --------------------------------------------------
 detected apps and services
               Application: Flows      Clients    Users      Payloads   Misc       Incompat.  Failed    
