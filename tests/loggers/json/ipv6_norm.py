@@ -15,7 +15,7 @@ def IPV6_to_hex(ipv6_addr):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print 'Usage: %s <filename>' % (sys.argv[0])
+        print('Usage: %s <filename>' % (sys.argv[0]))
         sys.exit(1)
 
     filename = sys.argv[1]
@@ -23,6 +23,6 @@ if __name__ == '__main__':
 
     matches = re.findall(r'\"(.+?)\"',text)
     for m in matches:
-        text = text.replace(m, IPV6_to_hex(m))
+        text = text.replace(m, str(IPV6_to_hex(m)))
 
-    print text
+    print(text)
