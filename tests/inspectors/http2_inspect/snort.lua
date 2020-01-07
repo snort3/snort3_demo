@@ -13,6 +13,7 @@ stream_tcp = { }
 
 wizard = default_wizard
 
+http_inspect = { }
 http2_inspect = { }
 
 default_rules =
