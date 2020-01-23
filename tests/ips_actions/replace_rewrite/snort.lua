@@ -13,6 +13,7 @@ normalizer =
 {
     tcp =
     {
+        base = true,
         ips = true,
         ecn = 'stream',
     },
