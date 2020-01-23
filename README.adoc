@@ -14,3 +14,9 @@ To execute the tests:
 run_test.sh will find *.bats files recursively from the current
 directory down and execute each test. Output is in TAPS format with
 a summary at the end.
+
+You can also execute a single test by specifying the relative path to
+the specific test.bats file, e.g.:
+
+./run_test.sh <snort3_installed_path> tests/ips_actions/replace_rewrite/test.bats
+

@@ -26,8 +26,11 @@ export PKG_CONFIG_PATH=$libs/pkgconfig:$PKG_CONFIG_PATH
 export SNORT_DAQS=$libs/snort/daqs:$libs/snort_extra/daqs
 export SNORT_PLUGINS=$libs
 
+tests=$2
+[ "$tests" ] || tests=`find . -name \*.bats`
+
 # run tests for all .bats
-for t in `find . -name \*.bats` ; do
+for t in $tests ; do
     printf "\n# $t:\n"
     pushd . &>/dev/null
     cd `dirname $t`
