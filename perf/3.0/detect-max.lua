@@ -2,7 +2,7 @@
 -- max detect: unlimited depth
 ---------------------------------------------------------------------------
 
-dofile('inspect.lua')
+include('inspect.lua')
 
 stream_tcp.queue_limit = { max_segments = 0, max_bytes = 0 }
 
@@ -19,7 +19,7 @@ references = default_references
 classifications = default_classifications
 
 search_engine = { }
-detection = { }
+detection = { hyperscan_literals = true }
 
-ips = { include = os.getenv('SNORT3_RULES') }
+ips = { include = os.getenv('SNORT3_MAX_RULES') }
 

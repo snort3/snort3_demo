@@ -21,6 +21,7 @@ stream_tcp =
     policy = 'windows',
     session_timeout = 180,
     overlap_limit = 10,
+    require_3whs = 0
 }
 
 stream_udp = { session_timeout = 3600 }
@@ -67,5 +68,5 @@ profiler.rules = { show = false }
 -- 4. configure tweaks
 ---------------------------------------------------------------------------
 
-dofile('common.lua')
+include('common.lua')
 

@@ -104,7 +104,8 @@ $ configure_cmake.sh --enable-shell --enable-tsc-clock --enable-tcmalloc
 Export the following (or directly set in perf/*/setup.sh):
 
 $ export SNORT2_BUILD=<Snort 2 build prefix>
-$ export SNORT2_RULES=<Snort 2 rules file>
+$ export SNORT2_MIN_RULES=<Snort 2 rules file for min detect>
+$ export SNORT2_MAX_RULES=<Snort 2 rules file for max detect>
 $ export SNORT_PCAPS=<path to dir containing pcaps for test>
 $ export SNORT_ODP=<path to dir containing odp/>
 
@@ -117,7 +118,7 @@ $ ./perf_test.sh 0x1 3
 
 1.  Setup:
 
-Same as for Snort 2 except use SNORT3_BUILD and SNORT3_RULES.
+Same as for Snort 2 except use SNORT3_* instead of SNORT2_*.
 
 You must also edit 3.0/common.lua to set the Snort 3 CPU pinning config.
 

@@ -2,7 +2,7 @@
 -- min detect: depth limited to that of data sheet perf test
 ---------------------------------------------------------------------------
 
-dofile('inspect.lua')
+include('inspect.lua')
 
 stream_tcp.queue_limit = { max_segments = 655, max_bytes = 262144 }
 
@@ -19,7 +19,7 @@ references = default_references
 classifications = default_classifications
 
 search_engine = { }
-detection = { }
+detection = { hyperscan_literals = true, pcre_override = false }
 
-ips = { include = os.getenv('SNORT3_RULES') }
+ips = { include = os.getenv('SNORT3_MIN_RULES') }
 

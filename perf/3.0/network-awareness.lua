@@ -18,4 +18,4 @@ host_cache = { memcap = 51200000 }
 ----------------------------------------
 rna = { }
 
-dofile('common.lua')
+include('common.lua')

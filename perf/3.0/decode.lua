@@ -25,5 +25,5 @@ profiler.rules = { show = false }
 -- 4. configure tweaks
 ---------------------------------------------------------------------------
 
-dofile('common.lua')
+include('common.lua')
 

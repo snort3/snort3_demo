@@ -21,8 +21,8 @@ end
 HOME_NET = 'any'
 EXTERNAL_NET = 'any'
 
-dofile(conf_dir .. '/snort_defaults.lua')
-dofile(conf_dir .. '/file_magic.lua')
+include(conf_dir .. '/snort_defaults.lua')
+include(conf_dir .. '/file_magic.lua')
 
 ---------------------------------------------------------------------------
 -- configure stream
@@ -41,6 +41,7 @@ stream_tcp =
     policy = 'windows',
     session_timeout = 180,
     overlap_limit = 10,
+    require_3whs = 0
 }
 
 stream_udp = { session_timeout = 3600 }
@@ -72,17 +73,7 @@ dce_http_server = { }
 http_inspect = { }
 http2_inspect = { }
 
-normalizer =
-{
-    ip4 = { base = false },
-    tcp =
-    {
-        base = false, block = false, urp = false, pad = false,
-        opts = false, req_urg = false, req_urp = false,
-        rsv = false, req_urp = false,
-        ips = true
-    }
-}
+normalizer = { }
 
 gtp_inspect = default_gtp
 
@@ -112,10 +103,11 @@ wizard = default_wizard
 binder =
 {
     -- port bindings required for protocols without wizard support
-    --{ when = { proto = 'udp', ports = '53' },  use = { type = 'dns' } },
-    { when = { proto = 'tcp', ports = '111' }, use = { type = 'rpc_decode' } },
-    { when = { proto = 'tcp', ports = '502' }, use = { type = 'modbus' } },
-    { when = { proto = 'tcp', ports = '2123 2152 3386' }, use = { type = 'gtp' } },
+    { when = { proto = 'udp', ports = '53', role='server' },  use = { type = 'dns' } },
+    { when = { proto = 'tcp', ports = '53', role='server' },  use = { type = 'dns' } },
+    { when = { proto = 'tcp', ports = '111', role='server' }, use = { type = 'rpc_decode' } },
+    { when = { proto = 'tcp', ports = '502', role='server' }, use = { type = 'modbus' } },
+    { when = { proto = 'tcp', ports = '2123 2152 3386', role='server' }, use = { type = 'gtp' } },
 
     { when = { proto = 'tcp', service = 'dcerpc' }, use = { type = 'dce_tcp' } },
     { when = { proto = 'udp', service = 'dcerpc' }, use = { type = 'dce_udp' } },
@@ -144,7 +136,7 @@ binder =
     { use = { type = 'wizard' } }
 }
 
-dofile('hosts.lua')
+include('hosts.lua')
 
 ---------------------------------------------------------------------------
 -- configure performance
@@ -166,5 +158,5 @@ memory = { }
 -- configure tweaks
 ---------------------------------------------------------------------------
 
-dofile('common.lua')
+include('common.lua')
 
