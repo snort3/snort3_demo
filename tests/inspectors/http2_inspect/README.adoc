@@ -2,4 +2,5 @@
 
 This test is to verify the basic functionality of HTTP2 inspector.
 
-Test verifies: A local rule for http2_frame_header is triggered.
+Test verifies: Local rules for http2_frame_header, http_stat_code, and http_raw_header are
+triggered.
