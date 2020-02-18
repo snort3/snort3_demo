@@ -18,7 +18,9 @@ http2_inspect = { }
 
 default_rules =
 [[
-alert tcp ( msg:"HTTP/2 frame header match"; http2_frame_header; content:"|00 00 0c 04 00 00 00 00 00|"; sid:1; )
+alert tcp ( msg:"HTTP/2 frame header match"; http2_frame_header; content:"|00 00 25 01 25 00 00 00 0d|"; sid:1; )
+alert tcp ( msg:"status code match"; http_stat_code; content:"200"; sid:2; )
+alert tcp ( msg:"raw header match"; http_raw_header; content:"Apache/2.4.18"; sid:3; )
 ]]
 
 ips =
