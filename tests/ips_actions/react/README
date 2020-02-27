@@ -1,11 +1,12 @@
 === IPS react action test
 
-This is a test of "react" IPS action. It "react" on a http GET request
-with configured http content.
+This is a test of the "react" IPS action. It "react"s to an http GET request
+by responding with a configured http page.
 
 Test result verifies:
 
-1. compare the alert -- drop verict
+1. compare the alert -- drop verdict
 
-2. compare the inlone-out.pcap -- reset of connections and the http
-   request was rejected by configured http page contents.
+2. compare the inline-out.pcap -- reset of connection and the http
+   request was rejected by configured http page contents. The remainder
+   of the flow was blacklisted.
