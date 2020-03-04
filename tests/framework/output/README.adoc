@@ -1,7 +1,0 @@
-=== Output
-
-This test is to configure general output parameters.
-
-Test verifies:
-
-1. Tests SDF with 2 rules that have the same exact pattern. This no longer errors. Instead, both rules fire.
