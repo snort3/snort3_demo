@@ -15,6 +15,8 @@ setup()
 
     if [[ "$OSTYPE" == "freebsd"* ]]; then
         CXX='clang++'
+    elif [[ "$OSTYPE" == "linux-musl"* ]]; then
+        gcc_opts="-std=c++11 -Wall -g -ggdb -O0"
     fi
 
     local cppflags="$(pkg-config --cflags snort) $(pkg-config --variable=DAQ_CPPFLAGS snort)"
