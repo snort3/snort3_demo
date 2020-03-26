@@ -39,10 +39,10 @@ using namespace snort;
 // implementation stuff
 //--------------------------------------------------------------------------
 
-class CheezFlowData : public snort::FlowData
+class CheezFlowData : public snort::RuleFlowData
 {
 public:
-    CheezFlowData() : FlowData(id) { }
+    CheezFlowData() : RuleFlowData(id) { }
 
     static void pinit()
     { id = FlowData::create_flow_data_id(); }
