@@ -13,7 +13,7 @@ stream_tcp = { }
 
 local_rules =
 [[
-alert tcp ( msg:"REM ALERT"; session:all; rem:"This is a rem test"; sid:1)
+alert tcp ( msg:"REM ALERT"; rem:"This is a rem test"; sid:1)
 ]]
 
 ips =

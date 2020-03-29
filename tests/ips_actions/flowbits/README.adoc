@@ -8,6 +8,3 @@ Test verifies:
 1. Local rules using flow, flowbits, and http_uri ips options are triggered
 verifying the rule options work as expected.
 
-2. This test also verifies the flowbits group feature and flowbits as third
-argument.
-

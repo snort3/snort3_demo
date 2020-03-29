@@ -22,8 +22,8 @@ process.  Here is a summary:
     --plugin-path.
 
 3:13 looks for a Cheez Whiz attack by counting the number of cans feteched per
-flow.  Anything over 7 triggers the alert.  If your tolerance is higher, your
-name is Carter Waxman, and you may adjust it higher.
+flow.  Anything over 7 triggers the alert.  If your tolerance is higher, you
+can adjust the threshold in the rule.
 
 Some things to note:
 
