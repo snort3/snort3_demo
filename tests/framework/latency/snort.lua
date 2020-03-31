@@ -11,7 +11,6 @@ latency =
 {
     packet =
     {
-        action = 'alert',
         max_time = 1,
         fastpath = true
     }
