@@ -14,7 +14,13 @@ stream_ip = { }
 stream_icmp = { }
 stream_tcp = { }
 
-detection = {trace = 0x16}
+trace =
+{
+    modules =
+    {
+        detection = { rule_eval = 1, buffer = 1, fp_search = 1 }
+    }
+}
 
 local_rules =
 [[
