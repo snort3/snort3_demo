@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
 
-PCAP="http2-test.pcap"
+PCAP="http2.demo.pcap"
 CFG="snort.lua"
 OPTION="-q -A csv -k none"
 
