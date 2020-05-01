@@ -1,6 +1,8 @@
-=== HTTP2 Inspector
+=== HTTP/2 Inspector
 
-This test is to verify the basic functionality of HTTP2 inspector.
+This test is to verify the basic functionality of HTTP/2 inspector.
 
-Test verifies: Local rules for http2_frame_header, http_stat_code, and http_raw_header are
-triggered.
+Test verifies: Local rules for http_uri and file_data content match with fast_pattern.
+Also verifies http_stat_code and http_raw_header.
+
+
