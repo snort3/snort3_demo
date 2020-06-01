@@ -19,7 +19,8 @@ references = default_references
 classifications = default_classifications
 
 search_engine = { }
-detection = { hyperscan_literals = true, pcre_override = false }
+
+detection = { pcre_override = false }
 
 ips = { include = os.getenv('SNORT3_MIN_RULES') }
 

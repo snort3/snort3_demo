@@ -87,7 +87,11 @@ ftp_server = default_ftp_server
 ftp_client = { }
 ftp_data = { }
 
-file_id = { file_rules = file_magic }
+file_id =
+{
+    file_rules = file_magic,
+    enable_signature = false
+}
 
 appid =
 {
@@ -102,6 +106,8 @@ wizard = default_wizard
 
 binder =
 {
+    { when = { proto = 'tcp', ports = '80', role='server' }, use = { type = 'http_inspect' } },
+
     -- port bindings required for protocols without wizard support
     { when = { proto = 'udp', ports = '53', role='server' },  use = { type = 'dns' } },
     { when = { proto = 'tcp', ports = '53', role='server' },  use = { type = 'dns' } },
