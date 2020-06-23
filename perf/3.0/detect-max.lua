@@ -18,8 +18,16 @@ profiler.rules = { show = true, sort = 'total_time', count = 25 }
 references = default_references
 classifications = default_classifications
 
-search_engine = { }
-detection = { hyperscan_literals = true }
+search_engine = { detect_raw_tcp = true }
 
 ips = { include = os.getenv('SNORT3_MAX_RULES') }
+
+---------------------------------------------------------------------------
+-- configure hyperscan if available
+---------------------------------------------------------------------------
+
+detection = { }
+
+--detection.hyperscan_literals = true
+--detection.pcre_to_regex = true
 
