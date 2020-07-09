@@ -20,7 +20,7 @@ classifications = default_classifications
 
 search_engine = { detect_raw_tcp = true }
 
-ips = { include = os.getenv('SNORT3_MAX_RULES') }
+ips = { include = os.getenv('SNORT3_MAX_RULES'), variables = default_variables }
 
 ---------------------------------------------------------------------------
 -- configure hyperscan if available

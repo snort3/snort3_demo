@@ -22,5 +22,5 @@ search_engine = { }
 
 detection = { pcre_override = false }
 
-ips = { include = os.getenv('SNORT3_MIN_RULES') }
+ips = { include = os.getenv('SNORT3_MIN_RULES'), variables = default_variables }
 
