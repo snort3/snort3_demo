@@ -1,0 +1,4 @@
+=== Verbose config output
+
+Verify verbose config output for inspectors.
+
