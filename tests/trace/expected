@@ -1,0 +1,109 @@
+++ [0] ./pcaps/tcp.pcap
+P0:detection:detect_engine:1: (wire) 1 cs::start 1 (i=20, b=0)
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:detect_engine:1: (wire) 1 cs::stop 1 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 2 cs::start 2 (i=20, b=0)
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:detect_engine:1: (wire) 2 cs::stop 2 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 3 cs::start 3 (i=20, b=0)
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:detect_engine:1: (wire) 3 cs::stop 3 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 4 cs::start 4 (i=20, b=0)
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:detect_engine:1: (wire) 4 cs::stop 4 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 5 cs::start 5 (i=20, b=0)
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:detect_engine:1: (wire) 5 cs::stop 5 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 6 cs::start 6 (i=20, b=0)
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:detect_engine:1: (wire) 6 cs::stop 6 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 7 cs::start 7 (i=20, b=0)
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:detect_engine:1: (wire) 7 cs::stop 7 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 7 de::idle (r=0)
+P0:detection:detect_engine:1: 7 cs::interrupt 0 (i=20, b=0)
+P0:detection:detect_engine:1: 7 cs::complete 8 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 7 cs::abort (i=20, b=0)
+-- [0] ./pcaps/tcp.pcap
+++ [0] ./pcaps/udp_1.pcap
+P0:detection:detect_engine:1: (wire) 1 cs::start 1 (i=20, b=0)
+P0:snort:inspector_manager:1: start inspection, raw, packet 1, context 1
+P0:snort:inspector_manager:1: enter stream
+P0:snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:wizard:all:1: c2s datagram search found service foobar
+P0:snort:inspector_manager:1: stop inspection, raw, packet 1, context 1, total time: usec
+P0:detection:rule_eval:1: packet 1 C2S 10.1.1.1:100 10.1.1.2:200 (fast-patterns)
+P0:detection:rule_eval:1: Fast pattern search
+P0:detection:rule_eval:1: Fast pattern processing - no matches found
+P0:detection:rule_eval:1: packet 1 C2S 10.1.1.1:100 10.1.1.2:200 (non-fast-patterns)
+P0:detection:rule_eval:1: Testing non-content rules
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:rule_eval:1: Reached leaf, cursor name pkt_data, cursor position 0
+P0:detection:rule_eval:1: Matched rule gid:sid:rev 1000002:1000002:0
+P0:snort:inspector_manager:1: post detection inspection, raw, packet 1, context 1
+P0:snort:inspector_manager:1: end inspection, raw, packet 1, context 1, total time: usec
+P0:detection:detect_engine:1: (wire) 1 cs::stop 1 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 2 cs::start 2 (i=20, b=0)
+P0:snort:inspector_manager:1: start inspection, raw, packet 2, context 2
+P0:snort:inspector_manager:1: enter stream
+P0:snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:snort:inspector_manager:1: stop inspection, raw, packet 2, context 2, total time: usec
+P0:detection:rule_eval:1: packet 2 C2S 10.1.1.1:100 10.1.1.2:200 (fast-patterns)
+P0:detection:rule_eval:1: Fast pattern search
+P0:detection:rule_eval:1: Fast pattern processing - no matches found
+P0:detection:rule_eval:1: packet 2 C2S 10.1.1.1:100 10.1.1.2:200 (non-fast-patterns)
+P0:detection:rule_eval:1: Testing non-content rules
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:rule_eval:1: Reached leaf, cursor name pkt_data, cursor position 0
+P0:detection:rule_eval:1: Matched rule gid:sid:rev 1000002:1000002:0
+P0:snort:inspector_manager:1: post detection inspection, raw, packet 2, context 2
+P0:snort:inspector_manager:1: end inspection, raw, packet 2, context 2, total time: usec
+P0:detection:detect_engine:1: (wire) 2 cs::stop 2 (i=19, b=1)
+P0:detection:detect_engine:1: 2 cs::interrupt 0 (i=20, b=0)
+P0:detection:detect_engine:1: 2 cs::complete 3 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 2 de::idle (r=0)
+P0:detection:detect_engine:1: 2 cs::interrupt 0 (i=20, b=0)
+P0:detection:detect_engine:1: 2 cs::complete 4 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 2 cs::abort (i=20, b=0)
+-- [0] ./pcaps/udp_1.pcap
+++ [0] ./pcaps/udp_2.pcap
+P0:detection:detect_engine:1: (wire) 1 cs::start 1 (i=20, b=0)
+P0:snort:inspector_manager:1: start inspection, raw, packet 1, context 1
+P0:snort:inspector_manager:1: enter stream
+P0:snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:wizard:all:1: c2s datagram search found service foobar
+P0:snort:inspector_manager:1: stop inspection, raw, packet 1, context 1, total time: usec
+P0:detection:rule_eval:1: packet 1 C2S 10.1.1.5:150 10.1.1.7:250 (fast-patterns)
+P0:detection:rule_eval:1: Fast pattern search
+P0:detection:rule_eval:1: Fast pattern processing - no matches found
+P0:detection:rule_eval:1: packet 1 C2S 10.1.1.5:150 10.1.1.7:250 (non-fast-patterns)
+P0:detection:rule_eval:1: Testing non-content rules
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:rule_eval:1: Reached leaf, cursor name pkt_data, cursor position 0
+P0:detection:rule_eval:1: Matched rule gid:sid:rev 1000002:1000002:0
+P0:snort:inspector_manager:1: post detection inspection, raw, packet 1, context 1
+P0:snort:inspector_manager:1: end inspection, raw, packet 1, context 1, total time: usec
+P0:detection:detect_engine:1: (wire) 1 cs::stop 1 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 2 cs::start 2 (i=20, b=0)
+P0:snort:inspector_manager:1: start inspection, raw, packet 2, context 2
+P0:snort:inspector_manager:1: enter stream
+P0:snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:snort:inspector_manager:1: stop inspection, raw, packet 2, context 2, total time: usec
+P0:detection:rule_eval:1: packet 2 C2S 10.1.1.5:150 10.1.1.7:250 (fast-patterns)
+P0:detection:rule_eval:1: Fast pattern search
+P0:detection:rule_eval:1: Fast pattern processing - no matches found
+P0:detection:rule_eval:1: packet 2 C2S 10.1.1.5:150 10.1.1.7:250 (non-fast-patterns)
+P0:detection:rule_eval:1: Testing non-content rules
+P0:detection:rule_eval:1: Starting tree eval
+P0:detection:rule_eval:1: Reached leaf, cursor name pkt_data, cursor position 0
+P0:detection:rule_eval:1: Matched rule gid:sid:rev 1000002:1000002:0
+P0:snort:inspector_manager:1: post detection inspection, raw, packet 2, context 2
+P0:snort:inspector_manager:1: end inspection, raw, packet 2, context 2, total time: usec
+P0:detection:detect_engine:1: (wire) 2 cs::stop 2 (i=19, b=1)
+P0:detection:detect_engine:1: 2 cs::interrupt 0 (i=20, b=0)
+P0:detection:detect_engine:1: 2 cs::complete 3 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 2 de::idle (r=0)
+P0:detection:detect_engine:1: 2 cs::interrupt 0 (i=20, b=0)
+P0:detection:detect_engine:1: 2 cs::complete 4 (i=19, b=1)
+P0:detection:detect_engine:1: (wire) 2 cs::abort (i=20, b=0)
+-- [0] ./pcaps/udp_2.pcap
