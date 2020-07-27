@@ -1,0 +1,1 @@
+alert tcp any any -> any any ( msg:"POLICY-OTHER eicar test string download attempt"; flow:to_client,established; file_data; content:"7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+",fast_pattern,nocase; metadata:policy balanced-ips drop,policy max-detect-ips drop,policy security-ips drop; reference:url,www.eicar.org/86-0-Intended-use.html; sid:37732; rev:3; )
