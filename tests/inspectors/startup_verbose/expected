@@ -1,0 +1,135 @@
+Finished snort.lua:
+--------------------------------------------------
+Inspection Policy : policy id 0 : snort.lua
+--------------------------------------------------
+binder:
+                 bindings:
+                           { when = { service = http },
+                             use = { type = http_inspect } }
+                           { when = { service = ftp, proto = tcp, ports = 21 23 25 42 53 80 110 111
+                             135 136 137 139 143 445 513 514 1433 1521 2401 3306 },
+                             use = { type = stream_tcp } }
+                           { when = { service = dns, proto = tcp, ports = 21 23 25 42 53 80 110 111
+                             135 136 137 139 143 445 513 514 1433 1521 2401 3306 },
+                             use = { type = stream_tcp } }
+                           { when = { proto = tcp, ports = 80 },
+                             use = { type = finalize_packet } }
+                           { when = { proto = udp },
+                             use = { type = stream_udp } }
+                           { when = { proto = udp, ports = 2123 2152 3386 },
+                             use = { type = gtp_inspect } }
+                           { when = { proto = ip, nets = 10.1.47.0/24, 172.16.8.0/24 },
+                             use = { type = stream_ip, name = stream_ip_1 } }
+                           { when = { },
+                             use = { type = wizard } }
+--------------------------------------------------
+data_log:
+                      key: http_request_header_event
+                    limit: 100
+--------------------------------------------------
+domain_filter:
+                    hosts: attack.com localhost packettracker.com test.net zombie.edu
+--------------------------------------------------
+finalize_packet:
+                start_pdu: 1
+                  end_pdu: 3
+                   modify: { pdu = 2, verdict = block }
+         switch_to_wizard: disabled
+        use_direct_inject: enabled
+          defer_whitelist: disabled
+          force_whitelist: disabled
+--------------------------------------------------
+gtp_inspect:
+--------------------------------------------------
+http_inspect:
+            request_depth: -1 (unlimited)
+           response_depth: -1 (unlimited)
+                    unzip: enabled
+            normalize_utf: enabled
+           decompress_pdf: disabled
+           decompress_swf: disabled
+           decompress_zip: disabled
+      detained_inspection: disabled
+     normalize_javascript: disabled
+max_javascript_whitespaces: 200
+           bad_characters: 0x00 0x0a 0x0d 0x23 0x24 0x25 0x26 0x27 0x28 0x29
+        ignore_unreserved: eghimnost
+                percent_u: disabled
+                     utf8: enabled
+           utf8_bare_byte: disabled
+              iis_unicode: disabled
+    iis_unicode_code_page: 1252
+        iis_double_decode: enabled
+      oversize_dir_length: 300
+       backslash_to_slash: enabled
+            plus_to_space: enabled
+            simplify_path: enabled
+--------------------------------------------------
+normalizer:
+                      ip4: disabled
+                      ip6: disabled
+                    icmp4: disabled
+                    icmp6: disabled
+                      tcp: enabled
+                      tcp: { ecn = disabled, block = disabled, rsv = disabled, pad = disabled, req_urg
+                           = disabled, req_pay = disabled, req_urp = disabled, urp = disabled, ips =
+                           enabled, trim = disabled }
+--------------------------------------------------
+rt_global:
+         downshift_packet: 0
+           downshift_mode: 3
+                   memcap: 2048
+                empty_ips: disabled
+      enable_file_capture: disabled
+         init_drop_reason: disabled
+--------------------------------------------------
+rt_packet:
+           retry_targeted: enabled
+                retry_all: disabled
+--------------------------------------------------
+so_proxy:
+--------------------------------------------------
+stream:
+            ip_frags_only: disabled
+                max_flows: 476288
+          pruning_timeout: 30
+                 ip_cache: { idle_timeout = 180, cap_weight = 0 }
+                tcp_cache: { idle_timeout = 3600, cap_weight = 11000 }
+                udp_cache: { idle_timeout = 180, cap_weight = 0 }
+               icmp_cache: { idle_timeout = 180, cap_weight = 0 }
+               user_cache: { idle_timeout = 180, cap_weight = 0 }
+               file_cache: { idle_timeout = 180, cap_weight = 32 }
+--------------------------------------------------
+stream_ip (stream_ip_1):
+                max_frags: 8192
+             max_overlaps: 0
+          min_frag_length: 0
+                  min_ttl: 1
+                   policy: linux
+          session_timeout: 30
+--------------------------------------------------
+stream_tcp:
+             flush_factor: 0
+                  max_pdu: 16384
+               max_window: 0
+                   no_ack: disabled
+            overlap_limit: 0
+                   policy: bsd
+              queue_limit: { max_bytes = 1048576, max_segments = 2621 }
+         reassemble_async: enabled
+             require_3whs: -1 (disabled)
+          session_timeout: 30
+           small_segments: { count = 0, maximum_size = 0 }
+               track_only: disabled
+--------------------------------------------------
+stream_udp:
+          session_timeout: 30
+--------------------------------------------------
+wizard:
+--------------------------------------------------
+pcap DAQ configured to passive.
+--------------------------------------------------
+host_cache
+    memcap: 8388608 bytes
+
+Snort successfully validated the configuration (with 0 warnings).

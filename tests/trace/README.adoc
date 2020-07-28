@@ -1,0 +1,9 @@
+=== Trace logger framework
+
+This test case uses the trace logger framework to print trace messages.
+
+Test result verifies:
+
+1. Trace messages are printed to stdout.
+2. Packet-related trace messages are filtered by the packet constraints.
+
