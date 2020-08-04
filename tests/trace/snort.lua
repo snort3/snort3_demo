@@ -28,7 +28,6 @@ trace =
     output = "stdout",
     modules =
     {
-        detection = { detect_engine = 1, rule_eval = 1 },
         snort = { inspector_manager = 1 },
         wizard = { all = 1 }
     },
