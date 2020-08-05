@@ -13,14 +13,6 @@ http_inspect =
     bad_characters = '0xa 0xd 0x0 0x23 0x24 0x25 0x26 0x27 0x28 0x29'
 }
 
-finalize_packet =
-{
-    start_pdu = 1,
-    end_pdu = 3,
-    modify = { pdu = 2, verdict = 'block' },
-    use_direct_inject = true
-}
-
 stream = { }
 stream_ip_1 = { }
 stream_tcp = { }
@@ -75,17 +67,6 @@ binder =
     {
         when =
         {
-            proto = 'tcp',
-            ports = '80'
-        },
-        use =
-        {
-            type = 'finalize_packet'
-        }
-    },
-    {
-        when =
-        {
             proto = 'udp'
         },
         use =
@@ -135,7 +116,3 @@ domain_filter =
     hosts = 'localhost packettracker.com',
     file = 'hosts.txt'
 }
-
-rt_global = { }
-rt_packet = { retry_targeted = true }
-

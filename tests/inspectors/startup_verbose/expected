@@ -12,8 +12,6 @@ binder:
                            { when = { service = dns, proto = tcp, ports = 21 23 25 42 53 80 110 111
                              135 136 137 139 143 445 513 514 1433 1521 2401 3306 },
                              use = { type = stream_tcp } }
-                           { when = { proto = tcp, ports = 80 },
-                             use = { type = finalize_packet } }
                            { when = { proto = udp },
                              use = { type = stream_udp } }
                            { when = { proto = udp, ports = 2123 2152 3386 },
@@ -29,15 +27,6 @@ data_log:
 --------------------------------------------------
 domain_filter:
                     hosts: attack.com localhost packettracker.com test.net zombie.edu
---------------------------------------------------
-finalize_packet:
-                start_pdu: 1
-                  end_pdu: 3
-                   modify: { pdu = 2, verdict = block }
-         switch_to_wizard: disabled
-        use_direct_inject: enabled
-          defer_whitelist: disabled
-          force_whitelist: disabled
 --------------------------------------------------
 gtp_inspect:
 --------------------------------------------------
@@ -74,18 +63,6 @@ normalizer:
                       tcp: { ecn = disabled, block = disabled, rsv = disabled, pad = disabled, req_urg
                            = disabled, req_pay = disabled, req_urp = disabled, urp = disabled, ips =
                            enabled, trim = disabled }
---------------------------------------------------
-rt_global:
-         downshift_packet: 0
-           downshift_mode: 3
-                   memcap: 2048
-                empty_ips: disabled
-      enable_file_capture: disabled
-         init_drop_reason: disabled
---------------------------------------------------
-rt_packet:
-           retry_targeted: enabled
-                retry_all: disabled
 --------------------------------------------------
 so_proxy:
 --------------------------------------------------
