@@ -1,0 +1,6 @@
+=== active FTP EICAR test
+
+The test verifies that EICAR is detected when downloaded via an active FTP data transfer.
+
+You can safely use Talos SID 37732 to validate your Snort 3 deployment by transferring this pcap
+through Snort or by pointing your browser at https://en.wikipedia.org/wiki/EICAR_test_file.
