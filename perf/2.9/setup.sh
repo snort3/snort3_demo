@@ -1,4 +1,4 @@
-# export or set SNORT2_BUILD, SNORT2_*_RULES, SNORT_PCAPS, and SNORT_ODP below
+# export or set SNORT2_* and SNORT_* variables
 
 [ -d "$SNORT2_BUILD" ] || SNORT2_BUILD=/home/snorty/snort2/snort-2.9.15/o3
 

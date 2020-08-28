@@ -68,7 +68,7 @@ also find some useful pcaps online or generate them as explained below.
 maccdc.pcap = maccdc2012_00000.pcap mostly has a TCP scan in it (SYN-RST).
 https://download.netresec.com/pcap/maccdc-2012/maccdc2012_00000.pcap.gz
 
-The tcp_* and udp_* pcaps can be used to generate standard data sheet perf test
+The tcp_* and udp_* scripts can be used to generate standard data sheet perf test
 pcaps.  Use with abcip like this:
 
 $ common/tcp_1000.sh 4096 | abcip --pcap get250.pcap
@@ -112,7 +112,7 @@ $ export SNORT_ODP=<path to dir containing odp/>
 2.  Run perf_test.sh <cpu_mask> <#iterations>
 
 $ cd 2.9
-$ ./perf_test.sh 0x1 3
+$ ./perf_test.sh 1 3
 
 == Snort 3:
 

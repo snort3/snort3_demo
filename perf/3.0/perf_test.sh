@@ -1,12 +1,13 @@
 #!/bin/bash
 
+. ./setup.sh
+
 mpse=$1
 max=$2
 thr="$3"
 
 [ "$thr" ] || thr="1"
-
-. ./setup.sh
+[ "$4" ] && confs="$4"
 
 for z in $thr ; do
     for pcap in $SNORT_PCAPS/* ; do

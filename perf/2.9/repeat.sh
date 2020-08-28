@@ -22,7 +22,7 @@ max=0
 sum="0"
 
 for i in $(seq 1 $num) ; do
-    x=`taskset $cpu $snort $args -c $conf $vars -r $pcap 2>&1 | grep "$runt" | grep -o '[0-9\.]*'`
+    x=`taskset -c "$cpu" $snort $args -c $conf $vars -r $pcap 2>&1 | grep "$runt" | grep -o '[0-9\.]*'`
     printf ", $x"
     sum+="+$x"
     if (( $(echo "$x < $min" | bc -l) )) ; then min=$x ; fi

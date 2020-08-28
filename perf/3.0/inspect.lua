@@ -106,6 +106,7 @@ wizard = default_wizard
 
 binder =
 {
+    -- perf tweak since since Snort 2 assumes this
     { when = { proto = 'tcp', ports = '80', role='server' }, use = { type = 'http_inspect' } },
 
     -- port bindings required for protocols without wizard support

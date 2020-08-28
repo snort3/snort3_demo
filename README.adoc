@@ -20,3 +20,7 @@ the specific test.bats file, e.g.:
 
 ./run_test.sh <snort3_installed_path> tests/ips_actions/replace_rewrite/test.bats
 
+Do this first if you require --daq-dir to run Snort 3:
+
+export SNORT3_DAQ_DIR="<daq3_installed_path>"
+

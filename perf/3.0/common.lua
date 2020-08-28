@@ -27,3 +27,5 @@ process = { threads = threads }
 
 search_engine = { }
 
+snort_whitelist_append("threads")
+
