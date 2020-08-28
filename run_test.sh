@@ -5,7 +5,7 @@ if [ $# -lt 1 ] ; then
     exit -1
 fi
 
-[ -d $SNORT_DAQ_DIR ] && daq_dir="--daq-dir $SNORT3_DAQ_DIR"
+[ -d "$SNORT3_DAQ_DIR" ] && daq_dir="--daq-dir $SNORT3_DAQ_DIR"
 
 # global args (add any needed here for your environment)
 args="-H -U"
