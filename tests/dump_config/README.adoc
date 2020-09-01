@@ -1,0 +1,9 @@
+=== Dump a configuration
+
+This test is to verify a dumped configuration.
+
+Test result verifies:
+
+1. Snort dumps its configuration in the correct JSON format.
+2. The dumped configuration is comprehensive and can be loaded once again.
+
