@@ -1,7 +1,0 @@
-=== SHA256 and SHA512
-
-This test is to verify the sha256 and sha512 hash functionalities.
-
-Test verifies:
-
-1. Local rules with sha256 and sha512 hash are triggered.

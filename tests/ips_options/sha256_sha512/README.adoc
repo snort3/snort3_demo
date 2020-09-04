@@ -1,0 +1,60 @@
+=== SHA256 and SHA512
+
+sha256 and sha512 (and md5) are content options that match on a hash of the buffer data.  These
+options all work in a similar fashion:
+
+1. The offset and relative options are used to find the start of data for the current buffer and
+cursor position.
+
+2. The buffer is checked to see if the specified length of data is available from the start.  
+
+3. The buffer size is checked to ensure that the required length bytes are present from the start
+position.
+
+4.  The data is hashed according to the given algorithm.
+
+5.  The result of the hash is compared against the specified digest.
+
+Since the data must be hashed before comparison, these are relatively expensive rule options.
+However, they may be needed in cases where the specific pattern to be matched should not be revealed.
+
+This test is demonstrates the sha256 and sha512 options.  All rules match on (raw) packet 4:
+
+16:17:01.862458 IP 10.1.2.3.48620 > 10.9.8.7.8: Flags [.], seq 1:116, ack 1, win 8192, length 115
+	0x0000:  4500 009b 0003 0000 4006 5c47 0a01 0203  E.......@.\G....
+	0x0010:  0a09 0807 bdec 0008 0000 0002 0000 0002  ................
+	0x0020:  5010 2000 e7d2 0000 4745 5420 2f61 7474  P.......GET./att
+	0x0030:  6163 6b2f 3120 4854 5450 2f31 2e31 0d0a  ack/1.HTTP/1.1..
+	0x0040:  486f 7374 3a20 6c6f 6361 6c68 6f73 740d  Host:.localhost.
+	0x0050:  0a58 2d46 6f72 7761 7264 6564 2d46 6f72  .X-Forwarded-For
+	0x0060:  3a20 312e 312e 312e 310d 0a55 7365 722d  :.1.1.1.1..User-
+	0x0070:  4167 656e 743a 2043 4552 4e2d 4c69 6e65  Agent:.CERN-Line
+	0x0080:  4d6f 6465 2f32 2e31 3520 6c69 6277 7777  Mode/2.15.libwww
+	0x0090:  2f32 2e31 3762 330d 0a0d 0a              /2.17b3....
+
+The interesting bits for the rules are:
+
+sid:3; content:"For"; sha256:<sha3>, length 7, relative, offset 2;
+sid:5; content:"For"; sha512:<sha5>, length 7, relative, offset 2;
+
+sid:4; content:"For"; sha256:<sha4>, length 9, offset 56;
+sid:6; content:"For"; sha512:<sha6>, length 9, offset 56;
+
+SIDs 3 and 5 are looking for the XFF address "1.1.1.1".  First they match the content at 0x53 and
+then try to match the SHA for the 7 bytes starting at 0x58 (cursor + 2) which fails.  The rule
+loops and searches for the content again landing at 0x5D.  This time the SHA for the 7 bytes at
+0x62 is a match.
+
+SIDs 4 and 6 are looking for ": 1.1.1.1".  In this case the SHA options are not relative so the
+first attempt matches at 0x60, ie start of buffer + offset = 0x28 + 0x38.
+
+One way to compute the SHAs is to echo like this:
+
+sha3: echo -n "1.1.1.1" | sha256sum
+sha5: echo -n "1.1.1.1" | sha512sum
+
+sha5: echo -n ": 1.1.1.1" | sha256sum
+sha6: echo -n ": 1.1.1.1" | sha512sum
+
+Note the use of -n to avoid including a newline character.
+
