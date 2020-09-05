@@ -1,0 +1,10 @@
+alert udp
+(
+    sid:1;
+    content:"|00 00 00 00|", offset 4, depth 4;
+    content:"|00 01 87 88|", offset 12, depth 4;
+    content:"|00 00 00 01 00 00 00 01|", offset 20, depth 8;
+    byte_jump:4,36,align;
+    content:"|00 00 00 00|", within 4;
+)
+

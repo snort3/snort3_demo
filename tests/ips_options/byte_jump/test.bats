@@ -1,11 +1,11 @@
 #!/usr/bin/env bats
 
-PCAP="byte_jump_post_offset_neg_value.pcap"
+PCAP="sadmind.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none"
+OPTION="-q -A csv"
 
-@test "Byte Jump - Post Offset Negative Value" {
-    $snort -r $PCAP -c $CFG $OPTION > snort.out
+@test "Byte Jump" {
+    $snort -c $CFG -R sadmind.rules $OPTION -r $PCAP > snort.out
     diff expected snort.out
 }
 
