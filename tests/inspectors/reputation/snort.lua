@@ -16,8 +16,8 @@ wizard = default_wizard
 reputation =
 {
     memcap = 1,
-    priority = 'whitelist',
-    blacklist = 'ip.blacklist',
+    priority = 'allowlist',
+    blocklist = 'ip.blocklist',
 }
 
 sip = { }
