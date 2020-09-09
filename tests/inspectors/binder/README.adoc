@@ -1,11 +1,18 @@
 === Binder
 
-This is to test use of binder.
+This is to test the use of the binder.
 
 Test verifies:
 
-1. With the use of binder, inspection subpolicy and ips subpolicy 
-are selected.
+1. An inspection policy and IPS policy can be loaded via the binder. This test demonstrates how to load those 
+policy configurations by using the binder.
 
-2. A builtin rule 140:26 and a local SIP rules used by IPS subpolicy 
-are generated.
+{ when = { nets = "10.0.0.0/8" }, use = { ips_policy = "ips.lua" } 
+
+and
+
+{ when = { nets = "10.0.0.0/8" }, use = { inspection_policy = "inspection.lua" } } 
+
+
+2. Events for a builtin rule 140:26 and a local SIP rule are generated.
+

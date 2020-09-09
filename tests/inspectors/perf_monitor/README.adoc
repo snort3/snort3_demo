@@ -4,4 +4,19 @@ This is to test that Perf Monitor correctly populates the DAQ stats.
 
 Test verifies:
 
-1. The Perf Monitor populates the DAQ statistics.
+1. The Perf Monitor populates the DAQ statistics correctly when using the keyword '--daq-batch-size'. 
+
+With the configuration options below:
+
+perf_monitor = 
+{
+    output = 'file',
+    format = 'text',
+    packets = 1,
+    seconds = 1,
+    modules = { { name = 'daq' } }
+}
+
+The output file and its type (text) are specified as well as the packet count (1), timer (1) and module (daq).
+
+See the snort manual for more details.
