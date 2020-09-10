@@ -1,0 +1,8 @@
+P0:wizard:all:1: c2s streaming search abandoned
+P0:wizard:all:1: s2c streaming search found service tcp
+P0:wizard:all:1: c2s datagram search found service udp
+P0:wizard:all:1: c2s streaming search found service ini
+P0:wizard:all:1: c2s datagram search found service ini
+P0:wizard:all:1: c2s datagram search found service foobar
+P0:wizard:all:1: c2s datagram search found service anyelf
+P0:wizard:all:1: c2s datagram search found service anyelf
