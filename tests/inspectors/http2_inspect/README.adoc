@@ -1,8 +1,12 @@
 === HTTP/2 Inspector
 
-This test is to verify the basic functionality of HTTP/2 inspector.
+The HTTP/2 inspector converts HTTP/2 frames into HTTP/1.1 message sections and feeds them to the HTTP
+inspector for further processing.
+For headers frames this includes HPACK decoding, converting pseudo-headers into HTTP/1.1 start line,
+and converting regular headers into HTTP/1.1 format.
+HTTP rule options can be used on HTTP/2 traffic. If needed to alert on HTTP/2 traffic only,
+service: http2; can be added to the rule (see sid:4).
 
-Test verifies: Local rules for http_uri and file_data content match with fast_pattern.
-Also verifies http_stat_code and http_raw_header.
-
+The rules demonstrate using HTTP rule options on HTTP/2 traffic.
+sids 1-3 are matching HTTP/2 headers frames. sid:4 is matching HTTP/2 data frame.
 
