@@ -6,5 +6,6 @@ Test result verifies:
 
 1. Various fields of a json format are populated.
 
-2. Rules parameters are matched and displayed correctly given the json format test option.
+2. The test alerts on local rule in json format based on the fields mentioned 
+in the alert_json field section.
 

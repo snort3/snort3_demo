@@ -4,5 +4,6 @@ Test log coverage for logging packet in pcap format.
 
 Test result verifies:
 
-1. log packet in pcap format
+1. The test logs local rules in pcap format which includes packet header 
+and data fields.
 

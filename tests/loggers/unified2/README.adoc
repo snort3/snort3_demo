@@ -1,9 +1,20 @@
 === UNIFIED2
 
-Test log coverage for scenario where output event and packet diplayed in unified2 format file.
+A Unified2 Packet is provided with each Unified2 Event record.
+This packet is the "alerting" packet that caused a given event.
+
+Unified2 Packet records contain contain a copy of the packet 
+that caused an alert (Packet Data) and is packet length octets long. 
+
+Unified2 files can be read with u2spewfoo or convert it to a 
+pcap with u2boat. Both u2spewfoo and u2boat are included in snort.
+
+Test log coverage for scenario where output event and packet diplayed 
+in unified2 format file.
 
 Test result verifies:
 
-1. logger option returns events in unified2 format file
+1. This test verifies that the alert on local rule is logged in 
+unified2 format.
 
 
