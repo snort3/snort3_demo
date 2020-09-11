@@ -1,9 +1,38 @@
 === Stream User Inspector
 
-This test is to verify the basic functionality of stream_user inspector.
-This test also demonstrates the use of Hext DAQ.
+The Snort stream_user module provides user session tracking and processing functions, which handles
+packets produced from the DAQ socket and hext modules.
 
-Test verifies:
+This test demonstrates use of the hext DAQ with the stream_user module.
 
-1. Triggers a local rule using http_uri rule option and displays the user
-counter using stream_user inspector.
+The hext module generates packets suitable for processing by Snort from hex/plain text. Raw packets
+include full headers and are processed normally. Otherwise the packets contain only payload and are
+accompanied with flow information (4-tuple) suitable for processing by stream_user.
+
+The input file for this test demonstrates the hext input format:
+
+$packet 10.1.2.3 48620 -> 10.9.8.7 80
+
+x47 45 54 20 2F 74 72 69 67 67 65 72 2F 31 20 48 54 54 50 2F  # GET /trigger/1 HTTP/
+x31 2E 31 0D 0A 48 6F 73 74 3A 20 6C 6F 63 61 6C 68 6F 73 74  # 1.1..Host: localhost
+x0D 0A 0D 0A                                                  # ....
+
+The first line has the form '$packet <addr> <port> -> <addr> <port>'. A line starting with '$' is a
+command, in this case to create a new packet from 10.1.2.3:48620 to 10.9.8.: 80. In a command where
+$packet is followed by a 4-tuple, the packet direction is determined using the heuristic that the
+client is the side with the greater port number. So in this example, the packet is being sent from
+the client to the server.
+
+$packet commands should be followed by packet data, which may contain any combination of hex and
+strings. Data for a packet ends with the next command or a blank line. Data after a blank line will
+start another packet with the same tuple as the prior one.
+
+This packet data consists hex, signaled by the lines starting with the character 'x'. The '#'
+character indicates a comment. The comments in this example packet tell us that the packet contains
+an HTTP/1.1 GET request.
+
+This packet triggers an alert on an IPS rule matching the string 'trigger' in the HTTP URI.
+
+To generate hext-formatted input for Snort, the hext logger can be used with pcaps to dump full
+packets in a way that can be read by the hext DAQ in raw mode. This can provide a quick (and dirty)
+way to edit pcaps. 
