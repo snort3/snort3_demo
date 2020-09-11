@@ -1,0 +1,41 @@
+=== RNA (Real-time Network Analysis) Inspector
+
+This test is to verify that the RNA inspector runs correctly.
+
+Test verifies:
+
+1. Test IP-based discovery works as expected
+2. Test network protocol, service protocol discovery work as expected
+
+
+The test begins by loading the following modules:
+stream            (required for operation of RNA)
+stream_udp        (required for RNA to correctly obtain start of flow events for UDP traffic)
+stream_icmp       (required for RNA to correctly obtain start of flow events for ICMP traffic)
+host_cache        (required for RNA, and to specify the output host_cache dump file)
+rna               (the RNA module)
+
+In the configuration of the RNA module, we specify the following configurations:
+-> Monitor the 8.8.0.0/16 subnet on any zone
+-> Ignore the host 8.8.8.8 on any zone
+-> Monitor the 10.10.10.0/16 subnet on any zone
+
+Note that excluding 8.8.8.8 will take precedence over the rule to monitor the entire 8.8.0.0
+subnet, so RNA excludes traffic for which 8.8.8.8 is the source IP
+
+The pcap contains DNS traffic between 10.10.10.19 and servers 8.8.8.8 and 8.8.4.4.
+RNA discovers 10.10.10.19 since it is the source address of the first three packets. For the
+next three DNS packets, RNA discovers 8.8.8.4 as it is included by the first rule in rna.conf,
+although it ignores 8.8.8.8 as it is excluded by the second rule.
+
+The next four packets are ICMP traffic. For the first ICMP packet, RNA sees a source IP that
+it has already seen within the default timeout value (3600 seconds), although this is a new
+transport protocol than the previous time we saw 10.10.10.19, so we add ICMP to the list of
+transport protocols. The next three ICMP packets have source IP addresses that RNA has not
+seen previously, so they are added to the host cache with only one transport protocol (ICMP).
+
+Because of the configuration of host_cache, it will dump its contents when snort is shutdown.
+We use this host cache dump to verify correct operation of RNA, as it contains all IP hosts
+discovered, in addition to their network and transport protocols, MAC addresses, and last seen
+times.
+
