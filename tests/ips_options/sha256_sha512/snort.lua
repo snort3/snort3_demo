@@ -44,3 +44,5 @@ ips = { rules = hash_rules }
 
 search_engine = { detect_raw_tcp = true }
 
+event_queue = { log = 4 }
+

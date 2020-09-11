@@ -2,7 +2,7 @@
 
 PCAP="get.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none"
+OPTION="-q -A csv"
 
 @test "SHA256 and SHA512 - verify hash operations" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out
