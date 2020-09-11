@@ -1,16 +1,19 @@
 === Rate Filter
 
-This test is to verify total sessions by destination using rate_filter.
+Rate filter provides rate based attack prevention by allowing users to
+configure a new action to take for a specified time when a given rate is
+exceeded.
 
-Test verifies:
-
-1. Check if total number of sessions is tracked by destination.
-
-2. Test case uses pcap file (includes single source and single destination) 
-with 100 connections, 10 calls per second, and 10 second duration. 
-Snort lua defines a rate_filter rule to track total sessions by destination 
-and drop packets if number of sessions exceeds 30, with 1 second revert 
-duration.
-
-3. Snort should allow first 30 connections and then drop all packets till 
-the last 30 connections remain. It should then allow packets
+The test is using rate filter to limit total sessions by destination.
+The rate_filter rule defined allows a maximum of 30 successful
+simultaneous connections to any one IP address, and alerts on any further
+connections attempts to that IP address for 1 second.
+seconds is the time period over which count is accrued. 0 seconds means count
+is a total count instead of a specific rate. new_action replaces rule action
+for timeout seconds, in this case 1.
+The pcap contains 100 connections each with a 10-second duration at a rate
+of 10 connections per second. All connections are between the same source
+and destination.
+The first 30 connections are allowed, then the rule is triggered. The rule
+will continue to trigger on every connection attempt, as the number of active
+connections remains more than 30.
