@@ -1,10 +1,13 @@
 === DNP3 Inspector
 
-This is to test DNP3 inspector - reassemble with new first segment.
+DNP3 is a communication protocol for SCADA Systems. DNP3 Inspector
+extracts data, function code, indicator flags and object headers
+for IPS rule options.
 
-Test verifies:
-
-1. DNP3 inspector test where a new first FIN segment comes during 
-reassembly which resets the process.
-
-2. An alert is generates for local rule for matched content and a builtin rule 145:4. 
+The pcap has multiple DNP3 frame which includes options mentioned above.
+Rules are alerting on following 4 data options:
+Data: |02 32 01 07 01 eb|
+Function: Unsolicited Response
+Indicator Flag: Device Restart
+Object: Group 50 and version 1
+ 
