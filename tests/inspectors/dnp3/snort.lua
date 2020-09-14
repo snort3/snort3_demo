@@ -17,9 +17,10 @@ dnp3 = { }
 
 local_rules =
 [[
-alert tcp ( msg:"should not alert"; dnp3_data; content:"missed"; sid:1; )
-alert tcp ( msg:"should alert"; dnp3_data; content:"matched"; sid:2; )
-alert ( msg:"DNP3_REASSEMBLY_BUFFER_CLEARED"; sid:4; gid:145; rev:1; metadata:rule-type preproc; )
+alert tcp any any -> any any ( msg:"Alert using dnp3_data"; dnp3_data; content:"|02 32 01 07 01 eb|"; sid:1; rev:1; )
+alert tcp any any -> any any ( msg:"Alert using dnp3_func"; dnp3_func:unsolicited_response; sid:2; rev:1;)
+alert tcp any any -> any any ( msg:"Alert using dnp3_ind"; dnp3_ind:"device_restart"; sid:3; rev:1; )
+alert tcp any any -> any any ( msg:"Alert using dnp3_obg"; dnp3_obj:group 50 , var 1; sid:4; rev:1;)
 ]]
 
 ips =
