@@ -26,7 +26,6 @@ rate_filter =
 local_rules =
 [[
 pass ( gid:135; sid:2; rev:1; )
-pass ( gid:135; sid:3; rev:1; )
 ]]
 
 ips = { rules = local_rules }
