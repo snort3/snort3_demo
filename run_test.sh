@@ -13,6 +13,7 @@ args="-H -U"
 # setup environnement
 export snorty_path=$1
 export snort="$snorty_path/bin/snort $daq_dir $args"
+export snort2lua="$snorty_path/bin/snort2lua"
 
 export LUA_PATH=$snorty_path/include/snort/lua/\?.lua\;\;
 export SNORT_LUA_PATH=$snorty_path/etc/snort/
