@@ -1,9 +1,14 @@
 === HTTP Inspector
 
-This is to test the HTTP raw body buffers detection and possibility of 
-basic matches.
+The test demonstrates usage of HTTP rule options.
 
-Test verifies:
+The rules are written for the first pair of GET request and response.
+The HTTP request contains GET /i/s2s/s2s_logo-blue.gif.
+sid:1 is looking for method GET and "gif" in the URI.
+sid:2 is using a mixture of different header field options.
 
-1. Local rules associated with raw body and raw header buffers of HTTP 
-message are matched.
+The next rules are matching the response.
+sid:3 and sid:4 are both looking for "Expires:". Since it appears only in the header, only sid 4 will trigger.
+sid:5 is using a mixture of different header field options.
+sid:6 and sid:7 are looking at the message body.
+sid:6 finds a match for "GIF89aQ", sid:7 finds a match for "k!@".
