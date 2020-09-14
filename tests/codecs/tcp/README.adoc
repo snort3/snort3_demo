@@ -1,8 +1,10 @@
 === TCP Builtin Rules
 
-This test verifies TCP builtin rule 116:433.
+TCP codec is repsonsible for tcp encoding and decoding.
+It performs protocol validation and checks for TCP based attacks.
+It is also responsible for building TCP packets when Snort is performing
+active response.
 
-Test verifies:
+The pcap contains a syn packet with sequence number 674711609. It triggers
+builtin rule 116:433 - DDoS Shaft SYN flood.
 
-1. A TCP decoder builtin rule 116:433 rule is triggered. 
-This rule is DDos shaft SYN flood.

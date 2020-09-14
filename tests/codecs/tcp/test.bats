@@ -2,11 +2,11 @@
 
 PCAP="cd_tcp.pcap"
 CFG="snort.lua"
-OPTION="-A csv -k none"
+OPTION="-q -A csv"
 
 @test "TCP - Builtin decoder rule 116:433" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out
-    run ./diff-outpp.sh expected snort.out
+    diff expected snort.out
 }
 
 teardown()
