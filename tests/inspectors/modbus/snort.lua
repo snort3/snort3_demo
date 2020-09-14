@@ -2,7 +2,6 @@
 stream = { }
 stream_tcp = { }
 modbus = { }
---wizard = default_wizard
 
 binder =
 {
@@ -11,7 +10,7 @@ binder =
 
 local_rules =
 [[
-alert tcp ( msg:"Should Alert"; modbus_data; content:"Modbus", distance 0; sid:1; )
+alert tcp ( msg:"Should Alert"; modbus_unit: 0; modbus_func: 17; modbus_data; content:"MygloriousModbus", distance 0; sid:1; )
 ]]
 
 ips = { rules = local_rules, }

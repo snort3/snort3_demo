@@ -1,12 +1,21 @@
 === MODBUS Inspector
 
-This is to test MODBUS Inspector that uses PAF to reassemble a Modbus
-PDU that was split over multiple TCP segments.
+MODBUS Inspector extracts unit, function code and data fields and makes them
+available as rule options.
 
-Test verifies:
+The pcap has the following modbus TCP frame:
+Transaction identifier: 1
+Protocol identifier: 0
+Length: 35
+Unit identifier: 0
+Function code: 1
+Data: MygloriousModbusRTUWithLongName
 
-1. A local rule is triggered that uses modbus_data rule option. An alert 
-is generated when there is a content match within reassembled Modbus PDU
-split over multiple TCP segments.
+The frame is split between 2 tcp packets. The split happens in Modbus Data
+field: "MyGlorious" is in packet 4, the rest is in packet 5.
+
+The rule is matching on unit identifier 0, function code 1 and content
+"MyGloriousModbus" in the data field.
+
 
 
