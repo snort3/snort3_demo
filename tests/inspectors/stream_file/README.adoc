@@ -1,7 +1,17 @@
 === Stream File Inspector
 
-This is to test is to demonstrate the use of File DAQ.
+The DAQ file module provides the ability to process files directly without having to extract them
+from pcaps. Snort's stream_file module processes this file data and provides access to Snort's
+normal file type identification and signature services as well as IPS detection and logging. This
+module is primarily for development and testing.
 
-Test verifies:
+This test demonstrates IPS detection with the DAQ file module and Snort stream_file. The config file
+defines an IPS rule that will alert on a content match of the string "PDF-1.3" in a file processed
+directly by Snort with the stream_file module.
 
-1. A local rule with file type PDF is fired using stream_file inspector.
+The test runs Snort with the command line option '-s 8192', which sets the snap length to 8192
+bytes. For the file module, this means that Snort will only read the first 8192 bytes of the file.
+Thus the expected alert contains the 'packet' length of 8192 despite the file having length 24311. 
+This length is sufficient for this test since the PDF version string we are matcing on comes at the
+start of the file. If you wish to process the entire file using the DAQ file module, the snap length
+must be set to at least the length of the file.
