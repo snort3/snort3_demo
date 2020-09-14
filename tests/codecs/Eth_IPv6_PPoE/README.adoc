@@ -1,7 +1,21 @@
-=== Ethernet, IPv6, and PPoE
+=== Ethernet, IPv6, and PPPoE
 
-This test coder decoder IPv6 and PPoE.
+The pcap for this test contains a TCP session over PPPoE (point-to-point protocol over
+ethernet). This test verifies that Snort can decode each of the packet layers.
 
-Test verifies:
+This test uses the codec logger, which logs the protocols in each packet by layer. For example, we
+see the following for the final packet in the pcap:
 
-1. Verify snort can read packets with PPPoE and IPv6.
+pkt:10	    gid:1    sid:1    rev:0
+eth(DLT):  00:90:1A:42:E6:CD -> 58:6D:8F:16:01:1D  type:0x8864
+pppoe_(0x8864):  
+ppp_en(0x880b):  
+ipv6(0x86dd):  2a01:1101:1:ffff::2 -> 2a01:1101:1:7d00:200:ff:fe00:0
+	Next:0x04 TTL:61 TOS:0x0 DgmLen:527
+ipv4(0x04):  213.180.141.140 -> 192.168.1.249
+	Next:0x06 TTL:64 TOS:0x0 ID:59510 IpLen:20 DgmLen:527 DF
+tcp(0x06):  ***AP***  SrcPort:80  DstPort:3809
+	Seq: 0xB708843D  Ack: 0xBF0D6E39  Win: 0x3CB8  TcpLen: 20
+
+We can can see rule 1:1, which should match on any IP packet, triggered. Then we see each layer that
+Snort decoded: ethernet, PPPoE, PPP, IPv6, IPv4, and finally TCP.

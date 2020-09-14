@@ -1,7 +1,4 @@
-pkt:1	
-eth(DLT):  00:0A:57:C5:77:67 -> 01:80:C2:00:00:0E  type:0x88CC
-
-pkt:2	
+pkt:2	    gid:1    sid:1    rev:0	
 eth(DLT):  00:90:1A:42:E6:CD -> 58:6D:8F:16:01:1D  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -9,7 +6,7 @@ ipv6(0x86dd):  fe80::90:1a06:43a1:681d -> ff02::1
 	Next:0x3A TTL:255 TOS:0x0 DgmLen:24
 icmp6(0x3a):  sType:134  Code:0  
 
-pkt:3	
+pkt:3	    gid:1    sid:1    rev:0	
 eth(DLT):  58:6D:8F:16:01:1D -> 00:90:1A:42:E6:CD  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -17,7 +14,7 @@ ipv6(0x86dd):  2a01:1101:1:7d00:200:ff:fe00:0 -> 2a01:1101:1:8000:203:baff:fe16:
 	Next:0x11 TTL:64 TOS:0x0 DgmLen:37
 udp(0x11):  SrcPort:6183 DstPort:53 Len:29
 
-pkt:4	
+pkt:4	    gid:1    sid:1    rev:0	
 eth(DLT):  00:90:1A:42:E6:CD -> 58:6D:8F:16:01:1D  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -25,7 +22,7 @@ ipv6(0x86dd):  2a01:1101:1:8000:203:baff:fe16:aba0 -> 2a01:1101:1:7d00:200:ff:fe
 	Next:0x11 TTL:59 TOS:0x0 DgmLen:218
 udp(0x11):  SrcPort:53 DstPort:6183 Len:210
 
-pkt:5	
+pkt:5	    gid:1    sid:1    rev:0	
 eth(DLT):  58:6D:8F:16:01:1D -> 00:90:1A:42:E6:CD  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -37,7 +34,7 @@ tcp(0x06):  ******S*  SrcPort:3809  DstPort:80
 	Seq: 0xBF0D6D17  Ack: 0x0  Win: 0xFAF0  TcpLen: 28
 	TCP Options (4) => MSS: 1260 NOP NOP SackOK 
 
-pkt:6	
+pkt:6	    gid:1    sid:1    rev:0	
 eth(DLT):  00:90:1A:42:E6:CD -> 58:6D:8F:16:01:1D  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -49,7 +46,7 @@ tcp(0x06):  ***A**S*  SrcPort:80  DstPort:3809
 	Seq: 0xB708843C  Ack: 0xBF0D6D18  Win: 0x3908  TcpLen: 28
 	TCP Options (4) => MSS: 1412 NOP NOP SackOK 
 
-pkt:7	
+pkt:7	    gid:1    sid:1    rev:0	
 eth(DLT):  58:6D:8F:16:01:1D -> 00:90:1A:42:E6:CD  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -60,7 +57,7 @@ ipv4(0x04):  192.168.1.249 -> 213.180.141.140
 tcp(0x06):  ***A****  SrcPort:3809  DstPort:80
 	Seq: 0xBF0D6D18  Ack: 0xB708843D  Win: 0xFAF0  TcpLen: 20
 
-pkt:8	
+pkt:8	    gid:1    sid:1    rev:0	
 eth(DLT):  58:6D:8F:16:01:1D -> 00:90:1A:42:E6:CD  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -71,7 +68,7 @@ ipv4(0x04):  192.168.1.249 -> 213.180.141.140
 tcp(0x06):  ***AP***  SrcPort:3809  DstPort:80
 	Seq: 0xBF0D6D18  Ack: 0xB708843D  Win: 0xFAF0  TcpLen: 20
 
-pkt:9	
+pkt:9	    gid:1    sid:1    rev:0	
 eth(DLT):  00:90:1A:42:E6:CD -> 58:6D:8F:16:01:1D  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  
@@ -82,7 +79,7 @@ ipv4(0x04):  213.180.141.140 -> 192.168.1.249
 tcp(0x06):  ***A****  SrcPort:80  DstPort:3809
 	Seq: 0xB708843D  Ack: 0xBF0D6E39  Win: 0x3CB8  TcpLen: 20
 
-pkt:10	
+pkt:10	    gid:1    sid:1    rev:0	
 eth(DLT):  00:90:1A:42:E6:CD -> 58:6D:8F:16:01:1D  type:0x8864
 pppoe_(0x8864):  
 ppp_en(0x880b):  

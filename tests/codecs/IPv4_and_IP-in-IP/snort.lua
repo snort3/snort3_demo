@@ -16,6 +16,3 @@ ips =
 {
     rules = default_rules,
 }
-
-
-
