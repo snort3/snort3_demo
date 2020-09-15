@@ -1,0 +1,64 @@
+=== Wizard
+
+When Wizard is bound to a session, it identifies the service using data
+from the initial payload. It allows to engage the appropriate service inspector
+as quickly as possible.
+
+Wizard has three configuration entries:
+
+ * spells are used for text protocol detection
+ * hexes are for binary protocol detection
+ * curses enable internal extended logic to detect of some binary protocols
+
+A few words about spell and hexes:
+
+* spells allow wildcards matching any number of consecutive characters,
+  whereas hexes allow a single wild char (`*` for spells, `?` for hexes)
+* spell patterns are case insensitive
+* spells automatically skip leading whitespace (at very start of flow)
+
+Wizard configuration in this test demonstrates how to detect service type
+using spells and hexes.
+Traces are enabled to show what's going on behind the scene.
+
+The pcap has 7 flows, matching any of 5 services defined in the configuration:
+
++------+----------------+----------------+---------+---------------------------+
+|      |                |                |         |                           |
+| Flow | Packet payload |    Matching    | Service |   Corresponding traces    |
+|      |                |    pattern     |         |                           |
+|      |                |                |         |                           |
++------+----------------+----------------+---------+---------------------------+
+| TCP  | "hello"        | to client      | tcp     | c2s streaming search      |
+|      | "s2c msg"      | 's2c'          |         | abandoned                 |
+|      |                |                |         | s2c streaming search      |
+|      |                |                |         | found service tcp         |
++------+----------------+----------------+---------+---------------------------+
+| UDP  | "hello"        | to server      | udp     | c2s datagram search found |
+|      | "hello"        | 'c2s'          |         | service udp               |
+|      | "c2s msg"      |                |         |                           |
++------+----------------+----------------+---------+---------------------------+
+| TCP  | "Hi!"          | to server      | ini     | c2s streaming search found|
+|      |                | 'hi*'          |         | service ini               |
+|      |                |                |         |                           |
++------+----------------+----------------+---------+---------------------------+
+| UDP  | "HI"           | to server      | ini     | c2s datagram search found |
+|      |                | 'hi*'          |         | service ini               |
+|      |                |                |         |                           |
++------+----------------+----------------+---------+---------------------------+
+| UDP  | "foobarbaz"    | to server      | foobar  | c2s datagram search found |
+|      |                | 'foobar'       |         | service foobar            |
+|      |                |                |         |                           |
++------+----------------+----------------+---------+---------------------------+
+| UDP  | "I am|7f|ELF!" | to server      | anyelf  | c2s datagram search found |
+|      |                | '????|7f|ELF?' |         | service anyelf            |
+|      |                |                |         |                           |
++------+----------------+----------------+---------+---------------------------+
+| UDP  | "Am I|7f|ELF?" | to server      | anyelf  | c2s datagram search found |
+|      |                | '????|7f|ELF?' |         | service anyelf            |
+|      |                |                |         |                           |
++------+----------------+----------------+---------+---------------------------+
+
+For curses example, please refer to 'tests/inspectors/dce_smb/README.adoc'
+and 'tests/inspectors/dce_tcp/README.adoc'.
+
