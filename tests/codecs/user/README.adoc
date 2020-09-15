@@ -1,9 +1,0 @@
-=== USER codec
-
-Test coverage for user codec ability to decode packets 
-
-Test verifies:
-
-1. User codec ability to decode the packets.
-2. eth, vlan, teredo, tcp, ipv4 packets decoding.
-3. Network max ip layer configuration triggered with builtin rules.

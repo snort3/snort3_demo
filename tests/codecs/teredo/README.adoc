@@ -1,0 +1,11 @@
+=== Teredo codec
+
+Teredo provides IPv6 connectivity by encapsulating IPv6 datagram packets within
+IPv4 UDP packets.
+
+The pcap has TCPv6 traffic tunneled using Teredo over UDPv4.
+The first test verifies traffic is decoded correctly. The rule is searching for 
+content "teredo tunnel" in tcp packet.
+In the second test the number of ip layers supported is limited to 1. Snort is 
+hitting the limitation and stops decoding the traffic, triggering built-in rule 
+116:293.
