@@ -4,4 +4,6 @@ This is to test the limit feature of event_filter.
 
 Test verifies:
 
-1. After every 10 seconds, an ICMP alert is generated.
+1. After every 10 seconds, an ICMP alert is generated. Without the filter in place an alert will be generated for each packet.
+The event filter allows you to group and filter events based on several fields (i.e src, dst etc). Use 'snort --help-module event_filter' to see 
+the available options.

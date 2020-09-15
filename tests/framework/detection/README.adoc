@@ -4,4 +4,27 @@ This test does detection trace for basic IPS options.
 
 Test verifies:
 
-1. Verify output for trace flag ips options. 
+1. Verify the output for the trace flag ips options. 
+
+2. In this demo the trace option allows you to see the buffer being used when the rule logic is applied.
+It displays a log message at each step in the detection process. In this scenarios it starts off with 
+
+P0:detection:rule_eval:1: packet 1 C2S 127.0.0.1:1234 127.0.0.1:5678 (fast-patterns)
+P0:detection:rule_eval:1: Fast pattern search
+P0:detection:fp_search:1: 1 fp packet[16]
+
+This provides information on the packet number as well as the buffer size (16) being evalutated. As the
+detection process continues more messages are displayed that show the current step and what is being done.
+
+P0:detection:rule_eval:1: Evaluating option byte_jump, cursor name pkt_data, cursor position 8
+
+In the above messsage the option being used, the buffer, and position of the detection cursor are displayed. This pattern
+will continue till a verdict is reached for detection (or not). In this case a match was found and an alert is displayed.
+
+P0:detection:rule_eval:1: Matched rule gid:sid:rev 1:1:0
+P0:detection:rule_eval:1: packet 1 C2S 127.0.0.1:1234 127.0.0.1:5678 (non-fast-patterns)
+04/22-16:21:40.905630 [**] [1:3:0] "no msg in rule" [**] [Priority: 0] {TCP} 127.0.0.1:1234 -> 127.0.0.1:5678
+127.0.0.1:1234 -> 127.0.0.1:5678 TCP TTL:64 TOS:0x0 ID:1 IpLen:20 DgmLen:56
+******S* Seq: 0x0  Ack: 0x0  Win: 0x2000  TcpLen: 20
+
+Use 'snort --help-module trace' to get a list of the available options.

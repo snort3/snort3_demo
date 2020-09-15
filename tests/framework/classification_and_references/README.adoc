@@ -1,10 +1,13 @@
 === Classification and References
 
-This is to basic configuration of classification that define rule 
-categories with priority. This test is also to define reference
-system used in rules.
+This is a basic configuration of classification that defines rule 
+categories with priority. This test is also used to define the reference
+system used with rules.
 
 Test verifies:
 
 1. Test verifies basic configuration of classification and reference
-framework options.
+framework options. Classifications allow the user to group the rules by
+name and/or priority. In the example provided the classification type of 'attempted-dos'
+is used. The reference keyword is used to indicate the relevant attack identification information.
+
