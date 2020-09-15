@@ -1,7 +1,7 @@
 === VLAN
 
-This is a QinQ (802.1AD standard) test.
+This test verifies that Snort handles 802.1AD VLAN traffic.
 
-Test verifies:
-
-1. Tests snort handling 802.1AD traffic. 
+The pcap consists of a QinQ frame, which contains two VLAN 802.1Q headers. The frame is an ICMP
+echo reply packet, which triggers an IPS rule that contains the icode and itype rule options. These
+match on an ICMP packet's code and type, respectively.
