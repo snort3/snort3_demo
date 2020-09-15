@@ -1,7 +1,8 @@
 === UDP Checksum
 
-This test is to verify UDP checksum.
+UDP codec is responsible for UDP encoding and decoding.
 
-Test verifies:
-
-1. Good and bad ip6, icmp6, udp6, and tcp6 checksums.
+The pcap contains 2 icmpv6 packets, 2 udp over ipv6 packets and 2 tcp over
+ipv6 packets. Each protocol has 1 packet with good checksum and 1 packet
+with bad checksum.
+The test verifies checksum checks for these protocols.
