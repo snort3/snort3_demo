@@ -2,7 +2,7 @@
 
 PCAP="pppoe.pcap"
 CFG="snort.lua"
-OPTION="-A csv -L log_codecs -k none -q"
+OPTION="-A log_codecs -q"
 
 @test "Ethernet, IPv6, and PPoE" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out

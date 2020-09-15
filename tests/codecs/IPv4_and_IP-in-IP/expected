@@ -1,1 +1,7 @@
-02/24-22:03:20.087000, 1, IP, raw, 91, UNK, 10.1.2.3:0, 10.9.8.7:0, 1:1:0, allow
+pkt:1	    gid:1    sid:1    rev:0	
+eth(DLT):  02:01:02:03:04:05 -> 02:09:08:07:06:05  type:0x0800
+ipv4(0x0800):  10.1.2.3 -> 10.9.8.7
+	Next:0x11 TTL:64 TOS:0x0 ID:1 IpLen:20 DgmLen:91 MF
+	Frag Offset: 0x0000   Frag Size: 0x0047
+
+
