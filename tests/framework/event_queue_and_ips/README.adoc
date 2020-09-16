@@ -4,4 +4,52 @@ This is to test basic event trace options.
 
 Test verifies:
 
-1. Test verifies basic event trace output.
+1. Test verifies basic event trace output. With trace enabled each packet that is part of the event is displayed in a verbose/debugging style format.
+
+With the following added to the config file:
+
+output = { event_trace = { max_data = 2048 } }
+
+we are able to see more information from each packet as it goes through the detection process. The max_data setting under event_trace
+option limits the packet data captured to the maximum amount set (2048 in this case).
+
+If we add the following output options when we run snort:
+
+"-A csv -k none -l ." 
+
+We get an output log file named 'event_trace.txt' that contains the event trace. As seen from the sample output below we get
+a verbose output about the event with a packet dump.
+
+Trace started at Tue Sep 15 18:11:24 2020
+Trace max_data is 2048 bytes
+
+Evt=1, Gid=1, Sid=1, Rev=0, Act=alert
+Pkt=4, Sec=1223906136. 52000, Len=466, Cap=466
+Pkt Bits: Flags=0x100098, Proto=0x803, Err=0x0
+Pkt Cnts: Dsz=412, Alt=0
+Packet[ 0] 47 45 54 20 2F 77 72 6C 2F 63 6F 6D 6D 61 6E 64  GET /wrl/command
+Packet[16] 32 33 20 48 54 54 50 2F 31 2E 31 0D 0A 43 6F 6E  23 HTTP/1.1..Con
+Packet[32] 6E 65 63 74 69 6F 6E 3A 20 6B 65 65 70 2D 61 6C  nection: keep-al
+Packet[48] 69 76 65 0D 0A 41 63 63 65 70 74 3A 20 74 65 78  ive..Accept: tex
+Packet[64] 74 2F 78 6D 6C 2C 20 61 70 70 6C 69 63 61 74 69  t/xml, applicati
+Packet[80] 6F 6E 2F 78 6D 6C 2C 20 61 70 70 6C 69 63 61 74  on/xml, applicat
+Packet[96] 69 6F 6E 2F 78 68 74 6D 6C 2B 78 6D 6C 2C 20 74  ion/xhtml+xml, t
+Packet[112] 65 78 74 2F 68 74 6D 6C 3B 71 3D 30 2E 39 2C 20  ext/html;q=0.9, 
+Packet[128] 74 65 78 74 2F 70 6C 61 69 6E 3B 71 3D 30 2E 38  text/plain;q=0.8
+Packet[144] 2C 20 69 6D 61 67 65 2F 70 6E 67 2C 20 2A 2F 2A  , image/png, */*
+Packet[160] 3B 71 3D 30 2E 35 0D 0A 41 63 63 65 70 74 2D 43  ;q=0.5..Accept-C
+Packet[176] 68 61 72 73 65 74 3A 20 49 53 4F 2D 38 38 35 39  harset: ISO-8859
+Packet[192] 2D 31 2C 20 75 74 66 2D 38 3B 71 3D 30 2E 37 2C  -1, utf-8;q=0.7,
+Packet[208] 20 2A 3B 71 3D 30 2E 37 0D 0A 41 63 63 65 70 74   *;q=0.7..Accept
+Packet[224] 2D 45 6E 63 6F 64 69 6E 67 3A 20 67 7A 69 70 2C  -Encoding: gzip,
+Packet[240] 20 64 65 66 6C 61 74 65 0D 0A 41 63 63 65 70 74   deflate..Accept
+Packet[256] 2D 4C 61 6E 67 75 61 67 65 3A 20 65 6E 2D 75 73  -Language: en-us
+Packet[272] 2C 20 65 6E 3B 71 3D 30 2E 35 0D 0A 48 6F 73 74  , en;q=0.5..Host
+Packet[288] 3A 20 77 72 6C 0D 0A 55 73 65 72 2D 41 67 65 6E  : wrl..User-Agen
+Packet[304] 74 3A 20 4D 6F 7A 69 6C 6C 61 2F 35 2E 30 20 28  t: Mozilla/5.0 (
+Packet[320] 58 31 31 3B 20 55 3B 20 4C 69 6E 75 78 20 69 36  X11; U; Linux i6
+Packet[336] 38 36 3B 20 65 6E 2D 55 53 3B 20 72 76 3A 31 2E  86; en-US; rv:1.
+Packet[352] 38 2E 31 2E 31 37 29 20 47 65 63 6B 6F 2F 32 30  8.1.17) Gecko/20
+Packet[368] 30 38 31 30 30 37 20 46 69 72 65 66 6F 78 2F 32  081007 Firefox/2
+Packet[384] 2E 30 2E 30 2E 31 37 0D 0A 4B 65 65 70 2D 41 6C  .0.0.17..Keep-Al
+Packet[400] 69 76 65 3A 20 33 30 30 0D 0A 0D 0A              ive: 300....
