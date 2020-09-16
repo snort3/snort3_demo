@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------
+-- Snort++ prototype configuration
+---------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+-- setup environment
+---------------------------------------------------------------------------
+-- given:
+-- export DIR=/install/path
+-- configure --prefix=$DIR
+-- make install
+--
+-- then:
+-- export SNORT_LUA_PATH=$DIR/conf/
+---------------------------------------------------------------------------
+
+dir = os.getenv('SNORT_LUA_PATH')
+
+if ( not dir ) then
+    dir = '.'
+end
+
+dofile(dir .. '/snort_defaults.lua')
+
+wizard = default_wizard
+
+local_rules =
+[[
+alert tcp any any -> any 22 ( msg:"SSH"; sid:1; )
+# Ruletype 'drop' discards the current packet only; using 'block' to discard all packets on flow
+block icmp any any -> any any ( msg:"ICMP"; sid:2; )
+]]
+
+ips =
+{
+    rules = local_rules,
+}
+
+binder =
+{
+    { use = { type = 'wizard', }, },
+}
+
