@@ -54,6 +54,7 @@ max_javascript_whitespaces: 200
        backslash_to_slash: enabled
             plus_to_space: enabled
             simplify_path: enabled
+              xff_headers: x-forwarded-for true-client-ip
 --------------------------------------------------
 normalizer:
                       ip4: disabled
