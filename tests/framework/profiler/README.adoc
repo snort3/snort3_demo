@@ -5,3 +5,23 @@ This test is to configure profiling of rules and/or modules.
 Test verifies:
 
 1. This tests profiler rule output can be limited to COUNT items.
+
+profiler =
+{
+    rules = { count = 2, sort = 'checks' },
+    modules = { show = false },
+    memory = { show = false }
+}
+
+In the example above the module's time stats and memory stats are set to false. 
+Set to true to see more rule profile information and stats.
+
+rule profile (worst 2, sorted by checks)
+#       gid   sid rev checks matches alerts time (us) avg/check avg/match avg/non-match timeouts su
+=       ===   === === ====== ======= ====== ========= ========= ========= ============= ======== ==
+1         1     2   0      2       2      2        17         8         8             0        0   
+2         1     4   0      2       0      0         4         2         0             2        0   
+
+With the current settings it shows the worst performing rules sorted by the 'checks' field.
+
+To view all available options use '/bin/snort --help-module profiler'.
