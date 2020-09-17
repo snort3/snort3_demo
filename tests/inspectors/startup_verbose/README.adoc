@@ -1,4 +1,20 @@
 === Verbose config output
 
-Verify verbose config output for inspectors.
+As a part of verbose mode (-v command-line option)
+inspectors print their configurations.
 
+The Inspectors' verbose output shows:
+ 1. List of inspectors engaged in the run (from the main policy).
+ 2. List of inspectors from sub-policies.
+ 3. The final configuration for every inspector (default and user-configured).
+ 4. The values read from external resources, like 'hosts.txt' in this test.
+
+The verbose output is gathered from all loaded configuration files,
+and this allows the user to troubleshoot any inspector configuration issues.
+Also, option names in the output stick to configuration option names
+as much as possible. Along with the LUA-like syntax it all ease the fixing
+of configurations.
+
+This test ensures that for the given configuration Snort produces expected
+Inspectors' verbose output, which is the summary of
+snort.lua snort_defaults.lua and default configuration values.
