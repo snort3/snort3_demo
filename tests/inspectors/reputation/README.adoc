@@ -4,4 +4,4 @@ This test is to verify the reputation runs correctly.
 
 Test verifies:
 
-1. Test to blacklist alerts for IPv4 addresses.
+1. Test to blocklist alerts for IPv4 addresses.
