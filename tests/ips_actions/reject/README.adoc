@@ -1,0 +1,40 @@
+=== IPS reject action test
+
+This is a test of the "reject" IPS action. It resets a connection on a http
+GET request.
+
+Test result verifies:
+
+1. compare the alert -- reset verdict
+In the expected file you can see the alert generated which has a verdict of 'reset'
+
+04/02-16:10:01.383009, 6, TCP, stream_tcp, 369, C2S, 10.3.2.1:48620, 10.9.8.7:80, 1:1:0, reset
+
+2. compare the inline-out.pcap -- reset of connections.
+
+To confirm the reset of the connections you can view the inline-out.pcap that is generated in tcpdump format. Inside the 
+pcap you will see the reset packets.
+
+12:10:01.383087 IP 10.3.2.1.48620 > 10.9.8.7.http: Flags [R.], seq 415, ack 321, win 0, length 0
+12:10:01.383087 IP 10.9.8.7.http > 10.3.2.1.48620: Flags [R.], seq 1, ack 415, win 0, length 0
+
+In this configuration example both connections are set to be reset and send icmp unreachables.
+
+reject = { reset = "both", control = "all" }
+
+The icmp unreachables can also be seen within the inline-out.pcap file:
+
+12:10:01.383087 IP 10.3.2.1 > 10.9.8.7: ICMP host 10.3.2.1 unreachable - admin prohibited filter, length 36
+12:10:01.383087 IP 10.3.2.1 > 10.9.8.7: ICMP net 10.3.2.1 unreachable, length 36
+12:10:01.383087 IP 10.3.2.1 > 10.9.8.7: ICMP host 10.3.2.1 unreachable, length 36
+12:10:01.383087 IP 10.3.2.1 > 10.9.8.7: ICMP 10.3.2.1 tcp port 48620 unreachable, length 36
+
+In order to get the inline-out.pcap file you will need to use the daq 'dump' option and enable inline operation (-Q)
+
+-Q --daq dump
+
+So you will start snort something like this to read a pcap and produce the inline-out.pcap:
+
+./bin/snort -c etc/snort/somefile.lua -Q --daq dump --daq-var load-mode=read-file -r etc/snort/somepcap.pcap -Acsv -k none -q
+ 
+
