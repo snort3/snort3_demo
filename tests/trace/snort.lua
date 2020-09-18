@@ -8,6 +8,9 @@ ips =
 }
 
 stream = { }
+
+stream_tcp = { }
+
 stream_udp = { }
 
 wizard =
@@ -20,17 +23,21 @@ wizard =
 
 binder =
 {
-    { use = { type = "wizard", }, },
+    { use = { type = "wizard" } }
 }
 
 trace =
 {
     output = "stdout",
+
+    log_ntuple = true,
+
     modules =
     {
         snort = { inspector_manager = 1 },
         wizard = { all = 1 }
     },
+
     constraints =
     {
         ip_proto = 17 -- UDP

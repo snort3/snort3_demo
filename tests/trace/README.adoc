@@ -1,9 +1,42 @@
 === Trace logger framework
 
-This test case uses the trace logger framework to print trace messages.
+The Trace module provides a way to configure execution traces.
+At crucial points of execution flow Snort has built-in trace messages.
+Thus, the control thread and packet processing threads can inform us of
+what's going on internally.
 
-Test result verifies:
+Availability of trace messages depends on build type and loaded modules.
+So, the correct way to get a configuration is asking Snort about that:
+'snort --help-module trace'.
 
-1. Trace messages are printed to stdout.
-2. Packet-related trace messages are filtered by the packet constraints.
+The Trace configuration consists of three main parts:
+ * output loggers
+ * message configurations
+ * packet message filtering
 
+Snort has two built-in trace loggers available:
+ * 'trace.output = "stdout"' prints messages to stdout stream.
+ * 'trace.output = "syslog"' sends messages to SYSLOG.
+For these loggers the 'trace.log_ntuple' option enables an extended format,
+which includes n-tuple packet info (source IP address and port,
+destination IP address and port, protocol ID, address space ID).
+
+Every module in Snort can define its own traces and message types. If a module
+supports trace, it will be presented in the `trace.modules` option
+as a sub-table. By setting the appropriate verbosity level of each message type,
+the user can configure Snort to print only desirable traces.
+
+Since, many of trace messages are related to packet processing, additional
+filtering can be done.
+The user configures trace printing for specific packets only
+by setting up constraints (protocol ID, IP addresses and ports).
+
+This test shows a simple configuration to get some traces in stdout.
+So, the Inspector Manager and Wizard will print their messages
+about processing UDP packets.
+
+The pcaps directory contains files representing three flows:
+ * tcp.pcap will be processed, but no traces produced for it
+   due to the constraints
+ * udp_1.pcap will be processed, traces with extra info will be generated
+ * udp_2.pcap will be processed, traces with extra info will be generated
