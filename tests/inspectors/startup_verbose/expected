@@ -16,7 +16,7 @@ binder:
                              use = { type = stream_udp } }
                            { when = { proto = udp, ports = 2123 2152 3386 },
                              use = { type = gtp_inspect } }
-                           { when = { proto = ip, nets = 10.1.47.0/24, 172.16.8.0/24 },
+                           { when = { nets = 10.1.47.0/24, 172.16.8.0/24, proto = ip },
                              use = { type = stream_ip, name = stream_ip_1 } }
                            { when = { },
                              use = { type = wizard } }
