@@ -1,7 +1,43 @@
 === Latency
 
-This test is to verify packet latency behavior using fastpath enabled.
+This test is to demonstrate packet latency behavior when fastpath is enabled.
 
 Test verifies:
 
-1. Test verifies the packet latency when the fastpath is enabled.
+1. This test verifies the packet processing path for traffic that reaches the max latency setting with fastpath enabled. 
+For this test the packet latency max timer is set to one second. 
+
+When using the following config:
+
+latency =
+{
+    packet =
+    {
+        max_time = 1,
+        fastpath = true
+    }
+}
+
+An event is generated each time the max_time threshold (the time the packet is held for processing) is exceeded. The packet is fastpathed and neither of the configured rules below fire.
+ 
+The events for GID 134 are generated instead. This results in the traffic bypassing any remaining rules.
+
+local_rules =
+[[
+alert icmp (
+    msg:"Ping"; sid:1;
+    content:"1234567"; content:"1234"; content:"56",distance 0,within 2; content:"7",distance 0,within 1;
+    pcre:"/1.+7/smi"; itype:8;
+    )
+
+alert icmp (
+    msg:"Pong"; sid:2;
+    content:"1234567"; content:"1234"; content:"56",distance 0,within 2; content:"7",distance 0,within 1;
+    pcre:"/1.+7/smi"; itype:0;
+    )
+]]
+
+If we remove the packet configuration under the latncy module then we will get events for both local rules since the packet isnt fastpathed and normal inspection happens.
+
+You can view the available options with './bin/snort --help-module latency'
+

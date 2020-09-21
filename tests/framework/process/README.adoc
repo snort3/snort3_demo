@@ -4,5 +4,6 @@ This test is to configure basic process set up.
 
 Test verifies:
 
-1. Test verifies AppId: load, init, terminate and unload the 
-third party dynamic library.
+1. Test verifies AppId: load, init, terminate and unload the third party dynamic library. The '--plugin-path' option
+(in the test.bats file) points to the location of the dynamic library to load.
+ 
