@@ -4,6 +4,9 @@ Test log coverage for scenario where output payload suitable for daq hext.
 
 Test result verifies:
 
-1. the hext logger will dump the full packet in a way that can be read by the hext DAQ.
+1. The hext logger will dump the full packet in a way that can be read 
+by the hext DAQ.
 
+2. The test alerts on local rule which can be verified to make sure the 
+alert is logged in hext format.
 

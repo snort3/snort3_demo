@@ -6,5 +6,7 @@ Test result verifies:
 
 1. Logging protocols for each packet
 
-2. Rule is triggered for packets contains an IP layer
+2. This test uses a detection rule to log IP packets. The IPv4 and IPv6 
+packets are logged when the pcap containing IP traffic is passed through 
+the detection engine.
 

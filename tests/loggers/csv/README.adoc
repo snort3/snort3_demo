@@ -6,5 +6,6 @@ Test result verifies:
 
 1. Various fields of a csv format are populated
 
-2. Both rules parameters are matched and displayed correctly given the csv format test option
+2. This test logs the local rule in csv format (Comma Separated Values) 
+by including all the fields mentioned under alert_csv.
 
