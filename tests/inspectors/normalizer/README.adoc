@@ -4,5 +4,5 @@ This is to test an alert on SYN on an established session.
 
 Test verifies:
 
-1. A builtin rule 129:1 is triggered on TCP SYN when a session is
-established.
+1. A builtin rule 129:1 is triggered when a TCP SYN packet is received after a tcp session has been
+established. 
