@@ -1,3 +1,27 @@
+2020/09/23 - 3.0.3 build 1
+
+-- codecs: Remove user, move relevant test to teredo
+-- codecs: Update IP tests
+-- codecs: Update tcp and udp demo tests
+-- codecs: Update vlan test
+-- framework: Edit README for classification_and references, detection, and event_filter
+-- framework: Edit README.adoc for event_queue_and_ips, latency and process
+-- framework: Update profiler README.adoc
+-- http2_inspect: Update readme, cleanup snort.lua
+-- http_inspect: Update demo test
+-- inspectors: Update dnp3 test
+-- inspectors: Update stream_file and stream_user tests
+-- inspectors: Update readme files for binder, normalizer and perf monitor
+-- ips_actions: Update the README.adoc files for reject and replace_rewrite
+-- loggers: Update README docs for Snort3 demo repo
+-- modbus: Update snort lua and readme
+-- rate_filter: Update demo test
+-- reputation: Update terms used in tests
+-- snort2lua: Add test to demonstrate configs conversion
+-- startup_verbose: Update README with details about verbose output
+-- trace: Update test description and configuration
+-- wizard: Add tests to demonstrate spells and hexes
+
 2020/09/13 - 3.0.2 build 6
 
 -- byte_jump: Change demo to detailed breakdown
