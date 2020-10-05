@@ -86,6 +86,20 @@ BLAH1 = 'ACCT'
 
 wizard = default_wizard
 
+local_states =
+[[
+# option change: 'enabled/disabled' --> 'enable'
+drop ( gid:1; sid:1000001; enable:yes; )
+# option change: 'enabled/disabled' --> 'enable'
+alert ( gid:1; sid:1000002; enable:no; )
+# option change: 'enabled/disabled' --> 'enable'
+# action change: 'sdrop' --> 'drop'
+drop ( gid:1; sid:1000003; enable:no; )
+# option change: 'enabled/disabled' --> 'enable'
+# action change: 'sdrop' --> 'drop'
+drop ( gid:1; sid:1000004; enable:yes; )
+]]
+
 local_variables =
 {
     HOME_NET = HOME_NET,
@@ -2241,6 +2255,7 @@ ips =
     uuid = '11111111-1111-1111-1111-123456789012',
     mode = 'tap',
     obfuscate_pii = true,
+    states = local_states,
     rules = local_rules,
     variables = local_variables,
     --option change: 'config autogenerate_preprocessor_decoder_rules:' -->
@@ -2404,40 +2419,6 @@ suppress =
     },
     --option change: 'gen_id' --> 'gid'
     --option change: 'sig_id' --> 'sid'
-}
-
-rule_state =
-{
-}
-
-rule_state["1:1000001"] =
-{
-    enable = 'yes',
-    action = 'drop',
-    --option change: 'enabled/disabled' --> 'enable'
-}
-
-rule_state["1:1000002"] =
-{
-    enable = 'no',
-    action = 'alert',
-    --option change: 'enabled/disabled' --> 'enable'
-}
-
-rule_state["1:1000003"] =
-{
-    enable = 'no',
-    action = 'drop',
-    --option change: 'enabled/disabled' --> 'enable'
-    --option change: 'sdrop' --> 'drop'
-}
-
-rule_state["1:1000004"] =
-{
-    enable = 'yes',
-    action = 'drop',
-    --option change: 'enabled/disabled' --> 'enable'
-    --option change: 'sdrop' --> 'drop'
 }
 
 binder =
