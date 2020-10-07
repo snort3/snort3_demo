@@ -1,3 +1,11 @@
+2020/10/07 - 3.0.3 build 2
+
+-- http_inspect: Tests for support of custom xff type headers
+-- inspectors: Updates for binder output changes
+-- rna: Update rna expected results file to match output changes due to adding rna host type
+   discovery support
+-- snort2lua: Replace deprecated rule_state[gid:sid] with ips.states stub
+
 2020/09/23 - 3.0.3 build 1
 
 -- codecs: Remove user, move relevant test to teredo
