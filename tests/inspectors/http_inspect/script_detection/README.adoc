@@ -1,0 +1,15 @@
+=== HTTP Inspector - Script Detection
+
+The test demonstrates usage of Script Detection.
+
+HTTP inspector inspects the traffic for the following
+sequence of characters: `</script>`. When observed, the 
+implementation will take that to be the end of a script 
+and will immediately flush that data segment through 
+inspection and detection. Partial inspection allows any IPS
+rules to match on any malicious behavior in that script.
+
+In this test, malware is in packet 10 and end of script tag
+in packet 18. When inspector sees end of script, partial
+inspection is triggered and detects malware, eventually
+blocking packet 18.
