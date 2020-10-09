@@ -1,4 +1,4 @@
-=== HTTP Inspector
+=== HTTP Inspector - Detection options
 
 The test demonstrates usage of HTTP rule options.
 
