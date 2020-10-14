@@ -13,6 +13,7 @@ stream_tcp = {}
 http_inspect = {}
 
 react = { page = "./mypage.html" }
+payload_injector = {}
 
 wizard = default_wizard
 
