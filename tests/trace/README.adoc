@@ -17,7 +17,7 @@ The Trace configuration consists of three main parts:
 Snort has two built-in trace loggers available:
  * 'trace.output = "stdout"' prints messages to stdout stream.
  * 'trace.output = "syslog"' sends messages to SYSLOG.
-For these loggers the 'trace.log_ntuple' option enables an extended format,
+For these loggers the 'trace.ntuple' option enables an extended format,
 which includes n-tuple packet info (source IP address and port,
 destination IP address and port, protocol ID, address space ID).
 
