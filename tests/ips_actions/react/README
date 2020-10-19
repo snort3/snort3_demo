@@ -4,6 +4,9 @@ This is a test of the "react" IPS action. It "react"s to an http GET request
 by responding with a configured http page.
 React is using payload_injector utility. When using react rules it should be
 configured as well.
+Normalizer is configured to ensure normalizer.tcp.ips = true (it is the default
+when normalizer is configured). It ensures the rule is triggered when receiving
+the GET packet itself instead of waiting for the server ack before processing it.
 
 Test result verifies:
 

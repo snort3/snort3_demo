@@ -27,3 +27,4 @@ ips =
     rules = local_rules,
 }
 
+normalizer = {}
