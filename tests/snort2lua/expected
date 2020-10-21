@@ -88,15 +88,15 @@ wizard = default_wizard
 
 local_states =
 [[
-# option change: 'enabled/disabled' --> 'enable'
+# rule_state option 'enable' deleted
 drop ( gid:1; sid:1000001; enable:yes; )
-# option change: 'enabled/disabled' --> 'enable'
+# rule_state option 'enable' deleted
 alert ( gid:1; sid:1000002; enable:no; )
-# option change: 'enabled/disabled' --> 'enable'
-# action change: 'sdrop' --> 'drop'
+# rule_state option 'enable' deleted
+# rule_state option 'action' deleted
 drop ( gid:1; sid:1000003; enable:no; )
-# option change: 'enabled/disabled' --> 'enable'
-# action change: 'sdrop' --> 'drop'
+# rule_state option 'enable' deleted
+# rule_state option 'action' deleted
 drop ( gid:1; sid:1000004; enable:yes; )
 ]]
 
