@@ -1,3 +1,9 @@
+2020/10/22 - 3.0.3 build 3
+
+-- actions: Use payload_injector for react
+-- http_inspect: Add test for script detection
+-- snort2lua: Update expected comments about rule_state options
+
 2020/10/07 - 3.0.3 build 2
 
 -- http_inspect: Tests for support of custom xff type headers
