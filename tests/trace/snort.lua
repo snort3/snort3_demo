@@ -30,7 +30,7 @@ trace =
 {
     output = "stdout",
 
-    log_ntuple = true,
+    ntuple = true,
 
     modules =
     {
