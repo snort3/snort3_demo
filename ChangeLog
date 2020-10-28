@@ -1,3 +1,9 @@
+2020/10/27 - 3.0.3 build 4
+
+-- actions: Use ips mode for react
+-- snort2lua: Update configs to a new syntax, ips variables in sub-tables
+-- trace: Rename n-tuple trace option
+
 2020/10/22 - 3.0.3 build 3
 
 -- actions: Use payload_injector for react
