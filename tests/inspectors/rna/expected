@@ -21,6 +21,6 @@ IP: 8.8.4.4
 macs size: 1
     mac: 00:50:56:8E:1D:DC, ttl: 114, primary: 0, time: 2019-09-04 22:51:52
 services size: 1
-    port: 53, proto: 17
+    port: 53, proto: 17, appid: 617
 network proto: 2048
 transport proto: 17

@@ -1,6 +1,7 @@
 stream = { }
 stream_udp = { }
 stream_icmp = { }
+appid = { }
 
 host_cache =
 {
