@@ -1,3 +1,8 @@
+2020/11/16 - 3.0.3 build 5
+
+-- ftp: Ftp detection across varying size segments
+-- rna: Change test to verify the service detected by appid
+
 2020/10/27 - 3.0.3 build 4
 
 -- actions: Use ips mode for react
