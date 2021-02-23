@@ -1,0 +1,19 @@
+=== IEC104 Inspector - APCI Type
+
+This test demonstrates usage of the `iec104_apci_type` rule option
+
+The pcap has the following IEC104 messages:
+
+* Valid Unnumbered Control Function APCI message with the STARTDT act flag set
+* Valid Numbered Supervisory Function APCI message with a RX value of 0x14
+* Valid Information Transfer Format with an SQ flag that is not set
+
+The rules are written using the `iec104_apci_type` rule option in each 
+of the three defined ways:
+
+* APCI type full name (iec104_apci_type:unnumbered_control_function)
+* upper case APCI type abbreviation (iec104_apci_type:S)
+* lower case APCI type abbreviation (iec104_apci_type:i)
+
+
+
