@@ -1,0 +1,17 @@
+=== IEC104 Inspector - ASDU Function
+
+This test demonstrates usage of the `iec104_asdu_func` rule option
+
+The pcap has the following IEC104 messages:
+
+* Valid M_SP_NA_1 message with a spontaneous cause of transmission
+* Valid M_PS_NA_1 message with a spontaneous cause of transmission
+
+The rules are written using the `iec104_asdu_func` rule option in each 
+of the two defined ways:
+
+* upper case ASDU function name (iec104_asdu_func:M_SP_NA_1)
+* lower case ASDU function name (iec104_asdu_func:m_ps_na_1)
+
+
+

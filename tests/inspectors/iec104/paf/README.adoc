@@ -1,0 +1,20 @@
+=== IEC104 Inspector - PAF
+
+This test demonstrates how IEC104 messages can be split apart or 
+combined through use of the PAF functionality
+
+The pcap has the following IEC104 messages:
+
+* Three IEC104 Messages pipelined into one frame
+   * Valid Unnumbered Control Function APCI message
+   * Invalid Numbered Supervisory Function APCI message
+   * Valid Information Transfer Format APCI message
+* One IEC104 Message split across two frames
+   * Invalid Information Transfer Format APCI message
+
+In the first example, three IEC104 messages are pipelined into one
+frame. The second message in the frame contains a reserved value
+which triggers builtin alert 6. In the second example, one IEC104
+message is split across two frames. This message contains an 
+invalid number of elements, which triggers builtin alert 9.
+

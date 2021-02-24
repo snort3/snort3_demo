@@ -1,0 +1,4 @@
+P0:iec104:identification:1: Unnumbered Control Function APCI
+02/09-00:26:06.637838, 5, TCP, stream_tcp, 7, C2S, 192.168.10.101:41802, 192.168.10.105:2404, 151:1:1, allow
+P0:iec104:identification:1: Information Transfer Format APCI
+02/15-15:32:05.106301, 14, TCP, stream_tcp, 28, C2S, 192.168.10.105:42016, 192.168.10.101:2404, 151:9:1, allow

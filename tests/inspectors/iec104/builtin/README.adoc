@@ -1,0 +1,14 @@
+=== IEC104 Inspector - Builtin Rules
+
+This test demonstrates usage of the builtin service inspector rules
+
+The pcap has the following IEC104 messages:
+
+* Unnumbered Control Function APCI message with an invalid length field
+* Information Transfer Format APCI message with an invalid number of items field
+
+These messages can be detected through use of the rules within the
+service inspector itself. Service inspector rules can be enabled
+by setting the `enable_builtin_rules` Snort configuration option 
+to `true`.
+
