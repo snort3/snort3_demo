@@ -15,9 +15,9 @@ trace =
 
 local_rules =
 [[
-alert tcp (msg:"PROTOCOL-SCADA IEC104 APCI Type U";iec104_apci_type:U;sid:1000000;)
-alert tcp (msg:"PROTOCOL-SCADA IEC104 APCI Type S";iec104_apci_type:S;sid:1000001;)
-alert tcp (msg:"PROTOCOL-SCADA IEC104 APCI Type I";iec104_apci_type:I;sid:1000002;)
+alert tcp (msg:"PROTOCOL-SCADA IEC104 APCI Type U";content:"|68|", depth 1;iec104_apci_type:U;sid:1000000;)
+alert tcp (msg:"PROTOCOL-SCADA IEC104 APCI Type S";content:"|68|", depth 1;iec104_apci_type:S;sid:1000001;)
+alert tcp (msg:"PROTOCOL-SCADA IEC104 APCI Type I";content:"|68|", depth 1;iec104_apci_type:I;sid:1000002;)
 ]]
 
 ips = { 
