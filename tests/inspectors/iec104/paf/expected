@@ -1,10 +1,6 @@
-P0:iec104:identification:1: Unnumbered Control Function APCI
 02/08-23:12:26.156644, 5, TCP, stream_tcp, 6, C2S, 192.168.10.101:41794, 192.168.10.105:2404, 1:1000000:0, allow
-P0:iec104:identification:1: Numbered Supervisory Function APCI
 02/08-23:12:26.156644, 5, TCP, stream_tcp, 6, C2S, 192.168.10.101:41794, 192.168.10.105:2404, 151:6:1, allow
 02/08-23:12:26.156644, 5, TCP, stream_tcp, 6, C2S, 192.168.10.101:41794, 192.168.10.105:2404, 1:1000001:0, allow
-P0:iec104:identification:1: Information Transfer Format APCI
 02/08-23:12:26.156644, 5, TCP, stream_tcp, 16, C2S, 192.168.10.101:41794, 192.168.10.105:2404, 1:1000002:0, allow
-P0:iec104:identification:1: Information Transfer Format APCI
 02/15-17:24:36.871261, 15, TCP, stream_tcp, 28, C2S, 192.168.10.105:42096, 192.168.10.101:2404, 151:9:1, allow
 02/15-17:24:36.871261, 15, TCP, stream_tcp, 28, C2S, 192.168.10.105:42096, 192.168.10.101:2404, 1:1000002:0, allow
