@@ -493,6 +493,7 @@ deleted_snort_config_options =
     --option deleted: 'config enable_decode_oversized_drops[:.*]'
     --option deleted: 'config enable_gtp[:.*]'
     --option deleted: 'config enable_ipopt_drops[:.*]'
+    --option deleted: 'config enable_mpls_multicast[:.*]'
     --option deleted: 'config enable_tcpopt_drops[:.*]'
     --option deleted: 'config enable_tcpopt_experimental_drops[:.*]'
     --option deleted: 'config enable_tcpopt_obsolete_drops[:.*]'
@@ -545,11 +546,13 @@ daq =
 packets =
 {
     bpf_file = './conf/filter',
+    mpls_agnostic = false,
     address_space_agnostic = true,
     limit = 400,
     vlan_agnostic = true,
     --option change: 'config addressspace_agnostic:' -->
     --    'address_space_agnostic'
+    --option change: 'config enable_mpls_overlapping_ip:' --> 'mpls_agnostic'
     --option change: 'config pkt_count:' --> 'limit'
 }
 
@@ -583,14 +586,11 @@ esp =
 
 mpls =
 {
-    enable_mpls_multicast = true,
-    max_mpls_stack_depth = 3,
-    enable_mpls_overlapping_ip = true,
-    mpls_payload_type = 'eth',
-    --option change: 'config max_mpls_labelchain_len:' -->
-    --    'max_mpls_stack_depth'
-    --option change: 'config mpls_payload_type: ethernet' -->
-    --    'mpls_payload_type = eth'
+    max_stack_depth = 3,
+    payload_type = 'eth',
+    --option change: 'config max_mpls_labelchain_len:' --> 'max_stack_depth'
+    --option change: 'config mpls_payload_type: ethernet' --> 'payload_type =
+    --    eth'
 }
 
 inspection =
