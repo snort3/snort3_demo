@@ -71,6 +71,7 @@ so_proxy:
 stream:
             ip_frags_only: disabled
                 max_flows: 476288
+               max_aux_ip: 16
           pruning_timeout: 30
                  ip_cache: { idle_timeout = 180, cap_weight = 0 }
                 tcp_cache: { idle_timeout = 3600, cap_weight = 11000 }
