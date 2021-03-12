@@ -1,3 +1,13 @@
+2021/03/11 - 3.1.2.0
+
+-- ftp: Update expected file due to change in snort ftp data eof handling
+-- http_inspect: Remove detained inspection
+-- iec104: Add demo tests for the new iec104 service inspector
+-- iec104: Add fast_pattern to example demo rules
+-- snort2lua: Update expected output for MPLS configuration changes
+-- stream_tcp: Update expected alert due to early detection upon FIN
+-- tests: Update for codec logging no longer truncating codec name
+
 2021/01/13 - 3.1.0.0
 
 No changes.
