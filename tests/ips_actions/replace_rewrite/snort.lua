@@ -7,8 +7,6 @@ end
 
 dofile(dir .. '/snort_defaults.lua')
 
-rewrite = { }
-
 normalizer =
 {
     tcp =
