@@ -1,3 +1,10 @@
+2021/03/27 - 3.1.3.0
+
+-- tests: Remove deprecated rewrite module
+-- tests: Update copyright
+-- tests: Update pcap logging test with the react rule triggered
+-- tests: Update test to reflect new warning when daq in unable to inject
+
 2021/03/11 - 3.1.2.0
 
 -- ftp: Update expected file due to change in snort ftp data eof handling
