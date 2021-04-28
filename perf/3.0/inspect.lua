@@ -38,7 +38,7 @@ stream_ip = { }
 
 stream_tcp =
 {
-    policy = 'windows',
+    policy = 'linux',
     session_timeout = 180,
     overlap_limit = 10,
     require_3whs = 0
