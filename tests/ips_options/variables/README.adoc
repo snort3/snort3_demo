@@ -1,0 +1,8 @@
+=== Custom variables
+
+This test is to verify Snort variables use in IPS.
+
+Test verifies:
+1. Variables are provided in individual ips policies
+2. Rules are shared between policies and enabled through ips.states
+3. Both network and port variables in different conditions are shown to trigger in different conditions
