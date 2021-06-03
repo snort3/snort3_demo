@@ -5,7 +5,7 @@ base=sid_3_13
 pcap="cheez.pcap"
 cfg="snort.lua"
 
-gcc_opts="-std=c++14 -Wall -g -ggdb -O0 -fsanitize=address"
+gcc_opts="-std=c++14 -Wall -g -ggdb -O0"
 stub_opts="--warn-all --plugin-path ."
 run_opts="-q -A csv"
 
