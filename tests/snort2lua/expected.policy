@@ -38,7 +38,6 @@ event_queue =
 
 stream =
 {
-    footprint = 192,
     --option deleted: 'track_icmp'
     --option deleted: 'track_tcp'
     --option deleted: 'track_udp'
@@ -120,8 +119,8 @@ stream_tcp =
     --option change: 'both ports' --> 'binder.when.ports; binder.when.role =
     --    any'
     --option change: 'timeout' --> 'session_timeout'
-    --option change: 'use_static_footprint_sizes' --> 'stream.footprint = 192'
     --option deleted: 'detect_anomalies'
+    --option deleted: 'use_static_footprint_sizes'
 }
 
 binder =
