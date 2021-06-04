@@ -2,7 +2,7 @@
 
 PCAP="teredo.pcap"
 CFG="snort.lua"
-OPTION="-q -A csv -k none"
+OPTION="-q -A csv -k none --enable-test-features"
 
 @test "teredo" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out
