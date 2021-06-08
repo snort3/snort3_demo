@@ -9,3 +9,4 @@
 710	LDAP	20012	0	0	ldap	ldap
 755	NetBIOS-ssn (SMB)	17	0	0	netbios-ssn	netbios-ssn
 836	SMTP	30	125	0	smtp	smtp
+4645	SMB version 1	0	0	1973	~	smb_version_1                                           

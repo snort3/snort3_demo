@@ -2,7 +2,6 @@ appid
                   packets: 33
         processed_packets: 33
            total_sessions: 3
-            appid_unknown: 1
        service_cache_adds: 2
 --------------------------------------------------
 detected apps and services
@@ -10,4 +9,5 @@ detected apps and services
                  kerberos: 2          2          0          0          0          0          0         
                      ldap: 0          0          2          0          0          0          0         
         netbios-ssn_(smb): 1          0          0          0          0          0          0         
+            smb_version_1: 0          0          0          1          0          0          0         
 --------------------------------------------------
