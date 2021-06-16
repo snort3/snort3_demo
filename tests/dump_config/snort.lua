@@ -95,11 +95,7 @@ binder =
       use = { type = 'stream_tcp' } },
 }
 
-trace = {
-    modules =
-    {
-        latency = { all = 1 },
-        snort = { all = 1, main = 2, inspector_manager = 3 },
-    }
+trace =
+{
+    modules = { all = 1 }
 }
-
