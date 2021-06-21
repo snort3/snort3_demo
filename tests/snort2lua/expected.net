@@ -26,7 +26,6 @@ wizard = default_wizard
 
 stream =
 {
-    footprint = 192,
     --option deleted: 'track_tcp'
     --option deleted: 'track_udp'
 }
@@ -38,7 +37,7 @@ ips =
 stream_tcp =
 {
     policy = 'first',
-    --option change: 'use_static_footprint_sizes' --> 'stream.footprint = 192'
+    --option deleted: 'use_static_footprint_sizes'
 }
 
 binder =

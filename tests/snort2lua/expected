@@ -1086,7 +1086,6 @@ stream =
 {
     max_flows = 456669,
     pruning_timeout = 120,
-    footprint = 192,
     tcp_cache =
     {
         idle_timeout = 180,
@@ -2361,7 +2360,6 @@ stream_tcp =
     --option change: 'server protocol' --> 'binder.when.proto; binder.when.role
     --    = server'
     --option change: 'timeout' --> 'session_timeout'
-    --option change: 'use_static_footprint_sizes' --> 'stream.footprint = 192'
     --option deleted: 'check_session_hijacking'
     --option deleted: 'detect_anomalies'
     --option deleted: 'dont_store_large_packets'
@@ -2370,6 +2368,7 @@ stream_tcp =
     --option deleted: 'ignore_ports 66 77'
     --option deleted: 'policy noack'
     --option deleted: 'policy unknown'
+    --option deleted: 'use_static_footprint_sizes'
 }
 
 normalizer =
