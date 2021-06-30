@@ -1,3 +1,10 @@
+2021/06/30 - 3.1.7.0
+
+appid: enhance service_netbios.cc to detect smb versions as webapps
+codecs: shorten IP in teredo expected due to removing REG_TEST flag
+ips_options: remove asan dependency from test
+snort2lua: remove footprint size config
+
 2021/06/16 - 3.1.6.0
 
 dump_config: use trace option which is available in any type of build
