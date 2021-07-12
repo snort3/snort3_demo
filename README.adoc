@@ -24,3 +24,5 @@ Do this first if you require --daq-dir to run Snort 3:
 
   export SNORT3_DAQ_DIR="<daq3_installed_path>"
 
+Dockerfiles outlining how to build Snort3 for a specific platform are included
+in the Dockerfiles folder.
