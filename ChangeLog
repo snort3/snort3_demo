@@ -1,3 +1,8 @@
+2021/07/15 - 3.1.8.0
+
+demo: add Dockerfile for ubuntu 20.10
+snort2lua: update expected
+
 2021/06/30 - 3.1.7.0
 
 appid: enhance service_netbios.cc to detect smb versions as webapps
