@@ -1,0 +1,32 @@
+Requires:
+
++ Snort 3 installation
++ LightSPD installation
+
+-------------------------------------------------
+Edit these files:
+
+setup.sh - configure for your environment.
+test.sh - the configs and pcaps you want to test.
+common.lua - set appropriate thread pinning
+
+-------------------------------------------------
+Then do this:
+
+$ ./run.sh <mode> <cpu#> <policy> <pcap>
+
+Output is to terminal.
+
+To get help:
+
+$ ./run.sh
+
+-------------------------------------------------
+Or run everything:
+
+$ ./test.sh <mpse>
+
+Output is in logs/<mpse>_<policy>_<pcap>.log
+
+-------------------------------------------------
+
