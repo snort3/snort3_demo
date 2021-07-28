@@ -1,3 +1,7 @@
+2021/07/28 - 3.1.9.0
+
+perf: add LightSPD testing for 3.0 with 2.9 equivalent for comparison
+
 2021/07/15 - 3.1.8.0
 
 demo: add Dockerfile for ubuntu 20.10
