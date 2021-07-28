@@ -1,0 +1,33 @@
+-------------------------------------------------
+Requires:
+
++ Snort 2 install
++ Snort 2 rules snapshot install
+
+-------------------------------------------------
+Edit these files:
+
+setup.sh - configure for your environment.
+test.sh - the configs and pcaps you want to test.
+
+-------------------------------------------------
+Run this first:
+
+$ ./get_rules.sh
+
+-------------------------------------------------
+Then do this (args are cpu, policy, and pcap):
+
+$ ./run.sh 1 connectivity udp1k0
+
+Output is to terminal.
+
+-------------------------------------------------
+Or run everything:
+
+$ ./test.sh
+
+Output is in logs/<policy>_<pcap>.log
+
+-------------------------------------------------
+
