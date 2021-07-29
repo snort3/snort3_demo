@@ -55,7 +55,7 @@ max_javascript_whitespaces: 200
             plus_to_space: enabled
             simplify_path: enabled
               xff_headers: x-forwarded-for true-client-ip
-request_body_app_detection: disabled
+request_body_app_detection: enabled
 --------------------------------------------------
 normalizer:
                       ip4: disabled
