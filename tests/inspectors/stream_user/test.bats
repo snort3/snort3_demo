@@ -4,7 +4,7 @@ CFG="snort.lua"
 OPTION="-A csv -q"
 
 @test "Basic stream_user functional test" {
-    $snort -c $CFG --daq-dir $SNORT_DAQS --daq hext -i get.hext $OPTION > snort.out
+    $snort -c $CFG --daq-dir $SNORT_DAQ_LIBS --daq hext -i get.hext $OPTION > snort.out
     diff expected snort.out
 }
 
