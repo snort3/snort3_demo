@@ -26,8 +26,8 @@ else
 fi
 
 export PKG_CONFIG_PATH=$libs/pkgconfig:$PKG_CONFIG_PATH
-export SNORT_DAQS=$libs/snort/daqs:$libs/snort_extra/daqs
-export SNORT_PLUGINS=$libs
+export SNORT_DAQ_LIBS=$libs/snort/daq:$libs/snort/daq/extra
+export SNORT_PLUGINS=$libs/snort/plugins
 
 tests=$2
 [ "$tests" ] || tests=`find . -name \*.bats`
