@@ -1,3 +1,9 @@
+2021/08/11 - 3.1.10.0
+
+build: install DAQ modules and Snort plugins in separate folders
+http_inspect: change the default value of http_inspect's request_body_app_detection config parameter to true
+inspectors: update startup_verbose expected
+
 2021/07/28 - 3.1.9.0
 
 perf: add LightSPD testing for 3.0 with 2.9 equivalent for comparison
