@@ -2389,7 +2389,6 @@ normalizer =
         ips = true,
         ecn = 'stream',
         ecn = 'packet',
-        trim = true,
         trim_rst = true,
         trim_syn = true,
         trim_mss = true,
@@ -2404,6 +2403,7 @@ normalizer =
         block = true,
         allow_names = 'sack md5 conn_count echo partial_order alt_checksum',
         allow_codes = '17 18 19 20',
+        --option deleted: 'trim'
     },
     --option change: 'preprocessor normalize_icmp4' --> 'icmp4 = <bool>'
     --option change: 'preprocessor normalize_icmp6' --> 'icmp6 = <bool>'
