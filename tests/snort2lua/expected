@@ -1828,7 +1828,7 @@ sip =
     --ports = '5060 5061 5600',
     max_uri_len = 512,
     max_call_id_len = 80,
-    max_requestName_len = 20,
+    max_request_name_len = 20,
     max_from_len = 256,
     max_to_len = 256,
     max_via_len = 1024,
@@ -1837,6 +1837,7 @@ sip =
     methods = [[ invite cancel ack bye register options refer subscribe
         update join info message notify benotify do qauth sprack publish
         service unsubscribe prack ]],
+    --option change: 'max_requestName_len' --> 'max_request_name_len'
     --option deleted: 'max_sessions'
 }
 
