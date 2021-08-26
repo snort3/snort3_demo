@@ -1,3 +1,9 @@
+2021/08/26 - 3.1.11.0
+
+http_inspect: Update expected for js_norm_max_tmpl_nest
+sip: rename max_requestName_len to max_request_name_len for consistency
+snort2lua: remove normalizer.tcp.trim config
+
 2021/08/11 - 3.1.10.0
 
 build: install DAQ modules and Snort plugins in separate folders
