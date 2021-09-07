@@ -98,7 +98,7 @@ stream_tcp:
                    no_ack: disabled
             overlap_limit: 0
                    policy: bsd
-              queue_limit: { max_bytes = 1048576, max_segments = 2621 }
+              queue_limit: { max_bytes = 4194304, max_segments = 3072 }
          reassemble_async: enabled
              require_3whs: -1 (disabled)
           session_timeout: 30
