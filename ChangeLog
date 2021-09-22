@@ -1,3 +1,8 @@
+2021/09/22 - 3.1.13.0
+
+inspectors: update filename in file event
+stream_tcp: update due to changing session_timeout default value
+
 2021/09/08 - 3.1.12.0
 
 stream_tcp: update due to queue limit changes
