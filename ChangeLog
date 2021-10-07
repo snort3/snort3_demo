@@ -1,3 +1,7 @@
+2021/10/07 - 3.1.14.0
+
+inspectors: change js_norm_identifier_depth value in startup_verbose test
+
 2021/09/22 - 3.1.13.0
 
 inspectors: update filename in file event
