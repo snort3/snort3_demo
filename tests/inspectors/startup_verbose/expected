@@ -38,6 +38,7 @@ http_inspect:
            decompress_pdf: disabled
            decompress_swf: disabled
            decompress_zip: disabled
+           decompress_vba: disabled
          script_detection: disabled
      normalize_javascript: disabled
 max_javascript_whitespaces: 200
