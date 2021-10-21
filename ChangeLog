@@ -1,3 +1,9 @@
+2021/10/21 - 3.1.15.0
+
+inspector/startup_verbose: support VBA macro data extraction feature
+startup_verbose: update expected with http_inspect.js_norm_max_scope_depth option
+startup_verbose: update test with new js_normalization_depth default value
+
 2021/10/07 - 3.1.14.0
 
 inspectors: change js_norm_identifier_depth value in startup_verbose test
