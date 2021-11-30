@@ -1,5 +1,31 @@
 Finished snort.lua:
 --------------------------------------------------
+Flow Tracking
+--------------------------------------------------
+stream:
+            ip_frags_only: disabled
+                max_flows: 476288
+               max_aux_ip: 16
+          pruning_timeout: 30
+                 ip_cache: { idle_timeout = 180, cap_weight = 0 }
+                tcp_cache: { idle_timeout = 3600, cap_weight = 11000 }
+                udp_cache: { idle_timeout = 180, cap_weight = 0 }
+               icmp_cache: { idle_timeout = 180, cap_weight = 0 }
+               user_cache: { idle_timeout = 180, cap_weight = 0 }
+               file_cache: { idle_timeout = 180, cap_weight = 32 }
+--------------------------------------------------
+Network Policy : policy id 0 : snort.lua
+--------------------------------------------------
+normalizer:
+                      ip4: disabled
+                      ip6: disabled
+                    icmp4: disabled
+                    icmp6: disabled
+                      tcp: enabled
+                      tcp: { ecn = disabled, block = disabled, rsv = disabled, pad = disabled, req_urg
+                           = disabled, req_pay = disabled, req_urp = disabled, urp = disabled, ips =
+                           enabled, trim = disabled }
+--------------------------------------------------
 Inspection Policy : policy id 0 : snort.lua
 --------------------------------------------------
 binder:
@@ -61,29 +87,7 @@ max_javascript_whitespaces: 200
               xff_headers: x-forwarded-for true-client-ip
 request_body_app_detection: enabled
 --------------------------------------------------
-normalizer:
-                      ip4: disabled
-                      ip6: disabled
-                    icmp4: disabled
-                    icmp6: disabled
-                      tcp: enabled
-                      tcp: { ecn = disabled, block = disabled, rsv = disabled, pad = disabled, req_urg
-                           = disabled, req_pay = disabled, req_urp = disabled, urp = disabled, ips =
-                           enabled, trim = disabled }
---------------------------------------------------
 so_proxy:
---------------------------------------------------
-stream:
-            ip_frags_only: disabled
-                max_flows: 476288
-               max_aux_ip: 16
-          pruning_timeout: 30
-                 ip_cache: { idle_timeout = 180, cap_weight = 0 }
-                tcp_cache: { idle_timeout = 3600, cap_weight = 11000 }
-                udp_cache: { idle_timeout = 180, cap_weight = 0 }
-               icmp_cache: { idle_timeout = 180, cap_weight = 0 }
-               user_cache: { idle_timeout = 180, cap_weight = 0 }
-               file_cache: { idle_timeout = 180, cap_weight = 32 }
 --------------------------------------------------
 stream_ip (stream_ip_1):
                 max_frags: 8192
