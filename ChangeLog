@@ -1,3 +1,8 @@
+2021/12/01 - 3.1.18.0
+
+framework: update verbose output for network policy changes
+startup_verbose: update expected with http_inspect.js_norm_max_bracket_depth value
+
 2021/11/17 - 3.1.17.0
 
 No changes.
