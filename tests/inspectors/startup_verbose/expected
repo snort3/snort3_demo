@@ -14,6 +14,10 @@ stream:
                user_cache: { idle_timeout = 180, cap_weight = 0 }
                file_cache: { idle_timeout = 180, cap_weight = 32 }
 --------------------------------------------------
+Global Inspectors
+--------------------------------------------------
+so_proxy:
+--------------------------------------------------
 Network Policy : policy id 0 : snort.lua
 --------------------------------------------------
 normalizer:
@@ -87,8 +91,6 @@ js_norm_max_bracket_depth: 256
             simplify_path: enabled
               xff_headers: x-forwarded-for true-client-ip
 request_body_app_detection: enabled
---------------------------------------------------
-so_proxy:
 --------------------------------------------------
 stream_ip (stream_ip_1):
                 max_frags: 8192
