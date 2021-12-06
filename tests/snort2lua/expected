@@ -63,7 +63,7 @@ FILE_DATA_PORTS = HTTP_PORTS .. ' 110 143'
 GTP_PORTS = '2123 2152 3386'
 
 -- treated as portvar
-TEST_PORTS = '! ' .. SSH_PORTS
+TEST_PORTS = '![ ' .. SSH_PORTS .. ' ]'
 
 -- treated as path var
 TEST_PATH = './'
@@ -73,7 +73,7 @@ SOURCE_PATH = './'
 
 -- treated as global var
 TEST_VAR = '1 2 3 4 5 6 7 8 9 10 11 12 13 14 ' .. FTP_PORTS .. [[ 15 16 17 18
-    19  ]] .. ORACLE_PORTS .. ' ' .. SSH_PORTS .. ' ' .. SIP_PORTS .. ' ' .. 
+    19 ]] .. ORACLE_PORTS .. ' ' .. SSH_PORTS .. ' ' .. SIP_PORTS .. ' ' .. 
     FILE_DATA_PORTS
 
 -- treated as path var
