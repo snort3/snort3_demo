@@ -37,13 +37,17 @@ wizard = default_wizard
 
 file_id = 
 {
-    enable_type = true,
-    enable_signature = true,
     file_rules = magics,
     trace_type = true,
     trace_signature = true,
     trace_stream = true,
-    file_policy = 
+}
+
+file_policy = 
+{
+    enable_type = true,
+    enable_signature = true,
+    rules = 
     {
        {  when = { sha256 = "9C72F9CC6DA7AB242C7B794C5E0C8B031728D461B923924AFE78D5A79C276CDE" }, use = { verdict = 'block'} },
     }

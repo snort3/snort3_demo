@@ -36,14 +36,17 @@ file_magic =
 
 local_file_policy =
 {
-    { when = { file_type_id = 273 },
-      use = { verdict = "reset", enable_file_type = true } }
+    rules =
+    {
+        { when = { file_type_id = 273 }, use = { verdict = "reset", enable_file_type = true } }
+    }
 }
+
+file_policy = local_file_policy
 
 file_id =
 {
     file_rules = file_magic,
-    file_policy = local_file_policy
 }
 
 stream_tcp =
