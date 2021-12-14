@@ -68,7 +68,7 @@ http_inspect:
          script_detection: disabled
      normalize_javascript: disabled
 max_javascript_whitespaces: 200
-   js_normalization_depth: -1
+      js_norm_bytes_depth: -1
  js_norm_identifier_depth: 65536
     js_norm_max_tmpl_nest: 32
 js_norm_max_bracket_depth: 256
