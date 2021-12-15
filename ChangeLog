@@ -1,3 +1,8 @@
+2021/12/15 - 3.1.19.0
+
+http_inspect: update expected with a renamed option
+snort2lua: change tests to match the changed conversion of variable sets
+
 2021/12/01 - 3.1.18.0
 
 framework: update verbose output for network policy changes
