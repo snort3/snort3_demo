@@ -90,8 +90,9 @@ ftp_data = { }
 file_id =
 {
     file_rules = file_magic,
-    enable_signature = false
 }
+
+file_policy = { }
 
 appid =
 {

@@ -655,10 +655,16 @@ react =
     --option change: 'config react:' --> 'page'
 }
 
-file_id =
+file_policy =
 {
     enable_type = true,
     enable_signature = true,
+    --option change: 'config file: signature' --> 'enable_signature'
+    --option change: 'config file: type_id' --> 'enable_type'
+}
+
+file_id =
+{
     type_depth = 104800,
     signature_depth = 0,
     show_data_depth = 1,
@@ -669,8 +675,6 @@ file_id =
     --option change: 'config file: file_lookup_timeout' --> 'lookup_timeout'
     --option change: 'config file: file_signature_depth' --> 'signature_depth'
     --option change: 'config file: file_type_depth' --> 'type_depth'
-    --option change: 'config file: signature' --> 'enable_signature'
-    --option change: 'config file: type_id' --> 'enable_type'
 }
 
 event_filter =

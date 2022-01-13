@@ -10,6 +10,7 @@ stream = { }
 stream_tcp = { }
 normalizer = { }
 file_id = { }
+file_policy = { }
 
 ftp_server = default_ftp_server
 ftp_client = { }
