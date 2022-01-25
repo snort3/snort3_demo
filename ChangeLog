@@ -1,3 +1,9 @@
+2022/01/25 - 3.1.21.0
+
+copyright: Update year to 2022
+file_api: updates for file policy changes
+startup_verbose: add global inspectors section
+
 2022/01/12 - 3.1.20.0
 
 appid: make peg counts consistent with what is reported to external components
