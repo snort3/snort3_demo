@@ -1,0 +1,33 @@
+=== HTTP Inspector - JavaScript Normalization
+
+The test demonstrates usage of JavaScript Normalization.
+
+JavaScript Normalizer will remove all extraneous whitespace
+and newlines, keeping a single space where syntactically necessary.
+Comments will be removed, but contents of string literals will
+be kept intact. Semicolons will be inserted, if not already present,
+according to ECMAScript automatic semicolon insertion rules.
+Identifier names, except those from the js_norm_ident_ignore list,
+will be substituted with unified names in the following format:
+var_0000 -> var_ffff. Identifiers from the list will be placed
+as is, without substitution. Starting with the listed identifier,
+any chain of dot accessors, brackets and function calls will be kept
+intact.
+
+The rules are written for the two HTTP responses.
+SID 1 will be triggered on packet 6, which contains an HTML page
+with inline JavaScript code wrapped in <script> tags.
+SID 2 will be triggered on packet 16, which contains JavaScript code.
+This packet has "Content-type: application/javascript" field, which
+indicates that it's an external JavaScript package.
+All contained JavaScript will be normalized and accessed using the
+js_data buffer selector.
+
+The test also shows trace messages related to JavaScript
+Normalization.
+"http_inspect:js_proc" shows information about the script
+normalization process.
+"http_inspect:js_dump:3: original" shows an original script
+being processed.
+"http_inspect:js_dump:1: js_data" shows a result of JavaScript
+Normalization.
