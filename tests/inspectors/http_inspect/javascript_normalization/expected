@@ -1,0 +1,58 @@
+P0:http_inspect:js_proc:1: opening tag at 73 offset
+P0:http_inspect:js_dump:3: original[512]: 
+            var   print = console.log
+            /* multi line
+             comment*/
+            name= 'Hacker  ';
+        </script>
+        <h1>Context is shared between all scripts on the page</h1>
+        <script>
+            function  sayHello( )
+            {
+                print(FormatHello(name))
+            }
+        </script>
+        <script src=/wrl/utils.js></script>
+        <form>
+            <input type="button" value="Click me!" onclick="sayHello()" />
+        </form>
+    </body>
+</html>
+
+P0:http_inspect:js_proc:1: opening tag at 292 offset
+P0:http_inspect:js_dump:3: original[293]: 
+            function  sayHello( )
+            {
+                print(FormatHello(name))
+            }
+        </script>
+        <script src=/wrl/utils.js></script>
+        <form>
+            <input type="button" value="Click me!" onclick="sayHello()" />
+        </form>
+    </body>
+</html>
+
+P0:http_inspect:js_proc:1: opening tag at 448 offset
+P0:http_inspect:js_dump:3: original[137]: </script>
+        <form>
+            <input type="button" value="Click me!" onclick="sayHello()" />
+        </form>
+    </body>
+</html>
+
+P0:http_inspect:js_dump:1: js_data[97]: var var_0000=console.log;var_0001='Hacker  ';function var_0002(){console.log(var_0003(var_0001))}
+01/28-16:35:34.250963 [**] [1:1:0] "Inline script" [**] [Priority: 0] {TCP} 1.1.1.1:8080 -> 1.1.1.2:47683
+P0:http_inspect:js_proc:1: external script at 0 offset
+P0:http_inspect:js_dump:3: original[153]: function FormatHello(name)
+{
+    return `Hello ${name}
+it's ${
+        // format date using template literal
+        Date().  toLocaleString()
+    }`
+}
+
+P0:http_inspect:js_dump:1: js_data[87]: function var_0000(var_0001){return `Hello ${var_0001}
+it's ${Date().toLocaleString()}`}
+01/28-16:35:34.251321 [**] [1:2:0] "External script" [**] [Priority: 0] {TCP} 1.1.1.1:8080 -> 1.1.1.2:47684
