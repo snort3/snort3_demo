@@ -515,6 +515,7 @@ deleted_snort_config_options =
     --option deleted: 'config no_promisc[:.*]'
     --option deleted: 'config nolog[:.*]'
     --option deleted: 'config sidechannel[:.*]'
+    --option deleted: 'config stateful[:.*]'
 }
 
 daq =
@@ -564,7 +565,6 @@ ip_stream =
 alerts =
 {
     alert_with_interface_name = true,
-    stateful = true,
     reference_net = '192.168.192.8/24',
     event_filter_memcap = 1000000,
     event_filter_memcap = 1000001,
@@ -762,7 +762,6 @@ rate_filter =
 search_engine =
 {
     search_method = 'ac_full',
-    search_optimize = true,
     max_pattern_len = 20,
     detect_raw_tcp = false,
     max_queue_events = 21,
@@ -776,25 +775,19 @@ search_engine =
     debug_print_rule_groups_uncompiled = true,
     bleedover_warnings_enabled = true,
     show_fast_patterns = true,
-    search_method = 'lowmem',
-    debug = true,
-    search_method = 'ac_banded',
-    search_method = 'ac_std',
-    search_method = 'ac_sparse',
-    search_method = 'ac_sparse_bands',
     --This table was previously 'config detection: ...
     --option change: 'ac' --> 'ac_full'
-    --option change: 'ac-banded' --> 'ac_banded'
+    --option change: 'ac-banded' --> 'ac_full'
     --option change: 'ac-bnfa' --> 'ac_bnfa'
     --option change: 'ac-bnfa-nq' --> 'ac_bnfa'
     --option change: 'ac-bnfa-q' --> 'ac_bnfa'
     --option change: 'ac-nq' --> 'ac_full'
     --option change: 'ac-q' --> 'ac_full'
-    --option change: 'ac-sparsebands' --> 'ac_sparse_bands'
+    --option change: 'ac-sparsebands' --> 'ac_full'
     --option change: 'ac-split' --> 'ac_full'
     --option change: 'ac-split' --> 'split_any_any'
-    --option change: 'ac-std' --> 'ac_std'
-    --option change: 'acs' --> 'ac_sparse'
+    --option change: 'ac-std' --> 'ac_full'
+    --option change: 'acs' --> 'ac_full'
     --option change: 'bleedover-port-limit' --> 'bleedover_port_limit'
     --option change: 'bleedover-warnings-enabled' -->
     --    'bleedover_warnings_enabled'
@@ -808,14 +801,12 @@ search_engine =
     --option change: 'debug-print-rule-groups-uncompiled' -->
     --    'debug_print_rule_groups_uncompiled'
     --option change: 'enable-single-rule-group' --> 'enable_single_rule_group'
-    --option change: 'lowmem-nq' --> 'lowmem'
-    --option change: 'lowmem-q' --> 'lowmem'
     --option change: 'max-pattern-len' --> 'max_pattern_len'
     --option change: 'no_stream_inserts' --> 'detect_raw_tcp'
     --option change: 'search-method' --> 'search_method'
-    --option change: 'search-optimize' --> 'search_optimize'
     --option change: 'split-any-any' --> 'split_any_any'
     --option deleted: 'mwm'
+    --option deleted: 'search-optimize is always true'
 }
 
 event_queue =
