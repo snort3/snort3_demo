@@ -4,5 +4,12 @@ This test is to verify the functionality of service ips option.
 
 Test verifies:
 
-1. This test verifies the snort configuration using service ips
-option.
+1. This test verifies the snort configuration using service ips option. Note that service is a
+keyword, not part of metadata like with Snort 2.
+
+2. Using service in the rule body will match on service or ports. sid:1 has dst port 12345 which is
+not matched.
+
+3. Using service in the header (protocol field) will match pn service and ports. sid:2 has src port
+445 which is matched. If the service was in the body, it would fire on each direction.
+
