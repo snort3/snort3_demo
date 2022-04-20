@@ -6,7 +6,7 @@ OPTION="-A csv -k none"
 
 @test "AppID with Kerberos Detector Plugin" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out
-    appid_diff.sh
+    ./appid_diff_bytes.sh
 }
 
 teardown()
