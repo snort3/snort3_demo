@@ -9,6 +9,5 @@ detected apps and services
               Application: Services   Clients    Users      Payloads   Misc       Referred  
                  kerberos: 2          2          0          0          0          0         
                      ldap: 0          0          2          0          0          0         
-        netbios-ssn_(smb): 1          0          0          0          0          0         
-            smb_version_1: 0          0          0          1          0          0         
+                  unknown: 1          0          0          0          0          0         
 --------------------------------------------------
