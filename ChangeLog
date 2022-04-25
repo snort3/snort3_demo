@@ -1,3 +1,12 @@
+2022/04/25 - 3.1.28.0
+
+appid: update expected bytes_in_use count.
+appid: use custom appid_diff_bytes.sh for comparison, to skip over bytes_in_use
+ips_actions: update test to log rewrite action
+ips: change Snort 2 style metadata:service foo to Snort 3 service:foo
+ips_options: fix typo in README.
+service: fix rules to use service correctly
+
 2022/04/07 - 3.1.27.0
 
 search_engines: miscellaneous config updates for retired legacy search engines
