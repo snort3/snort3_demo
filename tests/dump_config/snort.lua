@@ -1,3 +1,9 @@
+conf_dir = os.getenv('SNORT_LUA_PATH')
+
+if ( not conf_dir ) then
+    conf_dir = '.'
+end
+
 normalizer = { tcp = { ips = true } }
 
 default_wizard =
@@ -46,7 +52,7 @@ file_policy = local_file_policy
 
 file_id =
 {
-    file_rules = file_magic,
+    rules_file = conf_dir .. '/file_magic.rules',
 }
 
 stream_tcp =

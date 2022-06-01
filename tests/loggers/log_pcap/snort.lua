@@ -9,7 +9,6 @@ if ( not conf_dir ) then
 end
 
 dofile(conf_dir .. '/snort_defaults.lua')
-dofile(conf_dir .. '/file_magic.lua')
 
 stream = { }
 stream_icmp = { }
