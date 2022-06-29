@@ -6,7 +6,6 @@ if ( not dir ) then
 end
 
 dofile(dir .. '/snort_defaults.lua')
-dofile('./magic.lua')
 
 stream = {}
 
@@ -37,7 +36,7 @@ wizard = default_wizard
 
 file_id = 
 {
-    file_rules = magics,
+    rules_file = dir .. '/file_magic.rules',
     trace_type = true,
     trace_signature = true,
     trace_stream = true,

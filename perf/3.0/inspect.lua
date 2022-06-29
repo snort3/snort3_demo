@@ -22,7 +22,6 @@ HOME_NET = 'any'
 EXTERNAL_NET = 'any'
 
 include(conf_dir .. '/snort_defaults.lua')
-include(conf_dir .. '/file_magic.lua')
 
 ---------------------------------------------------------------------------
 -- configure stream
@@ -89,7 +88,7 @@ ftp_data = { }
 
 file_id =
 {
-    file_rules = file_magic,
+    rules_file = conf_dir .. '/file_magic.rules',
 }
 
 file_policy = { }

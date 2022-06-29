@@ -6,7 +6,6 @@ if ( not dir ) then
 end
 
 dofile(dir .. '/snort_defaults.lua')
-dofile('./magic.lua')
 
 stream = { }
 
@@ -34,7 +33,7 @@ suppress =
 
 file_id = 
 {
-    file_rules = magics,
+    rules_file = dir .. '/file_magic.rules',
     trace_type = true,
     trace_signature = true,
     trace_stream = true,
@@ -47,7 +46,7 @@ file_policy =
     enable_capture = true,
     rules =
     {
-      {  when = { file_type_id = 22 }, use = { verdict = 'log', enable_file_signature = true } },
+      {  when = { file_type_id = 288 }, use = { verdict = 'log', enable_file_signature = true } },
       {  when = { sha256 = "6F26E721FDB1AAFD29B41BCF90196DEE3A5412550615A856DAE8E3634BCE9F7A" }, use = { verdict = 'block'} },
    }
 }
