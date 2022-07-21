@@ -7,12 +7,12 @@ stream:
                 max_flows: 476288
                max_aux_ip: 16
           pruning_timeout: 30
-                 ip_cache: { idle_timeout = 180, cap_weight = 0 }
-                tcp_cache: { idle_timeout = 3600, cap_weight = 11000 }
-                udp_cache: { idle_timeout = 180, cap_weight = 0 }
-               icmp_cache: { idle_timeout = 180, cap_weight = 0 }
-               user_cache: { idle_timeout = 180, cap_weight = 0 }
-               file_cache: { idle_timeout = 180, cap_weight = 32 }
+                 ip_cache: { idle_timeout = 180 }
+                tcp_cache: { idle_timeout = 3600 }
+                udp_cache: { idle_timeout = 180 }
+               icmp_cache: { idle_timeout = 180 }
+               user_cache: { idle_timeout = 180 }
+               file_cache: { idle_timeout = 180 }
 --------------------------------------------------
 Global Inspectors
 --------------------------------------------------
