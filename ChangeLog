@@ -1,26 +1,14 @@
-2022/07/14 - 3.1.36.0
+2022/07/28 - 3.1.38.0
 
-No changes.
+config: Removed all instances of 'cap_weight' config parameter
 
 2022/06/30 - 3.1.33.0
 
 file_api: change configs for rule magic handling over ips
 
-2022/06/16 - 3.1.32.0
-
-No changes.
-
-2022/06/02 - 3.1.31.0
-
-No changes.
-
 2022/05/19 - 3.1.30.0
 
 appid: remove SMB detection from service_netbios.cc
-
-2022/05/04 - 3.1.29.0
-
-No changes.
 
 2022/04/25 - 3.1.28.0
 
@@ -35,25 +23,13 @@ service: fix rules to use service correctly
 
 search_engines: miscellaneous config updates for retired legacy search engines
 
-2022/03/23 - 3.1.26.0
-
-No changes.
-
 2022/03/09 - 3.1.25.0
 
 stream_tcp: update ftp/eicar test due to changes in when we do flush_queued_segments in stream_tcp
 
-2022/02/23 - 3.1.24.0
-
-No changes.
-
 2022/02/09 - 3.1.23.0
 
 http_inspect: add demo test for JavaScript Normalization
-
-2022/01/31 - 3.1.22.0
-
-No changes.
 
 2022/01/25 - 3.1.21.0
 
@@ -74,14 +50,6 @@ snort2lua: change tests to match the changed conversion of variable sets
 
 framework: update verbose output for network policy changes
 startup_verbose: update expected with http_inspect.js_norm_max_bracket_depth value
-
-2021/11/17 - 3.1.17.0
-
-No changes.
-
-2021/11/03 - 3.1.16.0
-
-No changes.
 
 2021/10/21 - 3.1.15.0
 
@@ -135,14 +103,6 @@ snort2lua: remove footprint size config
 dump_config: use trace option which is available in any type of build
 startup_verbose: update for new http config option
 
-2021/05/20 - 3.1.5.0
-
-No changes.
-
-2021/04/21 - 3.1.4.0
-
-No changes.
-
 2021/03/27 - 3.1.3.0
 
 -- tests: Remove deprecated rewrite module
@@ -159,14 +119,6 @@ No changes.
 -- snort2lua: Update expected output for MPLS configuration changes
 -- stream_tcp: Update expected alert due to early detection upon FIN
 -- tests: Update for codec logging no longer truncating codec name
-
-2021/01/13 - 3.1.0.0
-
-No changes.
-
-2020/12/20 - 3.0.3 build 6
-
-No changes.
 
 2020/11/16 - 3.0.3 build 5
 
@@ -243,19 +195,11 @@ No changes.
 -- ips: Update syntax for setting snort variables
 -- trace: Add trace logger framework test
 
-2020/07/15 - 3.0.2 build 2
-
-No changes.
-
 2020/07/06 - 3.0.2 build 1
 
 -- ips: Updates for detection and regex
 -- perf: Add maxcps script (tcp_1.sh) and other tweaks
 -- snort_defaults.lua: Remove unused AIM_SERVERS var
-
-2020/06/18 - 3.0.1 build 5
-
-No changes.
 
 2020/05/20 - 3.0.1 build 4
 
@@ -331,10 +275,6 @@ No changes.
 -- detection: Consolidate user rules
 -- reputation: Blacklist test fixed to include new destination-triggered SID
 
-2019/09/12 - build 261
-
-No changes.
-
 2019/08/28 - build 260
 
 -- host_tracker: Adding a perf scenario for host tracker
@@ -364,14 +304,6 @@ No changes.
 
 -- demos: Updates for strict snaplen handling in DAQng
 -- perf_monitor: Use batch-size=1 for now to match pre-DAQng behavior
-
-2019/05/03 - build 255
-
-No changes.
-
-2019/04/26 - build 254
-
-No changes.
 
 2019/04/17 - build 253
 
