@@ -2,8 +2,8 @@ ips =
 {
     rules =
     [[
-        alert tcp any any -> any any ( msg: "ALERT_TCP"; gid: 1000001; sid: 1000001 )
-        alert udp any any -> any any ( msg: "ALERT_UDP"; gid: 1000002; sid: 1000002 )
+        alert tcp any any -> any any ( msg: "ALERT_TCP"; gid: 1001; sid: 1000001 )
+        alert udp any any -> any any ( msg: "ALERT_UDP"; gid: 1002; sid: 1000002 )
     ]]
 }
 
