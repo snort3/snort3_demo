@@ -1,3 +1,8 @@
+2022-08-25: 3.1.40.0
+
+    ChangeLog: change to md format
+    gid: upper bound changed to match event_filter and rate_filter implementation limits
+
 2022-07-28: 3.1.38.0
 
 * config: Removed all instances of 'cap_weight' config parameter
