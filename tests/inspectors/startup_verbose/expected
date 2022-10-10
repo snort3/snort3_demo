@@ -69,6 +69,7 @@ http_inspect:
            decompress_swf: disabled
            decompress_zip: disabled
            decompress_vba: disabled
+          max_mime_attach: 5
          script_detection: disabled
      normalize_javascript: disabled
 max_javascript_whitespaces: 200
