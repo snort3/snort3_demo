@@ -1,7 +1,11 @@
+2022-10-20: 3.1.44.0
+
+* http_inspect: add config option
+
 2022-08-25: 3.1.40.0
 
-    ChangeLog: change to md format
-    gid: upper bound changed to match event_filter and rate_filter implementation limits
+* ChangeLog: change to md format
+* gid: upper bound changed to match event_filter and rate_filter implementation limits
 
 2022-07-28: 3.1.38.0
 
