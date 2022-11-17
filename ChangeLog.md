@@ -1,3 +1,8 @@
+2022-11-17: 3.1.47.0
+
+* http_inspect: move JavaScript Normalization test to a separate component
+* inspectors: update startup_verbose expected
+
 2022-10-20: 3.1.44.0
 
 * http_inspect: add config option
