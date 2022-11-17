@@ -1,4 +1,4 @@
-=== HTTP Inspector - JavaScript Normalization
+=== JavaScript Normalization
 
 The test demonstrates usage of JavaScript Normalization.
 
@@ -25,9 +25,9 @@ js_data buffer selector.
 
 The test also shows trace messages related to JavaScript
 Normalization.
-"http_inspect:js_proc" shows information about the script
+"js_norm:proc" shows information about the script
 normalization process.
-"http_inspect:js_dump:3: original" shows an original script
+"js_norm:dump:3: original" shows an original script
 being processed.
-"http_inspect:js_dump:1: js_data" shows a result of JavaScript
+"js_norm:dump:1: js_data" shows a result of JavaScript
 Normalization.

@@ -9,13 +9,14 @@ dofile(dir .. 'snort_defaults.lua')
 stream = {}
 stream_tcp = {}
 wizard = default_wizard
-http_inspect = default_http_inspect
+http_inspect = {}
+js_norm = default_js_norm
 
 trace = {
     modules = {
-        http_inspect = {
-            js_dump = 3,
-            js_proc = 1
+        js_norm = {
+            dump = 3,
+            proc = 1
         }
     }
 }
