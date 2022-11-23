@@ -1,0 +1,18 @@
+alert file (
+    msg:"ImageWidth value is 400";
+    file_data;
+    # match:
+    #  "MM|00 2A|" Big Endian TIFF
+    content:"MM|00 2A|", depth 4, fast_pattern;
+    # jump:
+    #  IFD Offset (4 bytes, BE)
+    # skip:
+    #  num_entries (2 bytes)
+    byte_jump:4, 0, relative, big, from_beginning, post_offset 2;
+    # match:
+    #  ImageWidth IFD Entry
+    content:"|01 00 00 03 00 00 00 01|", within 8;
+    #  Image width value test
+    byte_test: 2, =, 400, 0, relative, big;
+    sid:1;
+)

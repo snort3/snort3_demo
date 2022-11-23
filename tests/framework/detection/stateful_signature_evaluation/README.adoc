@@ -1,0 +1,16 @@
+=== Detection - Stateful Signature Evaluation
+
+   The test demonstrates how stateful evaluation could be used
+   for matching the rule.
+
+   Test verifies:
+
+   1. byte_jump ips option generates a continuation for 1:1 rule.
+   2. Generated continuation matches on relevant packet with respect to processed bytes
+      and file context.
+
+   Since the file structure is a well-known format, the rule could be written to
+   check values at the exact position. The file header contains the offset needed to
+   jump directly to IFD entry. The rule reads that field, calculates an offset in bytes and
+   does a 'long' jump (over 300000 bytes) right to the entry, skipping intermediate data.
+   The rule 1:1:0 checks if the image is 400 pixels wide.

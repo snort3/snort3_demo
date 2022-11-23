@@ -1,4 +1,4 @@
-=== Detection 
+=== Detection - Trace Basic IPS Options
 
 This test does detection trace for basic IPS options.
 
