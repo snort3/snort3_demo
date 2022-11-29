@@ -10,19 +10,19 @@ default_wizard =
 {
     spells =
     {
-        { service = 'imap', proto = 'tcp', client_first = false,
+        { service = 'imap', proto = 'tcp',
           to_client = { '** OK', '** BYE', '** PREAUTH' } },
 
-        { service = 'smtp', proto = 'tcp', client_first = true,
+        { service = 'smtp', proto = 'tcp',
           to_server = { 'HELO', 'EHLO' },
           to_client = { '220*SMTP', '220*MAIL' } },
     },
     hexes =
     {
-        { service = 'dnp3', proto = 'tcp', client_first = true,
+        { service = 'dnp3', proto = 'tcp',
           to_server = { '|05 64|' }, to_client = { '|05 64|' } },
 
-        { service = 'ssl', proto = 'tcp', client_first = true,
+        { service = 'ssl', proto = 'tcp',
           to_server = { '|16 03|' }, to_client = { '|16 03|' } },
     }
 }
