@@ -6,7 +6,7 @@ OPTION="-q -A csv -k none"
 
 @test "Profiler - Limit Output Count" {
     $snort -r $PCAP -c $CFG $OPTION > snort.out
-    ./compare_profile.sh
+    run ./compare_profile.sh
 }
 
 teardown()
