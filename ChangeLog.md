@@ -1,3 +1,7 @@
+2022-12-01: 3.1.48.0
+
+* detection: add test for Stateful Signature Evaluation feature
+
 2022-11-17: 3.1.47.0
 
 * http_inspect: move JavaScript Normalization test to a separate component
