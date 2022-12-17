@@ -1,3 +1,8 @@
+2022-12-15: 3.1.49.0
+
+* demo: updated tests and fix detection trace
+* wizard: update config after removing client_first option
+
 2022-12-01: 3.1.48.0
 
 * detection: add test for Stateful Signature Evaluation feature
