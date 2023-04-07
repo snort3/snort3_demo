@@ -1,3 +1,7 @@
+2023-04-06: 3.1.59.0
+
+* flow_cache: add config option prune_flows
+
 2023-02-22: 3.1.56.0
 
 * copyright: update for year 2023
