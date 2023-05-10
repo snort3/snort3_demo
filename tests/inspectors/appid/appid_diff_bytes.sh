@@ -25,7 +25,7 @@ fi
 if [ -f "expected_count" ] ; then
 
     let "flag++"
-    $SED -n '/^appid/,/^----------/p' snort.out | grep -v bytes_in_use > count.out;
+    $SED -n '/^appid$/,/^----------/p' snort.out | grep -v bytes_in_use > count.out;
     $SED -n '/^detected apps and services/,/^----------/p' snort.out >> count.out;
     diff expected_count count.out
     if [ $? != 0 ] ; then exit 1 ; fi
