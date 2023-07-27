@@ -9,20 +9,25 @@ you can find here: https://github.com/bats-core/bats-core.
 
 To execute the tests:
 
-  ./run_test.sh <snort3_installed_path>
+  ./run_test.sh
 
-run_test.sh will find *.bats files recursively from the current
-directory down and execute each test. Output is in TAPS format with
-a summary at the end.
+run_test.sh will find and expecute "test.bats" files recursively from the
+specified [path/to/tests] if provided, or recursively from the current
+directory, if no path is provided. Output is in TAPS format with a summary at
+the end.
 
-You can also execute a single test by specifying the relative path to
-the specific test.bats file, e.g.:
+You can also execute a one or more tests from an alternate directory tree by
+specifying an alternate path as the first argument file, e.g.:
 
-  ./run_test.sh <snort3_installed_path> tests/ips_actions/replace_rewrite/test.bats
+  ./run_test.sh tests/ips_actions/replace_rewrite
 
-Do this first if you require --daq-dir to run Snort 3:
+  or (path to the test.bats file)
 
-  export SNORT3_DAQ_DIR="<daq3_installed_path>"
+  ./run_test.sh tests/ips_actions/replace_rewrite/test.bats
+
+  or (some out of tree path to an externally defined test suite)
+
+  ./run_test.sh /some/other/path/tests/
 
 Dockerfiles outlining how to build Snort3 for a specific platform are included
 in the Dockerfiles folder.

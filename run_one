@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+TEST_PATH="$1"
+echo "test_path: $1"
+DIRNAME=$(dirname "$TEST_PATH")
+BASENAME=$(basename "$TEST_PATH")
+
+pushd "$DIRNAME" &>/dev/null
+echo "$PWD"
+bats -t "$BASENAME"
+popd &> /dev/null
