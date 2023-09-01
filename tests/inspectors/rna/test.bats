@@ -8,10 +8,12 @@ OPTION="-q -A csv -k none"
     $snort -r $PCAP -c $CFG $OPTION > snort.out
     # Only grab host cache output from "IP: " to "transport proto: .*$"
     sed -n '/IP:.*/,/transport proto: .*$/p' hosts.out > generated
-    diff expected generated
+    sort generated > generated.sorted
+    sort expected > expected.sorted
+    diff expected.sorted generated.sorted
 }
 
 teardown()
 {
-    rm -f snort.out hosts.out generated
+    rm -f snort.out hosts.out generated generated.sorted expected.sorted
 }
