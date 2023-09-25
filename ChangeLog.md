@@ -1,4 +1,8 @@
-2023-08-10: 3.1.70.0
+2023-09-25: 3.1.71.0
+
+* smtp: support DATA\n
+
+2023-09-10: 3.1.70.0
 
 * host_cache: added segmented host cache
 
