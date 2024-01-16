@@ -1,3 +1,7 @@
+2024-01-16: 3.1.78.0
+
+* copyright: update from 2023 to 2024
+
 2023-09-25: 3.1.71.0
 
 * smtp: support DATA\n
