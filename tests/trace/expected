@@ -1,32 +1,32 @@
 ++ [0] ./pcaps/tcp.pcap
 -- [0] ./pcaps/tcp.pcap
 ++ [0] ./pcaps/udp_1.pcap
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: start inspection, raw, packet 1, context 1
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: enter stream
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: exit stream, elapsed time: usec
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:wizard:all:1: c2s datagram search found service foobar
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: stop inspection, raw, packet 1, context 1, total time: usec
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: post detection inspection, raw, packet 1, context 1
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: end inspection, raw, packet 1, context 1, total time: usec
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: start inspection, raw, packet 2, context 2
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: enter stream
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: exit stream, elapsed time: usec
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: stop inspection, raw, packet 2, context 2, total time: usec
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: post detection inspection, raw, packet 2, context 2
-P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0:snort:inspector_manager:1: end inspection, raw, packet 2, context 2, total time: usec
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: start inspection, raw, packet 1, context 1
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: enter stream
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 wizard:all:1: c2s datagram search found service foobar
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: stop inspection, raw, packet 1, context 1, total time: usec
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: post detection inspection, raw, packet 1, context 1
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: end inspection, raw, packet 1, context 1, total time: usec
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: start inspection, raw, packet 2, context 2
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: enter stream
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: stop inspection, raw, packet 2, context 2, total time: usec
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: post detection inspection, raw, packet 2, context 2
+P0:10.1.1.1 100 -> 10.1.1.2 200 17 AS=0 snort:inspector_manager:1: end inspection, raw, packet 2, context 2, total time: usec
 -- [0] ./pcaps/udp_1.pcap
 ++ [0] ./pcaps/udp_2.pcap
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: start inspection, raw, packet 1, context 1
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: enter stream
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: exit stream, elapsed time: usec
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:wizard:all:1: c2s datagram search found service foobar
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: stop inspection, raw, packet 1, context 1, total time: usec
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: post detection inspection, raw, packet 1, context 1
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: end inspection, raw, packet 1, context 1, total time: usec
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: start inspection, raw, packet 2, context 2
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: enter stream
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: exit stream, elapsed time: usec
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: stop inspection, raw, packet 2, context 2, total time: usec
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: post detection inspection, raw, packet 2, context 2
-P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0:snort:inspector_manager:1: end inspection, raw, packet 2, context 2, total time: usec
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: start inspection, raw, packet 1, context 1
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: enter stream
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 wizard:all:1: c2s datagram search found service foobar
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: stop inspection, raw, packet 1, context 1, total time: usec
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: post detection inspection, raw, packet 1, context 1
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: end inspection, raw, packet 1, context 1, total time: usec
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: start inspection, raw, packet 2, context 2
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: enter stream
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: exit stream, elapsed time: usec
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: stop inspection, raw, packet 2, context 2, total time: usec
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: post detection inspection, raw, packet 2, context 2
+P0:10.1.1.5 150 -> 10.1.1.7 250 17 AS=0 snort:inspector_manager:1: end inspection, raw, packet 2, context 2, total time: usec
 -- [0] ./pcaps/udp_2.pcap
