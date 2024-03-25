@@ -1,3 +1,7 @@
+2024-03-24: 3.1.83.0
+
+* trace: replace colon with space in message headers
+
 2024-01-16: 3.1.78.0
 
 * copyright: update from 2023 to 2024
