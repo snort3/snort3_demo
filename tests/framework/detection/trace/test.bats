@@ -6,7 +6,7 @@ OPTION="-q -A csv -k none"
 
 @test "Detection - Trace Basic IPS Options" {
     # this test requires snort trace messages enabled by "--enable-debug-msgs" during building
-    run snort -T -c snort.lua
+    run $snort -T -c snort.lua
     if [ $status -ne 0 ];
     then
         skip "skipping if trace module is not enabled"

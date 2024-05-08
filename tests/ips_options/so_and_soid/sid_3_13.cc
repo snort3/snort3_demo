@@ -47,9 +47,6 @@ public:
     static void pinit()
     { id = FlowData::create_flow_data_id(); }
 
-    size_t size_of() override
-    { return sizeof(*this); }
-
     unsigned get_id() { return id; }
     unsigned total(unsigned n) { return cans += n; }
 
