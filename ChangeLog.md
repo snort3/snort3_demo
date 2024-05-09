@@ -1,3 +1,7 @@
+2024-05-08: 3.2.0.0
+
+* detection: fix snort -T check
+
 2024-03-24: 3.1.83.0
 
 * trace: replace colon with space in message headers
