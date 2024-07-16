@@ -1,3 +1,7 @@
+2024-07-15: 3.3.1.0
+
+* trace: update configuration and expected due to snort3 change
+
 2024-05-08: 3.2.0.0
 
 * detection: fix snort -T check
