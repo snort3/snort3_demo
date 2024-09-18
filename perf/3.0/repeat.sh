@@ -26,7 +26,7 @@ max=0
 sum="0"
 
 for i in $(seq 1 $num) ; do
-    x=`$snort $args -c $conf -r $pcap --lua "$var = '$mpse'" -z $z --pcap-loop $z 2>&1 | \
+    x=`$snort $args -c $conf -r $pcap --lua "$var = '$mpse'" -z $z --pcap-loop $z 2>&1 3>/dev/null | \
         grep "$runt" | grep -o '[0-9.]*'`
     printf ", $x"
     sum+="+$x"

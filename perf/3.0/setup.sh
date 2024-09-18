@@ -19,3 +19,10 @@ daq="$daq_dir --daq dump --daq-var output=none"
 args="--warn-all --plugin-path $plugs $daq -H -Q"
 runt="seconds:"
 
+# Scenarios for specific sets of a config and pcaps
+# ( "config pcap_1 pcap_n" ... )
+scenarios=(
+    "events_ips udp1k0"
+    "events_extractor http2 defcon"
+    "events_filtered_extractor http2 defcon"
+)

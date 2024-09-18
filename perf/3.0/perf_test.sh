@@ -17,3 +17,12 @@ for z in $thr ; do
     done
 done
 
+
+for z in $thr ; do
+    for scenario in "${scenarios[@]}" ; do
+        scenario_array=($scenario)
+        for (( p=1; p<${#scenario_array[*]}; p++ )) ; do
+            ./repeat.sh ${scenario_array[0]}.lua $mpse $max $SNORT_PCAPS/${scenario_array[$p]}.pcap $z
+        done
+    done
+done
