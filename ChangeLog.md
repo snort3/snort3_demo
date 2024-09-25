@@ -1,3 +1,7 @@
+2024-09-24: 3.3.7.0
+
+* perf: accomodate custom scenarios for runs
+
 2024-07-15: 3.3.1.0
 
 * trace: update configuration and expected due to snort3 change
