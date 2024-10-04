@@ -8,6 +8,7 @@ stream:
                max_aux_ip: 16
           pruning_timeout: 30
               prune_flows: 10
+             require_3whs: -1 (disabled)
                  ip_cache: { idle_timeout = 180 }
                 tcp_cache: { idle_timeout = 3600 }
                 udp_cache: { idle_timeout = 180 }
@@ -107,7 +108,6 @@ stream_tcp:
               queue_limit: { max_bytes = 4194304, max_segments = 3072 }
            asymmetric_ids: { flush threshold = 65535 }
          reassemble_async: enabled
-             require_3whs: -1 (disabled)
           session_timeout: 180
            small_segments: { count = 0, maximum_size = 0 }
                track_only: disabled
