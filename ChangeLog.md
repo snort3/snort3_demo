@@ -1,3 +1,8 @@
+2024-10-20: 3.4.0.0
+
+ * stream_tcp: move require_3whs to stream to avoid undesired flow creation
+ * stream_tcp: update expected to include output for new asymmetric ids flush threshold config option
+
 2024-09-24: 3.3.7.0
 
 * perf: accomodate custom scenarios for runs
