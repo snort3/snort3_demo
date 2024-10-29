@@ -107,7 +107,7 @@ stream_tcp:
             overlap_limit: 0
                    policy: bsd
               queue_limit: { max_bytes = 4194304, max_segments = 3072 }
-           asymmetric_ids: { flush threshold = 65535 }
+           asymmetric_ids: { flush threshold = 3145728 }
          reassemble_async: enabled
           session_timeout: 180
            small_segments: { count = 0, maximum_size = 0 }
