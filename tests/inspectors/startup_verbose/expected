@@ -15,6 +15,7 @@ stream:
                icmp_cache: { idle_timeout = 180 }
                user_cache: { idle_timeout = 180 }
                file_cache: { idle_timeout = 180 }
+          allowlist_cache: { enable = false }
 --------------------------------------------------
 Global Inspectors
 --------------------------------------------------
