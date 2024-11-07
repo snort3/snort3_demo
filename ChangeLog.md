@@ -1,3 +1,8 @@
+2024-11-06: 3.5.1.0
+
+* flow: new allowlist LRU
+* stream_tcp: update expected file for change in default value for asymmetric_ids_flush_threshold
+
 2024-10-20: 3.4.0.0
 
  * stream_tcp: move require_3whs to stream to avoid undesired flow creation
