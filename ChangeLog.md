@@ -1,3 +1,7 @@
+2024-11-18: 3.5.2.0
+
+* perf: add FTP proto to extractor test
+
 2024-11-06: 3.5.1.0
 
 * flow: new allowlist LRU
