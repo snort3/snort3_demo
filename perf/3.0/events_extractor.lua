@@ -1,9 +1,11 @@
 include("inspect.lua")
 
+std_connector = { }
+
 extractor =
 {
     formatting = 'csv',
-    output = 'stdout',
+    connector = "stdout",
     protocols =
     {
         {
