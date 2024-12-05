@@ -1,3 +1,7 @@
+2024-12-03: 3.6.0.0
+
+* extractor: move to Connectors api
+
 2024-11-18: 3.5.2.0
 
 * perf: add FTP proto to extractor test
