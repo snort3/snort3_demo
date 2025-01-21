@@ -1,3 +1,7 @@
+2025-01-19: 3.6.2.0
+
+* stream_tcp: update expected files to match output changes due to fix for ids asymmetric flush support
+
 2024-12-03: 3.6.0.0
 
 * extractor: move to Connectors api
