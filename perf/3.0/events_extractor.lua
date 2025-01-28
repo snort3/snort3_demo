@@ -22,5 +22,11 @@ extractor =
                 'uid, command, arg, user, reply_code, reply_msg, file_size,'..
                 'data_channel.passive, data_channel.orig_h, data_channel.resp_h, data_channel.resp_p'
         },
+        {
+            service = 'conn',
+            on_events = 'eof',
+            fields = 'ts, uid, id.orig_h, id.orig_p, id.resp_h, id.resp_p,'..
+                'duration, proto, service, orig_pkts, resp_pkts'
+        }
     }
 }
