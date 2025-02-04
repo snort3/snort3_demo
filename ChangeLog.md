@@ -1,3 +1,7 @@
+2025-02-03: 3.6.3.0
+
+* perf: add connection logging
+
 2025-01-19: 3.6.2.0
 
 * stream_tcp: update expected files to match output changes due to fix for ids asymmetric flush support
