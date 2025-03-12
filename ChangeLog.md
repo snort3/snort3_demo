@@ -1,3 +1,7 @@
+2025-03-11: 3.7.1.0
+
+* copyright: update year to 2025
+
 2025-02-03: 3.6.3.0
 
 * perf: add connection logging
