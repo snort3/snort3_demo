@@ -27,6 +27,12 @@ extractor =
             on_events = 'eof',
             fields = 'ts, uid, id.orig_h, id.orig_p, id.resp_h, id.resp_p,'..
                 'duration, proto, service, orig_pkts, resp_pkts'
+        },
+        {
+            service = 'dns',
+            on_events = 'response',
+            fields = 'ts,uid,id.orig_h,id.orig_p,id.resp_h,id.resp_p,proto,trans_id,query,qclass,qclass_name,' ..
+                     'qtype,qtype_name,rcode,rcode_name,AA,TC,RD,RA,Z,answers,TTLs,rejected,auth,addl'
         }
     }
 }
