@@ -1,3 +1,7 @@
+2025-04-20: 3.7.3.0
+
+* extractor: extend the configuration with DNS logging
+
 2025-03-11: 3.7.1.0
 
 * copyright: update year to 2025
