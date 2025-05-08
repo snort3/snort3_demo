@@ -1,3 +1,7 @@
+2025-05-05: 3.7.4.0
+
+* demo: updating line numbers for third-party mock library
+
 2025-04-20: 3.7.3.0
 
 * extractor: extend the configuration with DNS logging
