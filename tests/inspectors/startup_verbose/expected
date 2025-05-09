@@ -9,6 +9,7 @@ stream:
           pruning_timeout: 30
               prune_flows: 10
              require_3whs: -1 (disabled)
+       drop_stale_packets: disabled
                  ip_cache: { idle_timeout = 180 }
                 tcp_cache: { idle_timeout = 3600 }
                 udp_cache: { idle_timeout = 180 }
