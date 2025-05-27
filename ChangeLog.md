@@ -1,3 +1,11 @@
+2025-05-26: 3.8.1.0
+
+* extractor: extend config with all available fields
+* extractor: extend perf configuration with weird
+* flow: excess flows to allowlist
+* stream_tcp: updated expected output to include new drop_stale_packets configuration option
+* stream_tcp: update expected output to reflect that the reassemble_async option is now deprecated
+
 2025-05-05: 3.7.4.0
 
 * demo: updating line numbers for third-party mock library
