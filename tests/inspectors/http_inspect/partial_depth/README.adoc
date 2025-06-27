@@ -1,0 +1,27 @@
+=== HTTP Inspector - Partial depth
+
+The test demonstrates usage of partial_depth parameter
+for early detection.
+
+If there is a need to protect a server that evaluates
+incomplete HTTP bodies, you can enable early detection
+by setting partial_depth parameter to non zero values.
+As a result detection will be run on HTTP body fragments.
+The price to pay for these extra inspections is higher
+CPU utilization and corresponding lower maximal throughput
+for a given hardware platform.
+
+In this test the attacker is sending a request with
+content-length set to a value higher that the length
+of the body hoping that the server will evaluate the
+incomplete HTTP body while evading protections that
+act only on complete bodies.
+
+HTTP inspector when receives the body fragment, as its
+accumulated length is below the limit set by partial_depth,
+will immediately flush that data segment through inspection
+and detection. This allows any IPS rules to match on any
+malicious content in the fragment.
+
+In this test, malware is in packet 5 and it is blocked by
+snort.
