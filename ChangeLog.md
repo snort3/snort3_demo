@@ -1,3 +1,7 @@
+2025-06-29: 3.9.1.0
+
+* http_inspect: add test for partial depth and update existing test
+
 2025-05-26: 3.8.1.0
 
 * extractor: extend config with all available fields
