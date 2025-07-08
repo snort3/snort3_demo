@@ -1,11 +1,11 @@
-=== HTTP Inspector - Partial depth
+=== HTTP Inspector - Partial depth  body
 
-The test demonstrates usage of partial_depth parameter
+The test demonstrates usage of partial_depth_body parameter
 for early detection.
 
 If there is a need to protect a server that evaluates
 incomplete HTTP bodies, you can enable early detection
-by setting partial_depth parameter to non zero values.
+by setting partial_depth_body parameter to non zero values.
 As a result detection will be run on HTTP body fragments.
 The price to pay for these extra inspections is higher
 CPU utilization and corresponding lower maximal throughput
@@ -18,7 +18,7 @@ incomplete HTTP body while evading protections that
 act only on complete bodies.
 
 HTTP inspector when receives the body fragment, as its
-accumulated length is below the limit set by partial_depth,
+accumulated length is below the limit set by partial_depth_body,
 will immediately flush that data segment through inspection
 and detection. This allows any IPS rules to match on any
 malicious content in the fragment.

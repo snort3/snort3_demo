@@ -16,7 +16,7 @@ block http ( flow:established,to_server; content:"tricky"; sid:1; rev:1; )
 
 http_inspect =
 {
-    partial_depth = 1000
+    partial_depth_body = 1000
 }
 
 event_queue =
