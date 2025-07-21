@@ -1,3 +1,7 @@
+2025-07-20: 3.9.2.0
+
+http_inspect: parameter name change from partial_depth to partial_depth_body
+
 2025-06-29: 3.9.1.0
 
 * http_inspect: add test for partial depth and update existing test
