@@ -67,6 +67,7 @@ gtp_inspect:
 http_inspect:
             request_depth: -1 (unlimited)
            response_depth: -1 (unlimited)
+     partial_depth_header: 0 (disabled)
        partial_depth_body: 0 (disabled)
                     unzip: enabled
             normalize_utf: enabled
