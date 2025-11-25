@@ -1,3 +1,7 @@
+2025-11-24: 3.10.0.0
+
+* trace: added retry queue timeout traces in expected log required for --retry-timeout option
+
 2025-09-03: 3.9.5.0
 
 * http_inspect: new parameter partial_depth_header
