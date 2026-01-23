@@ -26,9 +26,11 @@ binder =
     { use = { type = "wizard" } }
 }
 
+stdout_trace = {}
+
 trace =
 {
-    output = "stdout",
+    output = "stdout_trace",
 
     ntuple = true,
 
