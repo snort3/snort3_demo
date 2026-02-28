@@ -1,3 +1,8 @@
+2026-02-26: 3.11.1.0
+
+* copyright: update copyright year to 2026
+* tests: updated test case based on multi-logging feature
+
 2025-11-24: 3.10.0.0
 
 * trace: added retry queue timeout traces in expected log required for --retry-timeout option
