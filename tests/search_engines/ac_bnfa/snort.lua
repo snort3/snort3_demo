@@ -1,5 +1,4 @@
 
-
 dir = os.getenv('SNORT_LUA_PATH')
 
 if ( not dir ) then
@@ -8,8 +7,8 @@ end
 
 dofile(dir .. 'snort_defaults.lua')
 
-stream = {}
-stream_tcp = {}
+stream = { }
+stream_tcp = { }
 
 wizard = default_wizard
 

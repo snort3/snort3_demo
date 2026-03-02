@@ -9,7 +9,7 @@ dofile(dir .. '/snort_defaults.lua')
 stream = { }
 stream_tcp = { }
 normalizer = { }
-file_id = { }
+file_inspect = { }
 file_policy = { }
 
 ftp_server = default_ftp_server

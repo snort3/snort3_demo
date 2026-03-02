@@ -32,8 +32,9 @@ setup()
     cat stub.rule snort.out | diff expected -
 }
 
+#    rm -f snort.out *.z *.o *.so stub.rule *.h
 teardown()
 {
-    rm -f snort.out *.z *.o *.so stub.rule *.h
+    rm -f barney
 }
 

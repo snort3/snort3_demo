@@ -35,14 +35,16 @@
 
 using namespace snort;
 
+#define NAME "3_13_1"
+
 //--------------------------------------------------------------------------
 // implementation stuff
 //--------------------------------------------------------------------------
 
-class CheezFlowData : public snort::RuleFlowData
+class CheezFlowData : public snort::FlowData
 {
 public:
-    CheezFlowData() : RuleFlowData(id) { }
+    CheezFlowData() : FlowData(id, NAME) { }
 
     static void pinit()
     { id = FlowData::create_flow_data_id(); }
@@ -83,9 +85,6 @@ static IpsOption::EvalStatus eval(void* pv, Cursor& c, Packet* p)
     assert(pv);
     CheezMeter* cm = (CheezMeter*)pv;
 
-    if ( !CheezFlowData::id )  // FIXIT-H hack this lazy init until pinit is called via api
-        CheezFlowData::pinit();
-
     CheezFlowData* fd = (CheezFlowData*)p->flow->get_flow_data(CheezFlowData::id);
 
     if ( !fd )
@@ -123,7 +122,7 @@ static const SoApi so_api =
         1,
         API_RESERVED,
         API_OPTIONS,
-        "3_13_1",
+        NAME,
         "SO rule example",
         nullptr,
         nullptr
@@ -131,7 +130,7 @@ static const SoApi so_api =
     (uint8_t*)rule_3_13_1,
     rule_3_13_1_len,
     CheezFlowData::pinit,
-    nullptr, // pterm - Snort issue, you should not need to call this directly
+    nullptr, // pterm
     nullptr, // tinit
     nullptr, // tterm
     ctor,

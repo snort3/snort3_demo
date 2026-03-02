@@ -1,6 +1,6 @@
 Finished snort.lua:
 --------------------------------------------------
-Flow Tracking
+Global Inspectors
 --------------------------------------------------
 stream:
             ip_frags_only: disabled
@@ -10,6 +10,7 @@ stream:
               prune_flows: 10
              require_3whs: -1 (disabled)
        drop_stale_packets: disabled
+      held_packet_timeout: 1000
                  ip_cache: { idle_timeout = 180 }
                 tcp_cache: { idle_timeout = 3600 }
                 udp_cache: { idle_timeout = 180 }
@@ -18,11 +19,7 @@ stream:
                file_cache: { idle_timeout = 180 }
           allowlist_cache: { enable = false, move_on_excess = false }
 --------------------------------------------------
-Global Inspectors
---------------------------------------------------
-so_proxy:
---------------------------------------------------
-Network Policy : policy id 0 : snort.lua
+Network Policy : policy id 1 : snort.lua
 --------------------------------------------------
 normalizer:
                       ip4: disabled
@@ -34,7 +31,7 @@ normalizer:
                            = disabled, req_pay = disabled, req_urp = disabled, urp = disabled, ips =
                            enabled, trim = disabled }
 --------------------------------------------------
-Inspection Policy : policy id 0 : snort.lua
+Inspection Policy : policy id 1 : snort.lua
 --------------------------------------------------
 binder:
                  bindings:

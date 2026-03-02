@@ -38,9 +38,9 @@ normalizer =
     }
 }
 
-stream = {}
+stream = { }
 
-stream_tcp = {}
+stream_tcp = { }
 
 wizard = default_wizard
 

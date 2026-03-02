@@ -50,10 +50,12 @@ local_file_policy =
 
 file_policy = local_file_policy
 
-file_id =
+file_inspect =
 {
     rules_file = conf_dir .. '/file_magic.rules',
 }
+
+stream = { }
 
 stream_tcp =
 {
@@ -62,7 +64,7 @@ stream_tcp =
     small_segments = { count = 0, maximum_size = 0 }
 }
 
-http_inspect = {}
+http_inspect = { }
 
 ips = { enable_builtin_rules = true }
 

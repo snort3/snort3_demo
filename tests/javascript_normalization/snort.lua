@@ -6,10 +6,10 @@ end
 
 dofile(dir .. 'snort_defaults.lua')
 
-stream = {}
-stream_tcp = {}
+stream = { }
+stream_tcp = { }
 wizard = default_wizard
-http_inspect = {}
+http_inspect = { }
 js_norm = default_js_norm
 
 trace = {

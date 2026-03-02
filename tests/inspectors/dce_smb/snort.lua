@@ -1,12 +1,4 @@
 
-dir = os.getenv('SNORT_LUA_PATH')
-
-if ( not dir ) then
-    dir = '.'
-end
-
-dofile(dir .. '/snort_defaults.lua')
-
 stream_ip = { }
 
 stream = { }
@@ -32,6 +24,4 @@ ips =
 {
     rules = local_rules,
 }
-
-
 

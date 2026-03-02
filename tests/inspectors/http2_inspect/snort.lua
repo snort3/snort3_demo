@@ -22,7 +22,7 @@ alert tcp ( msg:"status code match"; http_stat_code; content:"200"; sid:2; )
 alert tcp ( msg:"raw header match"; http_raw_header; content:"nginx/1.16.0"; sid:3; )
 alert tcp ( msg:"fast pattern file data match on HTTP/2 only"; file_data; content:"EICAR",fast_pattern; service: http2; sid:4; )
 ]]
-normalizer = {}
+normalizer = { }
 
 ips =
 {

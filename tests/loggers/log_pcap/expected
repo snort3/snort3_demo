@@ -1,7 +1,7 @@
 
 (Event)
 	Snort ID: 0	Event ID: 1	Seconds: 1465392499.487158
-	Policy ID:	Context: 0	Inspect: 0	Detect: 0
+	Policy ID:	Context: 1	Inspect: 1	Detect: 1
 	Rule 1:2:0	Class: 0	Priority: 0
 	MPLS Label: 0	VLAN ID: 1917	IP Version: 0x44	IP Proto: 6
 	Src IP: 5.6.7.8	Port: 46519

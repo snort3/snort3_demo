@@ -1,8 +1,8 @@
 
 plugin_path = os.getenv('SNORT_PLUGINS')
 
-stream = {}
-stream_tcp = {}
+stream = { }
+stream_tcp = { }
 
 appid =
 {

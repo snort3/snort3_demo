@@ -22,7 +22,7 @@
    a Lua table. The only way this will output "null" is if your entire input obj is
    nil itself.
 
-   An empty Lua table, {}, could be considered either a json object or array -
+   An empty Lua table, { }, could be considered either a json object or array -
    it's an ambiguous edge case. We choose to treat this as an object as it is the
    more general type.
 
@@ -47,7 +47,7 @@
 --]]
 
 
-local json = {}
+local json = { }
 
 
 -- Internal functions.
@@ -113,7 +113,7 @@ end
 -- Public values and functions.
 
 function json.stringify(obj, as_key)
-   local s = {}  -- We'll build the string as an array of strings to be concatenated.
+   local s = { }  -- We'll build the string as an array of strings to be concatenated.
    local kind = kind_of(obj)  -- This is 'array' if it's an array or type(obj) otherwise.
    if kind == 'array' then
       if as_key then error('Can\'t encode array as key.') end
@@ -148,7 +148,7 @@ function json.stringify(obj, as_key)
    return table.concat(s)
 end
 
-json.null = {}  -- This is a one-off table to represent the null value.
+json.null = { }  -- This is a one-off table to represent the null value.
 
 function json.parse(str, pos, end_delim)
    pos = pos or 1
@@ -156,7 +156,7 @@ function json.parse(str, pos, end_delim)
    local pos = pos + #str:match('^%s*', pos)  -- Skip whitespace.
    local first = str:sub(pos, pos)
    if first == '{' then  -- Parse an object.
-      local obj, key, delim_found = {}, true, true
+      local obj, key, delim_found = { }, true, true
       pos = pos + 1
       while true do
          key, pos = json.parse(str, pos, '}')
@@ -167,7 +167,7 @@ function json.parse(str, pos, end_delim)
          pos, delim_found = skip_delim(str, pos, ',')
       end
    elseif first == '[' then  -- Parse an array.
-      local arr, val, delim_found = {}, true, true
+      local arr, val, delim_found = { }, true, true
       pos = pos + 1
       while true do
          val, pos = json.parse(str, pos, ']')

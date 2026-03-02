@@ -7,7 +7,7 @@ end
 
 dofile(dir .. '/snort_defaults.lua')
 
-stream = {}
+stream = { }
 
 stream_tcp =
 {
@@ -15,7 +15,7 @@ stream_tcp =
     session_timeout = 180,
 }
 
-normalizer = 
+normalizer =
 {
    tcp = 
    {
@@ -30,11 +30,11 @@ ftp_client =
     bounce = true,
 }
 
-ftp_data = {}
+ftp_data = { }
 
 wizard = default_wizard
 
-file_id = 
+file_inspect =
 {
     rules_file = dir .. '/file_magic.rules',
     trace_type = true,
@@ -42,11 +42,11 @@ file_id =
     trace_stream = true,
 }
 
-file_policy = 
+file_policy =
 {
     enable_type = true,
     enable_signature = true,
-    rules = 
+    rules =
     {
        {  when = { sha256 = "9C72F9CC6DA7AB242C7B794C5E0C8B031728D461B923924AFE78D5A79C276CDE" }, use = { verdict = 'block'} },
     }

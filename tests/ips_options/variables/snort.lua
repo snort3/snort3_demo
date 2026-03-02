@@ -5,7 +5,7 @@ local_rules =
 ]]
 
 ips = {
-	id=1,
+	id = 1,
 	rules = local_rules,
 	variables = 
 	{
@@ -18,8 +18,8 @@ ips = {
 	}
 }
 
-stream = {}
-stream_udp = {}
+stream = { }
+stream_udp = { }
 
 binder = {
     { when = { src_nets = '1.1.1.1' }, use = { ips_policy = 'ips_1.lua' } },

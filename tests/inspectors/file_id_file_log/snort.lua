@@ -26,12 +26,12 @@ ips =
     rules = default_rules,
 }
 
-suppress = 
+suppress =
 {
    { gid = 129, sid = 10 },
 }
 
-file_id = 
+file_inspect =
 {
     rules_file = dir .. '/file_magic.rules',
     trace_type = true,
@@ -39,7 +39,7 @@ file_id =
     trace_stream = true,
 }
 
-file_policy = 
+file_policy =
 {
     enable_type = true,
     enable_signature = true,
@@ -52,3 +52,4 @@ file_policy =
 }
 
 file_log = { log_pkt_time = true, log_sys_time = false }
+

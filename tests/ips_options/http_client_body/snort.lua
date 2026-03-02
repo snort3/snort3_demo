@@ -7,7 +7,7 @@ end
 
 dofile(dir .. 'snort_defaults.lua')
 
-stream = {}
+stream = { }
 
 stream_tcp = { }
 

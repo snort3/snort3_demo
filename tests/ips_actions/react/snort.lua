@@ -8,12 +8,12 @@ end
 
 dofile(dir .. 'snort_defaults.lua')
 
-stream = {}
-stream_tcp = {}
-http_inspect = {}
+stream = { }
+stream_tcp = { }
+http_inspect = { }
 
 react = { page = "./mypage.html" }
-payload_injector = {}
+payload_injector = { }
 
 wizard = default_wizard
 
@@ -27,4 +27,4 @@ ips =
     rules = local_rules,
 }
 
-normalizer = {}
+normalizer = { }

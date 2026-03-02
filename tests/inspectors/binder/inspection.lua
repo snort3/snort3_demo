@@ -1,16 +1,12 @@
 
-dir = os.getenv('SNORT_LUA_PATH')
+inspection = { id = 2 }
 
-if ( not dir ) then
-    dir = '.'
-end
-
-dofile(dir .. '/snort_defaults.lua')
-
-sip = { }
 stream = { }
 stream_udp = { }
+sip = { }
+
 binder =
 {
     { when = { proto = 'udp', ports = '5060' }, use = { type = 'sip' } }
 }
+

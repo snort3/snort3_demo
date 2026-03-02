@@ -86,7 +86,7 @@ ftp_server = default_ftp_server
 ftp_client = { }
 ftp_data = { }
 
-file_id =
+file_inspect =
 {
     rules_file = conf_dir .. '/file_magic.rules',
 }

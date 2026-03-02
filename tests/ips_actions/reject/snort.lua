@@ -8,9 +8,9 @@ end
 
 dofile(dir .. 'snort_defaults.lua')
 
-stream = {}
-stream_tcp = {}
-http_inspect = {}
+stream = { }
+stream_tcp = { }
+http_inspect = { }
 
 reject = { reset = "both", control = "all" }
 
