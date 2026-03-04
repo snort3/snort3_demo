@@ -1,3 +1,13 @@
+2026-03-03: 3.12.0.0
+
+* file_id: rename to file_inspect
+* inspection, ips: id defaults to 1 and must be unique
+* latency: remove unstable test
+* plugins: refactor for so lib reload
+* snort: remove unused defaults includes
+* stream_tcp: stream is required
+* style: standardize empty table to { }
+
 2026-02-26: 3.11.1.0
 
 * copyright: update copyright year to 2026
