@@ -90,6 +90,8 @@ max_javascript_whitespaces: 200
             simplify_path: enabled
               xff_headers: x-forwarded-for true-client-ip
 request_body_app_detection: enabled
+      max_expansion_ratio: 100
+        decompress_brotli: disabled
 --------------------------------------------------
 stream_ip (stream_ip_1):
                 max_frags: 8192
