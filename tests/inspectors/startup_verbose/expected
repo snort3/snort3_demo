@@ -92,6 +92,8 @@ max_javascript_whitespaces: 200
 request_body_app_detection: enabled
       max_expansion_ratio: 100
         decompress_brotli: disabled
+         max_request_size: 0 (disabled)
+  max_request_line_length: 0 (disabled)
 --------------------------------------------------
 stream_ip (stream_ip_1):
                 max_frags: 8192
