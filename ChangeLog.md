@@ -1,3 +1,9 @@
+2026-07-20: 3.12.3.0
+
+* demo: QinQ outer vlan tag addition
+* http_inspect: brotli config
+* tests: update verbose startup test after new http configs
+
 2026-03-03: 3.12.0.0
 
 * file_id: rename to file_inspect
@@ -485,4 +491,3 @@
 2018-09-26: build 248
 
 * http_inspect: Split and inspect immediately upon reaching depth
-
