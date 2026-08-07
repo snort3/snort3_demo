@@ -17,7 +17,7 @@ stream:
                icmp_cache: { idle_timeout = 180 }
                user_cache: { idle_timeout = 180 }
                file_cache: { idle_timeout = 180 }
-          allowlist_cache: { enable = false, move_on_excess = false }
+          allowlist_cache: { enable = false, move_on_excess = false, max_excess_flows = 0 }
 --------------------------------------------------
 Network Policy : policy id 1 : snort.lua
 --------------------------------------------------
