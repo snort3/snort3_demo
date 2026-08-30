@@ -1,3 +1,8 @@
+2026-08-28: 3.12.5.0
+
+* process: update AppId plugin line expectations
+* tests: update allowlist_cache expected for max_excess_flows param
+
 2026-07-20: 3.12.3.0
 
 * demo: QinQ outer vlan tag addition
