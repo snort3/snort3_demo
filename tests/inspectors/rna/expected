@@ -7,7 +7,7 @@ transport proto: 1
 IP: 10.10.10.19
     type: Host, ttl: 0, hops: 255, time: 2019-09-04 22:52:11
 macs size: 1
-    mac: 00:50:56:A2:2D:AA, ttl: 64, primary: 0, time: 2019-09-04 22:51:52
+    mac: 00:50:56:A2:2D:AA, ttl: 64, primary: 0, time: 2019-09-04 22:52:11
 network proto: 2048
 transport proto: 1, 17
 IP: 10.10.10.52
