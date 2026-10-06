@@ -104,6 +104,7 @@ stream_ip (stream_ip_1):
           session_timeout: 60
 --------------------------------------------------
 stream_tcp:
+enforce_auto_window_trims: enabled
              flush_factor: 0
                   max_pdu: 16384
                max_window: 0
@@ -116,6 +117,11 @@ stream_tcp:
           session_timeout: 180
            small_segments: { count = 0, maximum_size = 0 }
                track_only: disabled
+     show_rebuilt_packets: disabled
+      proxy_mode_ooo_drop: disabled
+       trace_seq_relative: disabled
+        embryonic_timeout: 30
+             idle_timeout: 3600
 --------------------------------------------------
 stream_udp:
           session_timeout: 30
