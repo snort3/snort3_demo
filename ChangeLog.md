@@ -1,3 +1,10 @@
+2026-11-04: 3.13.2.0
+
+* rna: update mac last_seen time when traffic is seen
+* stream: update configuration logging expectations
+* tests: update detection trace expected output for XHash row distribution fix
+* tests: update verbose startup test for maximum_header_value_length
+
 2026-08-28: 3.12.5.0
 
 * process: update AppId plugin line expectations
